@@ -1,0 +1,33 @@
+.footer-container{
+    height:auto;
+    color:white;
+    font-weight: 600;
+  }
+  .logo-footer .logo {
+    height: 50px;
+  }
+  
+  .center-footer{
+    margin-top:4px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .center-footer>a, .social-footer>a{
+    color:white!important;
+  
+  }
+  
+  .social-footer>a{
+    font-size: 1.3em;
+    padding: 1px;
+  }
+  
+  .social-footer{
+    margin-top:4px;
+    text-align: center;
+  }
+  
+  .row-align-center{
+    align-items: center;
+  }

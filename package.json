@@ -1,0 +1,13 @@
+{
+  "name": "integration-parametrable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts" : {
+    "start": "start-portal",
+    "prepack": "build-portal"
+  },
+  "dependencies": {
+    "@openagenda/agenda-portal": "^6.5.1"
+  }
+}

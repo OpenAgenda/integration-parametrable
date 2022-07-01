@@ -1,0 +1,12 @@
+.registration {
+    height: 35px;
+    border: none;
+    margin-bottom: 40px;
+    border-radius: 2px;
+    &:hover {
+        box-shadow: none!important;
+    }
+    a {
+        color: white!important;
+    }
+}

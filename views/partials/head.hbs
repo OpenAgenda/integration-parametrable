@@ -1,0 +1,16 @@
+{{#if @root.styles.bannerItems.displayBanner}}
+<header role="banner" class="img-banner">
+  {{#if @root.styles.bannerItems.displayDarkerBanner}}
+  <div class="banner-color"></div>
+  {{/if}}
+  
+  <div class="container">
+    <a href="{{root}}" aria-label="Retour à la page d'accueil"><img src="{{@root.styles.bannerItems.logoBanner}}" class="logo" alt="Logo"></a>
+  </div>
+
+  <a href="https://openagenda.com/home" target="_blank">
+    <img  class="oa-logo" src="/logo-oa.png" alt="" OpenAgenda />
+  </a>
+
+</header>
+{{/if}}

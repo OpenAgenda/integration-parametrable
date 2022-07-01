@@ -1,0 +1,43 @@
+{{#if navigation.available}}
+<nav role="navigation">
+  <ul class="nav d-flex sub-header-nav mx-4">
+    <li class="nav-item back-list mr-auto ">
+      <a class="nav-link" href="{{navigation.list}}">
+        Retour à l'agenda
+      </a>
+    </li>
+    {{#if navigation.total}}
+    <li class="nav-item previous">
+      {{#if navigation.previous}}
+      <a class="nav-link" href="{{navigation.previous}}">
+        <svg class="arrow" width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 10.5L12 19" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {{else}}
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+        <svg class="arrow" width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 10.5L12 19" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {{/if}}
+    </li>
+    <li class="nav-item next">
+      {{#if navigation.next}}
+      <a class="nav-link" href="{{navigation.next}}">
+        <svg class="arrow" width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 19L12 10.5L2 2" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {{else}}
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+        <svg class="arrow" width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 19L12 10.5L2 2" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {{/if}}
+    </li>
+    {{/if}}
+  </ul>
+</nav>
+{{/if}}

@@ -1,0 +1,138 @@
+'use strict';
+
+// const log = require('@openagenda/agenda-portal/lib/Log')('server');
+
+// Set options as a parameter, environment variable, or rc file.
+
+const Portal = require('@openagenda/agenda-portal');
+const extractDate = require('./lib/extractDate');
+
+Portal.utils.loadEnvironment(__dirname);
+
+function eventHook(inputEvent, { agenda } ) {
+
+  inputEvent.registration = !inputEvent.registration
+   ? inputEvent.registration
+   : inputEvent.registration.reduce((group, obj) => {
+    const type = obj.type
+    if(group[type] == null) group[type] = []
+    group[type].push(obj)
+    return group
+   }, {})
+  
+  
+  const res = agenda.schema.fields.filter(f => !!f.options).reduce((event, field) => {
+    if (event[field.field] === undefined) {
+      return event;
+    }
+
+    return Object.assign(event, {
+      [field.field]: [].concat(event[field.field])
+        .map(id => field.options.find(o => o.id === id))
+    });
+  }, inputEvent);
+  
+  Object.assign(res, extractDate(res))
+
+  return res;
+}
+
+Portal({
+  dir: __dirname,
+  styles: {
+    primaryColor: process.env.STYLES_PRIMARY_COLOR,
+    secondaryColor: process.env.STYLES_SECONDARY_COLOR,
+    footerColor: process.env.STYLES_FOOTER_COLOR,
+
+    bannerItems: {
+      displayBanner: process.env.STYLES_DYSPLAY_BANNER,
+      displayDarkerBanner: process.env.STYLES_DARKER_BANNER,
+      imgBanner: process.env.STYLES_IMG_BANNER,
+      logoBanner: process.env.STYLES_LOGO_BANNER,
+    },
+    filterItems: {
+      displayCalendar: process.env.STYLES_DYSPLAY_CALENDAR_FILTER,
+      displayCity: process.env.STYLES_DYSPLAY_CYTY_FILTER,
+      displayAttendanceMode: process.env.STYLES_DYSPLAY_ATTENDANCEMODE_FILTER,
+      displayKeywords: process.env.STYLES_DYSPLAY_KEYWORDS_FILTER,
+      displaySearch: process.env.STYLES_DYSPLAY_SEARCH_FILTER,
+      displayOnlySearch: process.env.STYLES_DYSPLAY_ONLY_SEARCH_FILTER,
+      displayMap: process.env.STYLES_DYSPLAY_MAP_FILTER,
+    },
+    eventItems: {
+      displayInfos: process.env.STYLES_DYSPLAY_RIGHT_EVENT_INFOS,
+    },
+    footerItems: {
+      displayFooter: process.env.STYLES_DYSPLAY_FOOTER,
+      logoFooter: process.env.STYLES_LOGO_FOOTER,
+      linkPrincipal: process.env.STYLES_LINK_PRINCIPAL,
+      textPrincipal: process.env.STYLES_TEXT_LINK_PRINCIPAL,
+      displayLinkFacebook: process.env.STYLES_DYSPLAY_LINK_FACEBOOK,
+      displayLinkTwitter: process.env.STYLES_DYSPLAY_LINK_TWITTER,
+      displayLinkInstagram: process.env.STYLES_DYSPLAY_LINK_INSTAGRAM,
+      displayLinkYoutube: process.env.STYLES_DYSPLAY_LINK_YOUTUBE,
+      linkFacebook: process.env.STYLES_LINK_FACEBOOK,
+      linkTwitter: process.env.STYLES_LINK_TWITTER,
+      linkInstagram: process.env.STYLES_LINK_INSTAGRAM,
+      linkYoutube: process.env.STYLES_LINK_YOUTUBE,
+    }
+  },
+  root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
+  devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,
+  // agenda uid
+  uid: process.env.PORTAL_AGENDA_UID,
+  // site language
+  lang: process.env.PORTAL_LANG || 'fr',
+  // default timezone
+  defaultTimezone: process.env.PORTAL_DEFAULT_TIMEZONE || 'Europe/Paris',
+  // associated OA account key
+  key: process.env.PORTAL_KEY,
+  // views folder
+  views: process.env.PORTAL_VIEWS_FOLDER,
+  // main sass file
+  sass: process.env.PORTAL_SASS_PATH,
+  // main js file
+  js: process.env.PORTAL_JS_PATH,
+  // assets folder
+  assets: process.env.PORTAL_ASSETS_FOLDER,
+  // multilingual labels folder
+  i18n: process.env.PORTAL_I18N_FOLDER,
+  // number of events to be loaded in an event index page
+  eventsPerPage: 20,
+  // filters that applies even if other filter is specified, can be overloaded
+  preFilter: {
+    relative: ['current', 'upcoming']
+  },
+  // filter that applies when no other filter is specified
+  defaultFilter: {
+    // featured: 1,
+  },
+  // true if portal is to be displayed within iframe
+  iframable: process.env.PORTAL_IFRAMABLE,
+  iframeParent: process.env.PORTAL_IFRAME_PARENT_URL,
+  cache: {
+    // interval at which cache is refreshed ( in milliseconds )
+    refreshInterval: 60 * 60 * 1000,
+  },
+  // map tiles
+  map: {
+    tiles: {
+      link: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    },
+    auto: true,
+    /* center: {
+      latitude: 43.597198,
+      longitude: 1.441136
+    }, */
+    zoom: 20,
+  },
+  tracking: {
+    useAgendaGoogleAnalytics: process.env.PORTAL_USE_AGENDA_GA_ID ?? false,
+    // url of the link displayed in the cookie consent banner
+    cookieBannerLink: 'https://support.google.com/analytics/answer/6004245?hl=fr'
+  },
+  eventHook,
+  // proxyHookBeforeGet
+}).then(({ app }) => app.launch(process.env.PORTAL_PORT));

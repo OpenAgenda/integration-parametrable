@@ -1,0 +1,59 @@
+<style>
+    .primary-color,
+    .oa-filter-total,
+    .event-text a,
+    li.show .btn {
+        color: {{styles.primaryColor}};
+    }  
+
+    .rdrSelected,
+    .rdrInRange,
+    .rdrStartEdge,
+    .rdrEndEdge,
+    .rdrSelected,
+    .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
+    .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
+    .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
+    .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after,
+    .total-filter .badge,
+    .page-item.active .page-link:hover,
+    .registration {
+        background-color: {{styles.primaryColor}};
+    }
+    .rdrDayStartPreview,
+    .rdrDayInPreview,
+    .rdrDayEndPreview,
+    .rdrInputRangeInput:focus,
+    .rdrInputRangeInput:hover {
+        border-color: {{styles.primaryColor}};
+    }
+
+    .secondary-color,
+    .event-text a:hover,
+    .month i:hover,
+    .nav .nav-link:hover {
+        color: {{styles.secondaryColor}};
+    }
+    .rdrDayToday:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
+    .rdrDayToday:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
+    .rdrDayToday:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
+    .rdrDayToday:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after,
+    .rdrDayToday .rdrDayNumber span:after {
+        background-color: {{styles.secondaryColor}};
+    }
+    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
+    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
+    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
+    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after {
+        background-color: {{styles.secondaryColor}}!important;
+    }
+    .nav-link:hover .arrow path {
+        stroke: {{styles.secondaryColor}};
+    }
+    .footer-color {
+        background-color: {{styles.footerColor}}
+    }
+    .img-banner {
+        background-image: url('{{styles.bannerItems.imgBanner}}');
+    }
+</style>

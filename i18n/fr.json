@@ -1,0 +1,29 @@
+{
+  "attendanceMode": "Mode de participation",
+  "backToList": "Retour à la liste",
+  "customFilters": "Filtres personnalisés",
+  "filters": "Filtres",
+  "searchInAgenda": "Rechercher dans cet agenda",
+  "previous": "Précédent",
+  "next": "Suivant",
+  "contribute": "Proposer un événement",
+  "eventsTotal": "{total, plural, =0 {Aucun événement ne correspond à cette recherche} one {{total} événement} other {{total} événements}}",
+  "onlineAccessLink": "Accéder à l'événement en ligne",
+  "city": "Ville",
+  "keywords": "Mots clés",
+
+  "searchPlaceholder": "Rechercher",
+  "searchWhenMoving": "Rechercher quand je déplace la carte",
+
+  "offline":  "Hors ligne",
+  "online": "En ligne",
+  "mixed":  "Mixte",
+  "passed": "Passé",
+  "current": "En cours",
+  "upcoming":  "À venir",
+
+  "trackConsent.informationText": "Cet agenda utilise des cookies du service de suivi d'audience Google Analytics. Ils aident les administrateur de l'agenda, par la collecte et la communication d'informations de navigation, à comprendre comment les visiteurs interagissent avec les sites web. Les acceptez-vous?",
+  "trackConsent.moreInfoLink": "Cliquez ici pour en savoir plus",
+  "trackConsent.decline": "Refuser",
+  "trackConsent.accept": "Accepter"
+}

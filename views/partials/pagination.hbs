@@ -1,0 +1,16 @@
+<nav role="navigation">
+  <div class="row mt-4">
+    <ul class="pagination m-auto">
+      {{#each pages}}
+      <li class="page-item {{#if previous}}previous{{/if}} {{#if next}}next{{/if}} {{#if current}}active{{else}}js_trigger_spin{{/if}}">
+        <a class="page-link" href="/p/{{page}}{{../searchString}}" aria-label="Aller à la page {{#unless previous}}{{#unless next}}{{page}}{{/unless}}{{/unless}}{{#if previous}}précédente{{/if}}{{#if next}}suivante{{/if}}">
+          {{#if previous}}<p class="m-0">précédent</p>
+          {{else if next }}<p class="m-0">suivant</p>
+          {{else}}{{page}}
+          {{/if}}
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</nav>

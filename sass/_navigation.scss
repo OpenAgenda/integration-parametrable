@@ -1,0 +1,25 @@
+
+.nav {
+    background-color: white;
+    .disabled.nav-link { 
+        .arrow path {
+            stroke: #00000026;
+        }
+    }
+    .nav-item a {
+        color: black;
+        padding: 0;
+        margin: 0.8rem 15px;
+        
+        @include media-breakpoint-up(md) {
+            margin: 0.8rem 30px;
+        }
+    }
+    .arrow {
+        width: 10px;
+        @include media-breakpoint-up(md) {
+            width: 12px;
+        }
+    }
+    
+}

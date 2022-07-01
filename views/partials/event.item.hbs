@@ -1,0 +1,23 @@
+<div class="col-12 px-0 my-3 event-list-item shadow">
+  <a href="{{link}}" class="event-item">
+    {{#if image}}
+        <div class="text-center img-cover-event-col" style='background-image:url({{image image}})'>
+        </div>
+      {{else}}
+        <div class="text-center img-cover-event img-cover-event-empty">
+        </div>
+      {{/if}}
+        <div class="wbg px-4 py-3 text-event-cover-col">
+          <div class='event-cover-row'>
+            <p class="date secondary-color">{{dateRange}}</p>
+            <h5 class='event-title mb-md-3'>{{title}}</h5>
+            <div class="event-location">
+              <p class="m-0">{{location.name}}</p> 
+            </div>
+          </div>
+        </div>
+    <script type="application/ld+json">
+    {{{JSONLD}}}
+    </script>
+  </a>
+</div>

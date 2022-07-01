@@ -1,0 +1,37 @@
+    {{#if @root.styles.footerItems.displayFooter}}   
+    <div class="container-fluid footer-container footer-color">
+      <div class="container-fluid">
+        <div class="row row-align-center">
+          <div class="logo-footer col-12 col-md-2 text-center text-md-left my-3 my-md-none">
+            <img src="{{@root.styles.footerItems.logoFooter}}" class="logo"/>
+          </div>
+          <div class="center-footer col-12 col-md-8 my-3 my-md-none">
+            <a target='_blank' href="{{@root.styles.footerItems.linkPrincipal}}">{{@root.styles.footerItems.textPrincipal}}</a>
+          </div>
+          <div class='social-footer col-12 col-md-2 my-3 my-md-none'>
+            {{#if @root.styles.footerItems.displayLinkFacebook}}
+            <a target='_blank' href="{{@root.styles.footerItems.linkFacebook}}"><i class="fab fa-facebook-f"></i></a>
+            {{/if}}
+            {{#if @root.styles.footerItems.displayLinkTwitter}}
+            <a target='_blank' href="{{@root.styles.footerItems.linkTwitter}}"><i class="fab fa-twitter"></i></a>
+            {{/if}}
+            {{#if @root.styles.footerItems.displayLinkInstagram}}
+            <a target='_blank' href="{{@root.styles.footerItems.linkInstagram}}"><i class="fab fa-instagram"></i></a>
+            {{/if}}
+            {{#if @root.styles.footerItems.displayLinkYoutube}}
+            <a target='_blank' href="{{@root.styles.footerItems.linkYoutube}}"><i class="fab fa-youtube"></i></a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+    {{#each scripts.bottom}}
+    <script src="{{src}}"></script>
+    {{/each}}
+    <script src="{{root}}/js/toggleMobileFilters.js"></script>
+    <script type="application/json" id="page-props">
+      {{{pageProps}}}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{{>layout.top}}
+
+{{>head tagName="h1"}}
+
+{{>sidebar}}
+
+<div class="container">
+  <div class="total-filter pt-2 pt-md-4 px-0">
+    <div>
+      <div class="row">
+        <div class="col-12 col-sm-6 order-sm-last pb-4 pb-sm-0 d-sm-flex justify-content-end contribute">
+          {{>contribute}}
+        </div>
+        <div class="col-12 col-sm-6">
+          {{widget name='total' message='eventsTotal'}}
+        </div>
+      </div>
+
+      {{widget name='activeFilters' className='active-filters'}}
+
+      <!--<button class="main-show-sidebar float-right btn btn-outline-primary btn-sm wbg" data-sidebar-toggle>
+        <i class="fa fa-plus"></i>
+        {{i18n 'filters'}}
+      </button>-->
+    </div>
+  </div>
+
+  <div class="events">
+    {{>list}}
+  </div>
+
+</div>
+
+<div data-oa-filters-root></div>
+
+{{>layout.bottom}}

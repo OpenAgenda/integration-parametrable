@@ -1,0 +1,45 @@
+header {
+  position: relative;
+  background-size: cover;
+  height: 180px;
+  @media (min-width: 560px) {
+    height: 300px;
+  }
+  a:hover {
+    color: darken( $oa-white, 10 );
+  }
+  .banner-color {
+    background-color:#0000004d;
+    height: 180px;
+    @media (min-width: 560px) {
+      height: 300px;
+    }
+  }
+  .logo {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media (min-width: 561px) and (max-width: 1100px){
+      width: 20%;
+    }
+    @media (min-width: 1101px) {
+      width: 10%;
+    } 
+  }
+  .oa-logo {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 25px;
+    @include media-breakpoint-up(sm) {
+      top: 4%;
+      right: 2%;
+      width: 30px;
+    }
+    @include media-breakpoint-up(md) {
+      width: 40px;
+    }
+  }
+}

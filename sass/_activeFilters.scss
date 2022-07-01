@@ -1,0 +1,32 @@
+.total-filter {
+  padding: 0 15px;
+  .active-filters span :not(:first-child) button {
+    margin-top: 3px;
+  }
+  .active-filters {
+    margin-top: 1.5rem !important;
+    .badge {
+      color: white;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 1.5;
+      padding: 4px 8px;
+      margin-right: 10px;
+      border-radius: 2px!important;
+      &:hover {
+        background: #00000011!important;
+        color: black;
+        border-color: #00000011!important;
+      }
+      i {
+        margin-left: 5px;
+      }
+  
+      button {
+        line-height: 1;
+        padding: 0 0 0 0.5rem;
+      }
+    }
+  }
+  
+}
