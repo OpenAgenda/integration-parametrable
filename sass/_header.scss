@@ -8,8 +8,11 @@ header {
   a:hover {
     color: darken( $oa-white, 10 );
   }
-  .banner-color {
+  .banner-darker {
     background-color:#0000004d;
+  }
+  .banner-darker,
+  .banner-color {
     height: 180px;
     @media (min-width: 560px) {
       height: 300px;

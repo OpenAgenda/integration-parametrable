@@ -42,15 +42,16 @@ Portal({
   styles: {
     primaryColor: process.env.STYLES_PRIMARY_COLOR,
     secondaryColor: process.env.STYLES_SECONDARY_COLOR,
+    bannerColor: process.env.STYLES_COLOR_BANNER,
     footerColor: process.env.STYLES_FOOTER_COLOR,
 
-    bannerItems: {
+    banner: {
       displayBanner: process.env.STYLES_DISPLAY_BANNER,
       displayDarkerBanner: process.env.STYLES_DARKER_BANNER,
       imgBanner: process.env.STYLES_IMG_BANNER,
       logoBanner: process.env.STYLES_LOGO_BANNER,
     },
-    filterItems: {
+    filter: {
       displayCalendar: process.env.STYLES_DISPLAY_CALENDAR_FILTER,
       displayCity: process.env.STYLES_DISPLAY_CYTY_FILTER,
       displayAttendanceMode: process.env.STYLES_DISPLAY_ATTENDANCEMODE_FILTER,
@@ -59,10 +60,10 @@ Portal({
       displayOnlySearch: process.env.STYLES_DISPLAY_ONLY_SEARCH_FILTER,
       displayMap: process.env.STYLES_DISPLAY_MAP_FILTER,
     },
-    eventItems: {
+    event: {
       displayInfos: process.env.STYLES_DISPLAY_RIGHT_EVENT_INFOS,
     },
-    footerItems: {
+    footer: {
       displayFooter: process.env.STYLES_DISPLAY_FOOTER,
       logoFooter: process.env.STYLES_LOGO_FOOTER,
       linkPrincipal: process.env.STYLES_LINK_PRINCIPAL,

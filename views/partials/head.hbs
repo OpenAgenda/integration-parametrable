@@ -1,11 +1,13 @@
-{{#if @root.styles.bannerItems.displayBanner}}
+{{#if @root.styles.banner.displayBanner}}
 <header role="banner" class="img-banner">
-  {{#if @root.styles.bannerItems.displayDarkerBanner}}
+  {{#if @root.styles.banner.displayDarkerBanner}}
+  <div class="banner-darker"></div>
+  {{else}}
   <div class="banner-color"></div>
   {{/if}}
   
   <div class="container">
-    <a href="{{root}}" aria-label="Retour à la page d'accueil"><img src="{{@root.styles.bannerItems.logoBanner}}" class="logo" alt="Logo"></a>
+    <a href="{{root}}" aria-label="Retour à la page d'accueil"><img src="{{@root.styles.banner.logoBanner}}" class="logo" alt="Logo"></a>
   </div>
 
   <a href="https://openagenda.com/home" target="_blank">

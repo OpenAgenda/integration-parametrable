@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper container-fluid">   
   <div class="container">
     <div class="row justify-content-around filters text-center">
-      {{#if @root.styles.filterItems.displayCalendar}}
+      {{#if @root.styles.filter.displayCalendar}}
       <div class="col-sm-6 col-md-3 p-0" id="calendar">
         <div class="dropdown">
           <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
@@ -17,7 +17,7 @@
       </div>
       {{/if}}
 
-      {{#if @root.styles.filterItems.displayCity}}
+      {{#if @root.styles.filter.displayCity}}
       <div class="col-sm-6 col-md-3 p-0" id="city">
         <div class="dropdown">
           <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
@@ -33,7 +33,7 @@
       </div>
       {{/if}}
 
-      {{#if @root.styles.filterItems.displayAttendanceMode}}
+      {{#if @root.styles.filter.displayAttendanceMode}}
       <div class="col-sm-6 col-md-3 p-0" id="participation">
         <div class="dropdown">
           <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
@@ -49,7 +49,7 @@
       </div>
       {{/if}}
 
-      {{#if @root.styles.filterItems.displayKeywords}}
+      {{#if @root.styles.filter.displayKeywords}}
       <div class="col-sm-6 col-md-3 p-0" id="keywords">
         <div class="dropdown">
           <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
@@ -65,7 +65,7 @@
       </div>
       {{/if}}
 
-      {{#if @root.styles.filterItems.displaySearch}}
+      {{#if @root.styles.filter.displaySearch}}
       <div class="col-sm-6 col-md-3 p-0" id="searchbar">
         <div class="dropdown-toggle shadow">
         <img src="/Search.svg" alt="icône barre de recherche">
@@ -73,7 +73,7 @@
         </div>
       </div>
       {{/if}}
-      {{#if @root.styles.filterItems.displayOnlySearch}}
+      {{#if @root.styles.filter.displayOnlySearch}}
       <div class="col-12 col-lg-7 p-0" id="searchbaronly">
         <div class="dropdown-toggle shadow">
         <img src="/Search.svg" alt="icône barre de recherche">
@@ -86,7 +86,7 @@
   </div>
 </div>
 
-{{#if @root.styles.filterItems.displayMap}}
+{{#if @root.styles.filter.displayMap}}
 <div class="container">
   <div class="row p-0 m-0 hidden-map map-canvas container mx-auto">
     <div class="col mt-md-3 px-0">

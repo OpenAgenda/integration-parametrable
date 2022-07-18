@@ -1,9 +1,9 @@
 <style>
-    .primary-color,
+    .secondary-color,
     .oa-filter-total,
     .event-text a,
     li.show .btn {
-        color: {{styles.primaryColor}};
+        color: {{styles.secondaryColor}};
     }  
 
     .rdrSelected,
@@ -18,42 +18,45 @@
     .total-filter .badge,
     .page-item.active .page-link:hover,
     .registration {
-        background-color: {{styles.primaryColor}};
+        background-color: {{styles.secondaryColor}};
     }
     .rdrDayStartPreview,
     .rdrDayInPreview,
     .rdrDayEndPreview,
     .rdrInputRangeInput:focus,
     .rdrInputRangeInput:hover {
-        border-color: {{styles.primaryColor}};
+        border-color: {{styles.secondaryColor}};
     }
 
-    .secondary-color,
+    .primary-color,
     .event-text a:hover,
     .month i:hover,
     .nav .nav-link:hover {
-        color: {{styles.secondaryColor}};
+        color: {{styles.primaryColor}};
     }
     .rdrDayToday:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
     .rdrDayToday:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
     .rdrDayToday:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
     .rdrDayToday:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after,
     .rdrDayToday .rdrDayNumber span:after {
-        background-color: {{styles.secondaryColor}};
+        background-color: {{styles.primaryColor}};
     }
     .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
     .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
     .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
     .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after {
-        background-color: {{styles.secondaryColor}}!important;
+        background-color: {{styles.primaryColor}}!important;
     }
     .nav-link:hover .arrow path {
-        stroke: {{styles.secondaryColor}};
+        stroke: {{styles.primaryColor}};
     }
     .footer-color {
         background-color: {{styles.footerColor}}
     }
     .img-banner {
-        background-image: url('{{styles.bannerItems.imgBanner}}');
+        background-image: url('{{styles.banner.imgBanner}}');
+    }
+    .banner-color {
+        background-color: {{styles.bannerColor}}
     }
 </style>
