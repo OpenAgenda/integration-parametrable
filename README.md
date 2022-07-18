@@ -8,7 +8,7 @@ STYLES_PRIMARY_COLOR
 
 STYLES_SECONDARY_COLOR
 
-**Une couleur de banner à définir  (uniquement si aucune image n'est souhaitée en banner) :**
+**Une couleur de bannière à définir  (uniquement si aucune image n'est souhaitée en bannière) :**
 
 STYLES_COLOR_BANNER
 
@@ -16,7 +16,7 @@ STYLES_COLOR_BANNER
 
 STYLES_FOOTER_COLOR
 
-## Les éléments de la bannière
+## La bannière
 
 **Afficher la bannière :**
 
@@ -66,13 +66,13 @@ STYLES_DISPLAY_SEARCH_FILTER=1
 
 STYLES_DISPLAY_MAP_FILTER=1
 
-## Les éléments de la vue détail
+## La vue détail
 
 **Afficher les infos se situant à droite (partage, calendrier, localisation) :**
 
 STYLES_DISPLAY_RIGHT_EVENT_INFOS=1
 
-## Les éléments du footer
+## Le footer
 
 ### Afficher le footer
 
