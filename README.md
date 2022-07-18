@@ -2,80 +2,81 @@
 
 ## Les couleurs
 
-Deux couleurs prédominantes à définir :
+**Deux couleurs prédominantes à définir :**
 
-**STYLES_PRIMARY_COLOR**
-**STYLES_SECONDARY_COLOR**
+STYLES_PRIMARY_COLOR
 
-Une couleur de banner à définir  (uniquement si aucune image n'est souhaitée en banner):
+STYLES_SECONDARY_COLOR
 
-**STYLES_COLOR_BANNER**
+**Une couleur de banner à définir  (uniquement si aucune image n'est souhaitée en banner) :**
 
-Une couleur de footer à définir :
+STYLES_COLOR_BANNER
 
-**STYLES_FOOTER_COLOR**
+**Une couleur de footer à définir :**
+
+STYLES_FOOTER_COLOR
 
 ## Les éléments de la bannière
 
-Affichage de la bannière :
+**Afficher la bannière :**
 
-**STYLES_DISPLAY_BANNER=1**
+STYLES_DISPLAY_BANNER=1
 
-Définir l'image de la bannière (uniquement si aucune couleur n'a été prédéfinie précédemment) :
+**Définir l'image de la bannière (uniquement si aucune couleur n'a été prédéfinie précédemment) :**
 
-**STYLES_IMG_BANNER=https://banner.png**
+STYLES_IMG_BANNER=https://banner.png
 
-Définir le logo de la bannière :
+**Définir le logo de la bannière :**
 
-**STYLES_LOGO_BANNER=https://logo-banner.png**
+STYLES_LOGO_BANNER=https://logo-banner.png
 
-À définir si le logo n'est pas assez visible :
+**À définir si le logo n'est pas assez visible :**
 
-**STYLES_DARKER_BANNER=1**
+STYLES_DARKER_BANNER=1
 
 ## Les filtres
 
 ### Afficher uniquement le filtre "rechercher"
 
-**STYLES_DISPLAY_ONLY_SEARCH_FILTER=1**
+STYLES_DISPLAY_ONLY_SEARCH_FILTER=1
 
 ### Sinon définir les filtres à afficher (3 minimum)
 
-Afficher le filtre "calendrier" : 
+**Afficher le filtre "calendrier" :**
 
-**STYLES_DISPLAY_CALENDAR_FILTER=1**
+STYLES_DISPLAY_CALENDAR_FILTER=1
 
-Afficher le filtre "ville" :
+**Afficher le filtre "ville" :**
 
-**STYLES_DISPLAY_CYTY_FILTER=1**
+STYLES_DISPLAY_CYTY_FILTER=1
 
-Afficher le filtre "type de participation" :
+**Afficher le filtre "type de participation" :**
 
-**STYLES_DISPLAY_ATTENDANCEMODE_FILTER=1**
+STYLES_DISPLAY_ATTENDANCEMODE_FILTER=1
 
-Afficher le filtre "mot-clé" :
+**Afficher le filtre "mot-clé" :**
 
-**STYLES_DISPLAY_KEYWORDS_FILTER=1**
+STYLES_DISPLAY_KEYWORDS_FILTER=1
 
-Afficher le filtre "rechercher" :
+**Afficher le filtre "rechercher" :**
 
-**STYLES_DISPLAY_SEARCH_FILTER=1**
+STYLES_DISPLAY_SEARCH_FILTER=1
 
 ### Afficher le filtre map
 
-**STYLES_DISPLAY_MAP_FILTER=1**
+STYLES_DISPLAY_MAP_FILTER=1
 
 ## Les éléments de la vue détail
 
-Afficher les infos se situant à droite (partage, calendrier, localisation) :
+**Afficher les infos se situant à droite (partage, calendrier, localisation) :**
 
-**STYLES_DISPLAY_RIGHT_EVENT_INFOS=1**
+STYLES_DISPLAY_RIGHT_EVENT_INFOS=1
 
 ## Les éléments du footer
 
 ### Afficher le footer
 
-**STYLES_DISPLAY_FOOTER=1**
+STYLES_DISPLAY_FOOTER=1
 
 ### Définir un logo
 
@@ -83,50 +84,50 @@ STYLES_LOGO_FOOTER=https://logo-footer.png
 
 ### Définir le lien de l'organisation
 
-Le lien :
+**Le lien :**
 
-**STYLES_LINK_PRINCIPAL=https://www.organisation.com/**
+STYLES_LINK_PRINCIPAL=https://www.organisation.com/
 
-Le texte qui sera affiché par ce lien :
+**Le texte qui sera affiché par ce lien :**
 
-**STYLES_TEXT_LINK_PRINCIPAL=Organisation**
+STYLES_TEXT_LINK_PRINCIPAL=Organisation
 
 ### Lien Facebook
 
-Afficher un lien Facebook :
+**Afficher un lien Facebook :**
 
-**STYLES_DISPLAY_LINK_FACEBOOK=1**
+STYLES_DISPLAY_LINK_FACEBOOK=1
 
-Définir le lien Facebook :
+**Définir le lien Facebook :**
 
-**STYLES_LINK_FACEBOOK=https://www.facebook.com/**
+STYLES_LINK_FACEBOOK=https://www.facebook.com/
 
 ### Lien Twitter
 
-Afficher un lien Twitter :
+**Afficher un lien Twitter :**
 
-**STYLES_DISPLAY_LINK_TWITTER=1**
+STYLES_DISPLAY_LINK_TWITTER=1
 
-Définir le lien Twitter :
+**Définir le lien Twitter :**
 
-**STYLES_LINK_TWITTER=https://www.twitter.com/**
+STYLES_LINK_TWITTER=https://www.twitter.com/
 
 ### Lien Instagram
 
-Afficher un lien Instagram :
+**Afficher un lien Instagram :**
 
-**STYLES_DISPLAY_LINK_INSTAGRAM=1**
+STYLES_DISPLAY_LINK_INSTAGRAM=1
 
-Définir le lien Instagram :
+**Définir le lien Instagram :**
 
-**STYLES_LINK_INSTAGRAM=https://www.instagram.com/**
+STYLES_LINK_INSTAGRAM=https://www.instagram.com/
 
 ### Lien Youtube
 
-Afficher un lien Youtube :
+**Afficher un lien Youtube :**
 
-**STYLES_DISPLAY_LINK_YOUTUBE=1**
+STYLES_DISPLAY_LINK_YOUTUBE=1
 
-Définir le lien Youtube :
+**Définir le lien Youtube :**
 
-**STYLES_LINK_YOUTUBE=https://www.youtube.com/**
+STYLES_LINK_YOUTUBE=https://www.youtube.com/
