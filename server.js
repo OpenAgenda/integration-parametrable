@@ -53,7 +53,7 @@ Portal({
     },
     filter: {
       displayCalendar: process.env.STYLES_DISPLAY_CALENDAR_FILTER,
-      displayCity: process.env.STYLES_DISPLAY_CYTY_FILTER,
+      displayCity: process.env.STYLES_DISPLAY_CITY_FILTER,
       displayAttendanceMode: process.env.STYLES_DISPLAY_ATTENDANCEMODE_FILTER,
       displayKeywords: process.env.STYLES_DISPLAY_KEYWORDS_FILTER,
       displaySearch: process.env.STYLES_DISPLAY_SEARCH_FILTER,

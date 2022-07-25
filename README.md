@@ -48,7 +48,7 @@ STYLES_DISPLAY_CALENDAR_FILTER=1
 
 **Afficher le filtre "ville" :**
 
-STYLES_DISPLAY_CYTY_FILTER=1
+STYLES_DISPLAY_CITY_FILTER=1
 
 **Afficher le filtre "type de participation" :**
 
