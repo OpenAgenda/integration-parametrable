@@ -92,16 +92,15 @@
     <div class="col mt-md-3 px-0">
       <div class="my-4">
         {{#if @root.styles.map.mapTilesUrl}}
-          {{#if @root.styles.map.mapTilesAttribution}}
-            {{filter
-              name='geo'
-              mapClass='map-container'
-              height='180px'
-              searchMessage=(i18n 'searchWhenMoving')
-              searchWithMap=true
-              tileAttribution=styles.map.mapTilesAttribution
-              tileUrl=styles.map.mapTilesUrl
-            }}
+          {{filter
+            name='geo'
+            mapClass='map-container'
+            height='180px'
+            searchMessage=(i18n 'searchWhenMoving')
+            searchWithMap=true
+            tileAttribution=styles.map.mapTilesAttribution
+            tileUrl=styles.map.mapTilesUrl
+          }}
           {{else}}
             {{filter
               name='geo'
@@ -111,8 +110,7 @@
               searchWithMap=true
               tileAttribution='Map data © OpenStreetMap contributors'
               tileUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-            }}
-          {{/if}}
+            }} 
         {{/if}}
       </div>
     </div>
