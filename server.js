@@ -118,9 +118,9 @@ Portal({
   // map tiles
   map: {
     tiles: {
-      link: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      link: 'https://maps.geoapify.com/v1/tile/klokantech-basic/{z}/{x}/{y}.png?&apiKey=0601207fc1d344dbab60046c27412aff',
       attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        '&copy; <a href="http://openmaptiles.org/" target="_blank">© OpenMapTiles</a>',
     },
     auto: true,
     /* center: {
