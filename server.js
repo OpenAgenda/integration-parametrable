@@ -76,6 +76,10 @@ Portal({
       linkTwitter: process.env.STYLES_LINK_TWITTER,
       linkInstagram: process.env.STYLES_LINK_INSTAGRAM,
       linkYoutube: process.env.STYLES_LINK_YOUTUBE,
+    },
+    map: {
+      mapTilesAttribution: process.env.MAP_TILES_ATTRIBUTION,
+      mapTilesUrl: process.env.MAP_TILES_URL,
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
@@ -118,9 +122,9 @@ Portal({
   // map tiles
   map: {
     tiles: {
-      link: 'https://maps.geoapify.com/v1/tile/klokantech-basic/{z}/{x}/{y}.png?&apiKey=0601207fc1d344dbab60046c27412aff',
+      link: process.env.MAP_TILES_URL || 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
-        '&copy; <a href="http://openmaptiles.org/" target="_blank">© OpenMapTiles</a>',
+      process.env.MAP_TILES_ATTRIBUTION || '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     },
     auto: true,
     /* center: {

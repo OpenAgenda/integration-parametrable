@@ -131,3 +131,13 @@ STYLES_DISPLAY_LINK_YOUTUBE=1
 **Définir le lien Youtube :**
 
 STYLES_LINK_YOUTUBE=https://www.youtube.com/
+
+## La map (pas obligatoire)
+
+**Attribution à définir :**
+
+MAP_TILES_ATTRIBUTION=
+
+**URL à définir :**
+
+MAP_TILES_URL=
