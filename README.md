@@ -2,7 +2,7 @@
 
 ## Les couleurs
 
-**Une couleur de background à définir (couleur par default : white):**
+**Une couleur de background à définir (couleur par défaut : white):**
 
 STYLES_BG_COLOR
 
