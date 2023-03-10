@@ -1,5 +1,5 @@
 <div class="sidebar-wrapper container-fluid">   
-  <div class="container">
+  <div class="{{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
     <div class="row justify-content-around filters text-center">
       {{#if @root.styles.filter.displayCalendar}}
       <div class="col-sm-6 col-md-3 p-0" id="calendar">
@@ -87,7 +87,7 @@
 </div>
 
 {{#if @root.styles.filter.displayMap}}
-<div class="container">
+<div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}}">
   <div class="row p-0 m-0 hidden-map map-canvas container mx-auto">
     <div class="col mt-md-3 px-0">
       <div class="my-4">
