@@ -4,7 +4,7 @@
 
 **Une couleur de background à définir (couleur par default : white):**
 
-STYLES_COLOR_BANNER
+STYLES_BG_COLOR
 
 **Deux couleurs prédominantes à définir :**
 
