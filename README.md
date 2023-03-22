@@ -2,6 +2,10 @@
 
 ## Les couleurs
 
+**Une couleur de background à définir (couleur par défaut : white):**
+
+STYLES_BG_COLOR
+
 **Deux couleurs prédominantes à définir :**
 
 STYLES_PRIMARY_COLOR
@@ -15,6 +19,10 @@ STYLES_COLOR_BANNER
 **Une couleur de footer à définir :**
 
 STYLES_FOOTER_COLOR
+
+**À définir pour supprimer les marges :**
+
+STYLES_NO_MARGIN=1
 
 ## La bannière
 
@@ -65,6 +73,12 @@ STYLES_DISPLAY_SEARCH_FILTER=1
 ### Afficher le filtre map
 
 STYLES_DISPLAY_MAP_FILTER=1
+
+## Les boutons
+
+**À définir pour ne pas afficher le bouton de contribution :**
+
+STYLES_NO_CONTRIBUTE_BUTTON=1
 
 ## La vue détail
 

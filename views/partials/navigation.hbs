@@ -1,6 +1,6 @@
 {{#if navigation.available}}
 <nav role="navigation">
-  <ul class="nav d-flex sub-header-nav mx-4">
+  <ul class="nav d-flex sub-header-nav {{#if @root.styles.noMargin}}{{else}}mx-4{{/if}}">
     <li class="nav-item back-list mr-auto ">
       <a class="nav-link" href="{{navigation.list}}">
         Retour à l'agenda

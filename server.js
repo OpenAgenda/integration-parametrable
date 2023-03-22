@@ -40,10 +40,12 @@ function eventHook(inputEvent, { agenda } ) {
 Portal({
   dir: __dirname,
   styles: {
+    bgColor: process.env.STYLES_BG_COLOR || 'white',
     primaryColor: process.env.STYLES_PRIMARY_COLOR,
     secondaryColor: process.env.STYLES_SECONDARY_COLOR,
     bannerColor: process.env.STYLES_COLOR_BANNER,
     footerColor: process.env.STYLES_FOOTER_COLOR,
+    noMargin: process.env.STYLES_NO_MARGIN,
 
     banner: {
       displayBanner: process.env.STYLES_DISPLAY_BANNER,
@@ -59,6 +61,9 @@ Portal({
       displaySearch: process.env.STYLES_DISPLAY_SEARCH_FILTER,
       displayOnlySearch: process.env.STYLES_DISPLAY_ONLY_SEARCH_FILTER,
       displayMap: process.env.STYLES_DISPLAY_MAP_FILTER,
+    },
+    noButton : {
+      contribute : process.env.STYLES_NO_CONTRIBUTE_BUTTON,
     },
     event: {
       displayInfos: process.env.STYLES_DISPLAY_RIGHT_EVENT_INFOS,
