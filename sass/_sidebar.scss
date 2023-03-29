@@ -9,21 +9,24 @@
 
 .sidebar-wrapper {
   background-color: white;
-  .filters {
-    margin-top: 15px;
-  }
-  .dropdown-toggle {
+  padding-top: 15px;
+  .dropdown-m {
     min-width: 100%;
+    @media (min-width: 494px) {
+      max-width: 95%;
+      min-width: 95%;
+    }
+  }
+  
+  .dropdown-toggle {
     border-radius: 2px;
     border: none;
     background-color: white;
     height: 40px;
+    margin-right: auto;
+    margin-left: auto;
     @include media-breakpoint-up(sm) {
       height: 50px;
-    }
-    @media (min-width: 576px) {
-      max-width: 95%;
-      min-width: 95%;
     }
     &::after {
       display: none;
@@ -60,57 +63,81 @@
   #participation,
   #keywords,
   #searchbar {
+    min-width: 232px;
     margin-bottom: 8px;
     @include media-breakpoint-up(sm) {
       margin-bottom: 15px;
     }
   }
-  #searchbar {
+
+  #searchbar,
+  #searchbaronly {
     img {
       position: absolute;
       top: 10px;
-      @media (max-width: 338px) {
-        left: 7%;
+    }
+    .input-group {
+      margin: 0px!important;
+      justify-content: end;
+      .form-control {
+        height: 39px;
+        border: none;
+        background: none;
+        box-shadow: none;
+        @include media-breakpoint-up(sm) {
+          height: 49px;
+        }
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+          display: none;
+        }
+        &::placeholder {
+          color: black;
+          margin-left: 16px;
+          font-size: 14px;
+          @include media-breakpoint-up(sm) {
+            font-size: 16px;
+          }
+        }
       }
-      @media (min-width: 339px ) and (max-width: 490px) {
-        left: 5%;
-      }
-      @media (min-width: 491px ) and (max-width: 762px) {
-        left: 4%;
-      }
-      @media (min-width: 763px ) and (max-width: 1055px) {
-        left: 8%;
-      }
-      @media (min-width: 1056px ) and (max-width: 2000px) {
-        left: 5%;
-      }
-      @media (min-width: 2001px) {
-        left: 6%;
+      .input-group-append {
+        display: none;
       }
     }
-    .dropdown-toggle {
-      margin-right: auto;
-      margin-left: auto;
-      max-width: 100%;  
+  }
+  #searchbar {
+    .dropdown-m {
+      img {
+        @media (max-width: 338px) {
+          left: 7%;
+        }
+        @media (min-width: 339px ) and (max-width: 493px) {
+          left: 4%;
+        }
+        @media (min-width: 494px ) and (max-width: 575px) {
+          left: 9%;
+        }
+        @media (min-width: 576px ) and (max-width: 711px) {
+          left: 8%;
+        }
+        @media (min-width: 712px ) and (max-width: 767px) {
+          left: 8%;
+        }
+        @media (min-width: 768px ) and (max-width: 991px) {
+          left: 4%;
+        }
+        @media (min-width: 992px ) and (max-width: 2000px) {
+          left: 7%;
+        }
+        @media (min-width: 2001px) {
+          left: 6%;
+        }
+      }
       div {
         .input-group {
-          margin: 0px!important;
-          justify-content: end;
           .form-control {
-            height: 39px;
-            max-width: 78%;
-            border: none;
-            background: none;
-            box-shadow: none;
-            @include media-breakpoint-up(sm) {
-              height: 49px;
-            }
-            &::-webkit-search-decoration,
-            &::-webkit-search-cancel-button,
-            &::-webkit-search-results-button,
-            &::-webkit-search-results-decoration {
-              display: none;
-            }
             @media (max-width: 299px) {
               max-width:84%;
             }
@@ -121,69 +148,112 @@
               max-width: 88%;
             }
             @media (min-width: 421px ) and (max-width: 453px) {
-              max-width: 88%;
-            }
-            @media (min-width: 454px ) and (max-width: 539px) {
               max-width: 90%;
             }
-            @media (min-width: 540px ) and (max-width: 575px) {
-              max-width: 92%;
+            @media (min-width: 454px ) and (max-width: 493px) {
+              max-width: 91%;
             }
-            @media (min-width: 576px ) and (max-width: 767px) {
+            @media (min-width: 494px ) and (max-width: 515px) {
+              max-width: 81%;
+            }
+            @media (min-width: 516px ) and (max-width: 575px) {
               max-width: 83%;
             }
-            @media (min-width: 768px ) and (max-width: 991px) {
-              max-width: 76%;
+            @media (min-width: 576px ) and (max-width: 711px) {
+              max-width: 81%;
             }
-            @media (min-width: 992px ) and (max-width: 1280px) {
+            @media (min-width: 712px ) and (max-width: 767px) {
               max-width: 80%;
             }
-            @media (min-width: 1280px) and (max-width: 1700px){
+            @media (min-width: 768px ) and (max-width: 943px) {
+              max-width: 94%;
+            }
+            @media (min-width: 944px ) and (max-width: 991px) {
+              max-width: 93%;
+            }
+            @media (min-width: 992px) and (max-width: 1700px){
               max-width: 81%;
             }
             @media (min-width: 1701px){
               max-width: 84%;
             }
-            &::placeholder {
-              color: black;
-              margin-left: 16px;
-              font-size: 14px;
-              @include media-breakpoint-up(sm) {
-                font-size: 16px;
-              }
-            }
-          }
-          .input-group-append {
-            display: none;
           }
         }
       }
     }
-  }
-  li.show {
-    min-width: 100%;
-    @media (min-width: 576px ) {
-      max-width: 150%;
-      min-width: 95%;
-    }
-    .form-control {
-      display: none;
-    }
-    .checkbox {
-      margin: 0px 22px;
-      width: auto;
-      .oa-choice-option-label {
-        font-size: 14px;
-        span {
-          margin-left: 10px;
-          font-size: 12px;
+    .dropdown-s-nm {
+      min-width: 100%;
+      @media (min-width: 494px) {
+        max-width: 95%;
+        min-width: 95%;
+      }
+      img {
+        @media (max-width: 338px) {
+          left: 7%;
+        }
+        @media (min-width: 339px ) and (max-width: 493px) {
+          left: 4%;
+        }
+        @media (min-width: 494px ) and (max-width: 575px) {
+          left: 9%;
+        }
+        @media (min-width: 576px ) and (max-width: 711px) {
+          left: 8%;
+        }
+        @media (min-width: 712px ) and (max-width: 943px) {
+          left: 4%;
+        }
+        @media (min-width: 944px ) and (max-width: 1055px) {
+          left: 8%;
+        }
+        @media (min-width: 1056px ) and (max-width: 2000px) {
+          left: 7%;
+        }
+        @media (min-width: 2001px) {
+          left: 6%;
         }
       }
-    }
-    .btn {
-      font-size: 14px;
-      padding: 6px 0;
-      margin: 0px 22px;
+      .form-control {
+        @media (max-width: 299px) {
+          max-width:84%;
+        }
+        @media (min-width: 300px ) and (max-width: 345px) {
+          max-width: 85%;
+        }
+        @media (min-width: 346px ) and (max-width: 420px) {
+          max-width: 88%;
+        }
+        @media (min-width: 421px ) and (max-width: 453px) {
+          max-width: 90%;
+        }
+        @media (min-width: 454px ) and (max-width: 493px) {
+          max-width: 91%;
+        }
+        @media (min-width: 494px ) and (max-width: 515px) {
+          max-width: 81%;
+        }
+        @media (min-width: 516px ) and (max-width: 575px) {
+          max-width: 83%;
+        }
+        @media (min-width: 576px ) and (max-width: 711px) {
+          max-width: 81%;
+        }
+        @media (min-width: 712px ) and (max-width: 767px) {
+          max-width: 92%;
+        }
+        @media (min-width: 768px ) and (max-width: 943px) {
+          max-width: 94%;
+        }
+        @media (min-width: 944px ) and (max-width: 1280px) {
+          max-width: 80%;
+        }
+        @media (min-width: 1280px) and (max-width: 1700px){
+          max-width: 81%;
+        }
+        @media (min-width: 1701px){
+          max-width: 86%;
+        }
+      }
     }
   }
 }
@@ -192,52 +262,35 @@
 .sidebar-wrapper {
   #searchbaronly {
     margin-bottom: 15px;
-    img {
-      position: absolute;
-      top: 10px;
-      @media (max-width: 338px) {
-        left: 7%;
-      }
-      @media (min-width: 339px ) and (max-width: 490px) {
-        left: 5%;
-      }
-      @media (min-width: 491px ) and (max-width: 762px) {
-        left: 5%;
-      }
-      @media (min-width: 768px ) and (max-width: 1055px) {
-        left: 5%;
-      }
-      @media (min-width: 1056px ) and (max-width: 2000px) {
-        left: 6%;
-      }
-      @media (min-width: 2001px) {
-        left: 6%;
-      }
-    }
-    .dropdown-toggle {
-      margin-right: auto;
-      margin-left: auto;
+    .dropdown-m {
       max-width: 70%;
-    
+      min-width: 98%;
+      img {
+        @media (max-width: 338px) {
+          left: 7%;
+        }
+        @media (min-width: 339px ) and (max-width: 490px) {
+          left: 4%;
+        }
+        @media (min-width: 491px ) and (max-width: 575px) {
+          left: 5%;
+        }
+        @media (min-width: 576px ) and (max-width: 762px) {
+          left: 4%;
+        }
+        @media (min-width: 763px ) and (max-width: 1055px) {
+          left: 2%;
+        }
+        @media (min-width: 1056px ) and (max-width: 2000px) {
+          left: 2%;
+        }
+        @media (min-width: 2001px) {
+          left: 2%;
+        }
+      }
       div {
         .input-group {
-          margin: 0px!important;
-          justify-content: end;
           .form-control {
-            height: 39px;
-            max-width: 78%;
-            border: none;
-            background: none;
-            box-shadow: none;
-            @include media-breakpoint-up(sm) {
-              height: 49px;
-            }
-            &::-webkit-search-decoration,
-            &::-webkit-search-cancel-button,
-            &::-webkit-search-results-button,
-            &::-webkit-search-results-decoration {
-              display: none;
-            }
             @media (max-width: 299px) {
               max-width:84%;
             }
@@ -248,40 +301,122 @@
               max-width: 88%;
             }
             @media (min-width: 421px ) and (max-width: 453px) {
-              max-width: 88%;
-            }
-            @media (min-width: 454px ) and (max-width: 539px) {
               max-width: 90%;
             }
-            @media (min-width: 540px ) and (max-width: 575px) {
+            @media (min-width: 454px ) and (max-width: 493px) {
+              max-width: 91%;
+            }
+            @media (min-width: 494px ) and (max-width: 575px) {
               max-width: 92%;
             }
             @media (min-width: 576px ) and (max-width: 767px) {
-              max-width: 89%;
-            }
-            @media (min-width: 768px ) and (max-width: 1280px) {
               max-width: 91%;
             }
-            @media (min-width: 1280px) and (max-width: 1700px){
-              max-width: 89%;
+            @media (min-width: 768px ) and (max-width: 1040px) {
+              max-width: 94%;
+            }
+            @media (min-width: 1041px) and (max-width: 1700px){
+              max-width: 96%;
             }
             @media (min-width: 1701px){
-              max-width: 89%;
+              max-width: 96%;
             }
-            &::placeholder {
-              color: black;
-              margin-left: 16px;
-              font-size: 14px;
-              @include media-breakpoint-up(sm) {
-                font-size: 16px;
-              }
-            }
-          }
-          .input-group-append {
-            display: none;
           }
         }
       }
     }
+  }
+  .dropdown-nm {
+    max-width: 100%;
+    min-width: 100%;
+    @media (min-width: 494px) {
+      max-width: 98%;
+      min-width: 98%;
+    }
+    img {
+      @media (max-width: 338px) {
+        left: 7%;
+      }
+      @media (min-width: 339px ) and (max-width: 490px) {
+        left: 4%;
+      }
+      @media (min-width: 491px ) and (max-width: 575px) {
+        left: 5%;
+      }
+      @media (min-width: 576px ) and (max-width: 762px) {
+        left: 3%;
+      }
+      @media (min-width: 763px ) and (max-width: 1055px) {
+        left: 2%;
+      }
+      @media (min-width: 1056px ) and (max-width: 2000px) {
+        left: 2%;
+      }
+      @media (min-width: 2001px) {
+        left: 2%;
+      }
+    }
+    .form-control {
+      @media (max-width: 299px) {
+        max-width:84%;
+      }
+      @media (min-width: 300px ) and (max-width: 345px) {
+        max-width: 85%;
+      }
+      @media (min-width: 346px ) and (max-width: 420px) {
+        max-width: 88%;
+      }
+      @media (min-width: 421px ) and (max-width: 453px) {
+        max-width: 90%;
+      }
+      @media (min-width: 454px ) and (max-width: 493px) {
+        max-width: 91%;
+      }
+      @media (min-width: 494px ) and (max-width: 575px) {
+        max-width: 92%;
+      }
+      @media (min-width: 576px ) and (max-width: 767px) {
+        max-width: 91%;
+      }
+      @media (min-width: 768px ) and (max-width: 1040px) {
+        max-width: 94%;
+      }
+      @media (min-width: 1041px) and (max-width: 1700px){
+        max-width: 96%;
+      }
+      @media (min-width: 1701px){
+        max-width: 96%;
+      }
+    }
+  }
+}
+.sidebar-wrapper.container-fluid {
+  @media (min-width: 496px){
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+}
+
+li.show {
+  min-width: 100%;
+  @media (min-width: 576px ) {
+    max-width: 150%;
+    min-width: 95%;
+  }
+  .checkbox {
+    margin: 0px 22px;
+    width: auto;
+    .oa-choice-option-label {
+      font-size: 14px;
+      span {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+  .btn {
+    font-size: 14px;
+    padding: 6px 0;
+    margin: 0px 22px;
   }
 }

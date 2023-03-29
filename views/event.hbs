@@ -33,12 +33,12 @@
         <p class="event-description">{{event.description}}</p>
       {{/if}}
       {{#if event.image}}
-      <div class="wbg text-center">
+      <div class="text-center">
         <img class="img-fluid shadow" src="{{event.image.base}}{{event.image.filename}}" alt="{{event.description}}" />
       </div>
       {{/if}}   
       {{#if event.longDescription}}
-      <div class="wbg event-text">
+      <div class="event-text">
         {{{mdToHtml event.longDescription}}}
       </div>
       {{/if}}

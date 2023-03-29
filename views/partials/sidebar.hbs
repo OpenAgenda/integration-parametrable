@@ -1,94 +1,92 @@
 <div class="sidebar-wrapper container-fluid">   
-  <div class="{{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
-    <div class="row justify-content-around filters text-center">
-      {{#if @root.styles.filter.displayCalendar}}
-      <div class="col-sm-6 col-md-3 p-0" id="calendar">
-        <div class="dropdown">
-          <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
-            <img class="d-inline" src="/Calendrier.svg" alt="icône calendrier">
-            <p class="text-left mb-0 d-inline ml-3">Date</p>
-          </button>
-          <form>
-            <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  {{filter name='timings'}}
-            </li>
-          </form>
-        </div>
+  <div class="row justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0 px-sm-2{{/if}}">
+    {{#if @root.styles.filter.displayCalendar}}
+    <div class="col p-0" id="calendar">
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+          <img class="d-inline" src="/Calendrier.svg" alt="icône calendrier">
+          <p class="text-left mb-0 d-inline ml-3">Date</p>
+        </button>
+        <form>
+          <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {{filter name='timings'}}
+          </li>
+        </form>
       </div>
-      {{/if}}
-
-      {{#if @root.styles.filter.displayCity}}
-      <div class="col-sm-6 col-md-3 p-0" id="city">
-        <div class="dropdown">
-          <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
-            <img class="d-inline" src="/Location.svg" alt="icône localisation">
-            <p class="text-left mb-0 d-inline ml-3">{{i18n 'city'}}</p>
-          </button>
-          <form>
-            <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {{filter type='choice' name='city' inputType='checkbox' pageSize=20}}
-            </li>
-          </form>
-        </div>
-      </div>
-      {{/if}}
-
-      {{#if @root.styles.filter.displayAttendanceMode}}
-      <div class="col-sm-6 col-md-3 p-0" id="participation">
-        <div class="dropdown">
-          <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
-            <img class="d-inline" src="/Participation.svg" alt="icône mode de participation">
-            <p class="text-left mb-0 d-inline ml-3">Participation</p>
-          </button>
-          <form>
-            <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              {{filter type='choice' name='attendanceMode' inputType='checkbox' pageSize=20}}
-            </li>
-          </form>
-        </div> 
-      </div>
-      {{/if}}
-
-      {{#if @root.styles.filter.displayKeywords}}
-      <div class="col-sm-6 col-md-3 p-0" id="keywords">
-        <div class="dropdown">
-          <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
-            <img class="d-inline" class="d-inline" src="/MotsCles.svg" alt="icône mots-clés">
-            <p class="text-left mb-0 filtre-type d-inline ml-3">{{i18n 'keywords'}}</p>
-          </button>
-          <form>
-            <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              {{filter name='keyword'}}
-            </li>
-          </form>
-        </div>
-      </div>
-      {{/if}}
-
-      {{#if @root.styles.filter.displaySearch}}
-      <div class="col-sm-6 col-md-3 p-0" id="searchbar">
-        <div class="dropdown-toggle shadow">
-        <img src="/Search.svg" alt="icône barre de recherche">
-        {{filter name="search"}}
-        </div>
-      </div>
-      {{/if}}
-      {{#if @root.styles.filter.displayOnlySearch}}
-      <div class="col-12 col-lg-7 p-0" id="searchbaronly">
-        <div class="dropdown-toggle shadow">
-        <img src="/Search.svg" alt="icône barre de recherche">
-        {{filter name="search"}}
-        </div>
-      </div>
-      {{/if}}
-
     </div>
+    {{/if}}
+
+    {{#if @root.styles.filter.displayCity}}
+    <div class="col p-0" id="city">
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+          <img class="d-inline" src="/Location.svg" alt="icône localisation">
+          <p class="text-left mb-0 d-inline ml-3">{{i18n 'city'}}</p>
+        </button>
+        <form>
+          <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              {{filter type='choice' name='city' inputType='checkbox' pageSize=20}}
+          </li>
+        </form>
+      </div>
+    </div>
+    {{/if}}
+
+    {{#if @root.styles.filter.displayAttendanceMode}}
+    <div class="col p-0" id="participation">
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+          <img class="d-inline" src="/Participation.svg" alt="icône mode de participation">
+          <p class="text-left mb-0 d-inline ml-3">Participation</p>
+        </button>
+        <form>
+          <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            {{filter type='choice' name='attendanceMode' inputType='checkbox' pageSize=20}}
+          </li>
+        </form>
+      </div> 
+    </div>
+    {{/if}}
+
+    {{#if @root.styles.filter.displayKeywords}}
+    <div class="col p-0" id="keywords">
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 shadow" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+          <img class="d-inline" class="d-inline" src="/MotsCles.svg" alt="icône mots-clés">
+          <p class="text-left mb-0 filtre-type d-inline ml-3">{{i18n 'keywords'}}</p>
+        </button>
+        <form>
+          <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            {{filter name='keyword'}}
+          </li>
+        </form>
+      </div>
+    </div>
+    {{/if}}
+
+    {{#if @root.styles.filter.displaySearch}}
+    <div class="col p-0" id="searchbar">
+      <div class="dropdown-toggle {{#if @root.styles.noMargin}}dropdown-s-nm{{else}}dropdown-m{{/if}} shadow">
+      <img src="/Search.svg" alt="icône barre de recherche">
+      {{filter name="search"}}
+      </div>
+    </div>
+    {{/if}}
+    {{#if @root.styles.filter.displayOnlySearch}}
+    <div class="col-12 p-0" id="searchbaronly">
+      <div class="dropdown-toggle {{#if @root.styles.noMargin}}dropdown-nm{{else}}dropdown-m{{/if}} shadow">
+      <img src="/Search.svg" alt="icône barre de recherche">
+      {{filter name="search"}}
+      </div>
+    </div>
+    {{/if}}
+
   </div>
 </div>
 
 {{#if @root.styles.filter.displayMap}}
 <div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}}">
-  <div class="row p-0 m-0 hidden-map map-canvas container mx-auto">
+  <div class="row p-0 m-0 hidden-map map-canvas {{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
     <div class="col mt-md-3 px-0">
       <div class="my-4">
         {{#if @root.styles.map.mapTilesUrl}}
