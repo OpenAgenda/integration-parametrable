@@ -1,6 +1,6 @@
 {{>layout.top}}
 {{>head tagName="h1"}}
-<div class="shadow">
+<div {{#unless @root.styles.noShadows}}class="shadow"{{/unless}}>
   {{>navigation}}
 </div>
 <div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}} event-page">
@@ -34,7 +34,7 @@
       {{/if}}
       {{#if event.image}}
       <div class="text-center">
-        <img class="img-fluid shadow" src="{{event.image.base}}{{event.image.filename}}" alt="{{event.description}}" />
+        <img class="img-fluid {{#unless @root.styles.noShadows}}shadow{{/unless}}" src="{{event.image.base}}{{event.image.filename}}" alt="{{event.description}}" />
       </div>
       {{/if}}   
       {{#if event.longDescription}}
@@ -43,7 +43,7 @@
       </div>
       {{/if}}
 
-      <div class="event-details shadow">
+      <div class="event-details {{#unless @root.styles.noShadows}}shadow{{/unless}}">
         {{#if event.conditions}}
         <div class="conditions mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Conditions.svg" alt="icône prix">{{event.conditions}}</div>
         {{/if}}

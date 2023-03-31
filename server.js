@@ -46,6 +46,7 @@ Portal({
     bannerColor: process.env.STYLES_COLOR_BANNER,
     footerColor: process.env.STYLES_FOOTER_COLOR,
     noMargin: process.env.STYLES_NO_MARGIN,
+    noShadows: process.env.STYLES_NO_SHADOWS,
 
     banner: {
       displayBanner: process.env.STYLES_DISPLAY_BANNER,

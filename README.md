@@ -24,6 +24,10 @@ STYLES_FOOTER_COLOR
 
 STYLES_NO_MARGIN=1
 
+**À définir pour supprimer les ombres :**
+
+STYLES_NO_SHADOWS=
+
 ## La bannière
 
 **Afficher la bannière :**

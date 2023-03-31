@@ -4,7 +4,11 @@
     margin-bottom: 40px;
     border-radius: 2px;
     &:hover {
+        background: #00000011!important;
         box-shadow: none!important;
+        a {
+            color: black!important;
+        }
     }
     a {
         color: white!important;

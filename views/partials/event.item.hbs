@@ -1,4 +1,4 @@
-<div class="col-12 px-0 my-3 event-list-item shadow">
+<div class="col-12 px-0 my-3 event-list-item {{#if @root.styles.noShadows}}ns-event-border{{else}}shadow{{/if}}">
   <a href="{{link}}" class="event-item">
     {{#if image}}
         <div class="text-center img-cover-event-col" style='background-image:url({{image image}})'>
