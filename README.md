@@ -80,9 +80,9 @@ STYLES_DISPLAY_ADDITIONAL_FILTER=1
 
 **Définir le titre et le label du filtre additionnel :**
 
-STYLES_ADDITIONAL_TITLE_FILTER=Additional
+STYLES_ADDITIONAL_TITLE_FILTER=
 
-STYLES_ADDITIONAL_LABEL_FILTER=categorie
+STYLES_ADDITIONAL_LABEL_FILTER=
 
 ### Afficher le filtre map
 
