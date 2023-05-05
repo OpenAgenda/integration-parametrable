@@ -55,6 +55,9 @@ Portal({
       logoBanner: process.env.STYLES_LOGO_BANNER,
     },
     filter: {
+      displayAdditional: process.env.STYLES_DISPLAY_ADDITIONAL_FILTER,
+      additionalTitle: process.env.STYLES_ADDITIONAL_TITLE_FILTER,
+      additionalLabel: process.env.STYLES_ADDITIONAL_LABEL_FILTER,
       displayCalendar: process.env.STYLES_DISPLAY_CALENDAR_FILTER,
       displayCity: process.env.STYLES_DISPLAY_CITY_FILTER,
       displayAttendanceMode: process.env.STYLES_DISPLAY_ATTENDANCEMODE_FILTER,

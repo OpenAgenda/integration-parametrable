@@ -74,6 +74,16 @@ STYLES_DISPLAY_KEYWORDS_FILTER=1
 
 STYLES_DISPLAY_SEARCH_FILTER=1
 
+### Afficher un filtre additionnel
+
+STYLES_DISPLAY_ADDITIONAL_FILTER=1
+
+**Définir le titre et le label du filtre additionnel :**
+
+STYLES_ADDITIONAL_TITLE_FILTER=Additional
+
+STYLES_ADDITIONAL_LABEL_FILTER=categorie
+
 ### Afficher le filtre map
 
 STYLES_DISPLAY_MAP_FILTER=1
