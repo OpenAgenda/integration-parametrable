@@ -1,21 +1,11 @@
 {{>layout.top}}
-<div class="container">
-  <div class="row">
-    <div class="events">
-      <ul class="list-unstyled js_progressive_load_disabled">
+<div class="{{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
+  <main role="main">
+    <div class="row d-flex mt-2 mt-md-3">
       {{#each events}}
-        <li>
-            <a data-event-slug="{{slug}}" href="#" class="event-item my-1">
-              <div class="wbg px-2 py-1">
-                <h3>{{title}}</h3>
-                <span>{{range}}</span>
-              </div>
-              <script type="application/ld+json">{{{JSONLD}}}</script>
-            </a>
-        </li>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 featured-{{featured}} list-unstyled js_progressive_load_disabled d-flex" >{{>event.item}}</div>
       {{/each}}
-      </ul>
     </div>
-  </div>
+  </main>
 </div>
 {{>layout.bottom}}
