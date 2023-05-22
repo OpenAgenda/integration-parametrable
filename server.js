@@ -123,7 +123,7 @@ Portal({
   // filters that applies even if other filter is specified, can be overloaded
   visibilityPastEvents : process.env.PORTAL_VISIBILITY_PAST_EVENTS,
   preFilter: {
-    relative: [process.env.PORTAL_PREFILTER.split(',')],
+    relative: [process.env.PORTAL_PREFILTER.split(',') || 'current', 'upcoming'],
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
