@@ -1,10 +1,16 @@
 .total-filter {
   padding: 0 15px;
+  .total {
+    div {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
   .active-filters span :not(:first-child) button {
     margin-top: 3px;
   }
   .active-filters {
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
     .badge {
       color: white;
       font-size: 12px;

@@ -11,6 +11,12 @@ Portal.utils.loadEnvironment(__dirname);
 
 function eventHook(inputEvent, { agenda } ) {
 
+  const currentEvents = agenda.summary.publishedEvents.current
+  const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents
+  if (currentEvents === 0 && upcomingEvents === 0) {
+    agenda.noEvents = "Tous les événements sont passés"
+  }
+
   inputEvent.registration = !inputEvent.registration
    ? inputEvent.registration
    : inputEvent.registration.reduce((group, obj) => {
@@ -68,6 +74,7 @@ Portal({
     },
     noButton : {
       contribute : process.env.STYLES_NO_CONTRIBUTE_BUTTON,
+      export : process.env.STYLES_NO_EXPORT_BUTTON,
     },
     event: {
       displayInfos: process.env.STYLES_DISPLAY_RIGHT_EVENT_INFOS,
@@ -114,7 +121,10 @@ Portal({
   // number of events to be loaded in an event index page
   eventsPerPage: 20,
   // filters that applies even if other filter is specified, can be overloaded
-  preFilter: {},
+  visibilityPastEvents : process.env.PORTAL_VISIBILITY_PAST_EVENTS,
+  preFilter: {
+    relative: [process.env.PORTAL_PREFILTER.split(',')],
+  },
   // filter that applies when no other filter is specified
   defaultFilter: {
     // featured: 1,

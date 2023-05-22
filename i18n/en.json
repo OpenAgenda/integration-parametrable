@@ -7,6 +7,7 @@
   "previous": "Previous",
   "next": "Next",
   "contribute": "Contribute an event",
+  "export": "Export/Download",
   "eventsTotal": "{total, plural, =0 {No events match this search} one {{total} event} other {{total} events}}",
   "onlineAccessLink": "Access online event",
   "city": "City",

@@ -5,19 +5,54 @@
 {{>sidebar}}
 
 <div class="{{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
-  <div class="total-filter pt-2 pt-md-4 px-0">
+  <div class="total-filter pt-2 pt-md-2 px-0">
     <div>
       <div class="row">
-        <div class="col-12 col-sm-6 order-sm-last pb-4 pb-sm-0 d-sm-flex justify-content-end contribute">
+        
+        <div class="col-12 col-sm-8 order-sm-last pb-4 pb-sm-0 ">
+          {{#if @root.styles.noButton.export}}
+          {{else}} 
+            <div class="col-12 d-sm-flex justify-content-end p-0 export">
+              {{>export}}
+            </div>
+          {{/if}}
+
           {{#if @root.styles.noButton.contribute}}
           {{else}} 
-          {{>contribute}}
+            <div class="col-12 d-sm-flex justify-content-end p-0 contribute">               
+              {{>contribute}}
+            </div>
           {{/if}}
+
         </div>
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-4 d-sm-flex total">
           {{widget name='total' message='eventsTotal'}}
         </div>
       </div>
+      
+      {{!-- <div class="row">
+        <div class="col-12 col-sm-6 order-sm-last pb-4 pb-sm-0 d-sm-flex justify-content-end contribute">
+          <div class="export">
+            {{#if @root.styles.noButton.export}}
+            {{else}} 
+              {{>export}}
+            {{/if}}
+          </div>
+          <div class="contribute">
+            {{#if @root.styles.noButton.contribute}}
+            {{else}} 
+                {{>contribute}}
+            {{/if}}
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6">
+          {{widget name='total' message='eventsTotal'}}
+        </div>
+      </div> --}}
+      {{#if agenda.noEvents}}
+        <p>{{agenda.noEvents}}</p>
+      {{/if}}
 
       {{widget name='activeFilters' className='active-filters'}}
 
