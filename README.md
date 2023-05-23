@@ -1,24 +1,34 @@
 # Intégration paramétrable
 
+## Les prefiltres
+
+**À définir pour afficher les événements passés lorsqu'un filtre temporel est utilisé. Lorsque l'agenda n'a aucun événément à venir ou en cours ne pas définir ce préfiltre pour afficher les événements passés :**
+
+PORTAL_VISIBILITY_PAST_EVENTS=1
+
+**Définir les événements à afficher par leur statut (par defaut : current, upcoming):**
+
+PORTAL_PREFILTER=
+
 ## Les couleurs
 
 **Une couleur de background à définir (couleur par défaut : white):**
 
-STYLES_BG_COLOR
+STYLES_BG_COLOR=
 
 **Deux couleurs prédominantes à définir :**
 
-STYLES_PRIMARY_COLOR
+STYLES_PRIMARY_COLOR=
 
-STYLES_SECONDARY_COLOR
+STYLES_SECONDARY_COLOR=
 
 **Une couleur de bannière à définir  (uniquement si aucune image n'est souhaitée en bannière) :**
 
-STYLES_COLOR_BANNER
+STYLES_COLOR_BANNER=
 
 **Une couleur de footer à définir :**
 
-STYLES_FOOTER_COLOR
+STYLES_FOOTER_COLOR=
 
 **À définir pour supprimer les marges :**
 
@@ -26,7 +36,7 @@ STYLES_NO_MARGIN=1
 
 **À définir pour supprimer les ombres :**
 
-STYLES_NO_SHADOWS=
+STYLES_NO_SHADOWS=1
 
 ## La bannière
 
@@ -93,6 +103,10 @@ STYLES_DISPLAY_MAP_FILTER=1
 **À définir pour ne pas afficher le bouton de contribution :**
 
 STYLES_NO_CONTRIBUTE_BUTTON=1
+
+**À définir pour ne pas afficher le bouton d'export :**
+
+STYLES_NO_EXPORT_BUTTON=1
 
 ## La vue détail
 
