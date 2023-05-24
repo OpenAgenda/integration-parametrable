@@ -43,11 +43,11 @@ function eventHook(inputEvent, { agenda } ) {
   return res;
 }
 
-const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER.split(',')
+const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',')
 
-const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER.split(',')
+const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',')
 
-const additionalFilters = titles.map((title, index) => ({title, slug: slugs[index]} ))
+const additionalFilters = titles?.map((title, index) => ({title, slug: slugs[index]} ))
 
 Portal({
   dir: __dirname,
@@ -127,6 +127,7 @@ Portal({
   i18n: process.env.PORTAL_I18N_FOLDER,
   // number of events to be loaded in an event index page
   eventsPerPage: 20,
+  // visibility of past events when relative or timings filter is specified
   visibilityPastEvents : process.env.PORTAL_VISIBILITY_PAST_EVENTS,
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
