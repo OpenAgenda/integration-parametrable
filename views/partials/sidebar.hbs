@@ -15,21 +15,23 @@
       </div>
     </div>
     {{/if}}
-
-    {{#if @root.styles.filter.displayAdditional}}
-    <div class="col p-0" id="filter">
-      <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
-          <img class="d-inline" src="/Filter.svg" alt="icône filtres additionnels">
-          <p class="text-left mb-0 d-inline ml-3">{{@root.styles.filter.additionalTitle}}</p>
-        </button>
-        <form>
-          <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {{filter type='choice' name=@root.styles.filter.additionalLabel inputType='checkbox' pageSize=20}}
-          </li>
-        </form>
-      </div>
-    </div>
+    
+    {{#if @root.styles.filter.displayAdditionalFilter}}
+      {{#each @root.styles.filter.additionalFilters}}
+        <div class="col p-0" id="filter">
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+              <img class="d-inline" src="/Filter.svg" alt="icône filtres additionnels">
+              <p class="text-left mb-0 d-inline ml-3">{{this.title}}</p>
+            </button>
+            <form>
+              <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {{filter type='choice' name=this.slug inputType='checkbox' pageSize=20}}
+              </li>
+            </form>
+          </div>
+        </div>
+      {{/each}}
     {{/if}}
 
     {{#if @root.styles.filter.displayCity}}

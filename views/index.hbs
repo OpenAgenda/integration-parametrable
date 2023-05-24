@@ -29,27 +29,7 @@
           {{widget name='total' message='eventsTotal'}}
         </div>
       </div>
-      
-      {{!-- <div class="row">
-        <div class="col-12 col-sm-6 order-sm-last pb-4 pb-sm-0 d-sm-flex justify-content-end contribute">
-          <div class="export">
-            {{#if @root.styles.noButton.export}}
-            {{else}} 
-              {{>export}}
-            {{/if}}
-          </div>
-          <div class="contribute">
-            {{#if @root.styles.noButton.contribute}}
-            {{else}} 
-                {{>contribute}}
-            {{/if}}
-          </div>
-        </div>
 
-        <div class="col-12 col-sm-6">
-          {{widget name='total' message='eventsTotal'}}
-        </div>
-      </div> --}}
       {{#if agenda.noEvents}}
         <p>{{agenda.noEvents}}</p>
       {{/if}}

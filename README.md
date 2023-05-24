@@ -84,15 +84,15 @@ STYLES_DISPLAY_KEYWORDS_FILTER=1
 
 STYLES_DISPLAY_SEARCH_FILTER=1
 
-### Afficher un filtre additionnel
+### Afficher des filtres additionnels
 
 STYLES_DISPLAY_ADDITIONAL_FILTER=1
 
-**Définir le titre et le label du filtre additionnel :**
+**Définir le titre et le label des filtres additionnels :**
 
-STYLES_ADDITIONAL_TITLE_FILTER=
+STYLES_ADDITIONAL_TITLE_FILTER=Filtre1,Filtre2
 
-STYLES_ADDITIONAL_LABEL_FILTER=
+STYLES_ADDITIONAL_SLUG_FILTER=Slug1,Slug2
 
 ### Afficher le filtre map
 
