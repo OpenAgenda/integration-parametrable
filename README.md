@@ -94,6 +94,12 @@ STYLES_ADDITIONAL_TITLE_FILTER=Filtre1,Filtre2
 
 STYLES_ADDITIONAL_SLUG_FILTER=Slug1,Slug2
 
+**Définir une icone associée aux filtres additionnels (icone par default si aucune n'est définit):**
+
+Choisir une icone parmis : default, access, accessibility, categories, themes, conditions, location, public, 
+
+STYLES_ADDITIONAL_IMG_FILTER=default,access
+
 ### Afficher le filtre map
 
 STYLES_DISPLAY_MAP_FILTER=1

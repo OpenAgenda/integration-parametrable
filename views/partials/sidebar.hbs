@@ -21,7 +21,7 @@
         <div class="col p-0" id="filter">
           <div class="dropdown">
             <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
-              <img class="d-inline" src="/Filter.svg" alt="icône filtres additionnels">
+              <img class="d-inline" {{#if this.img}} src="/icon-filter-add/{{this.img}}.svg" {{else}} src="/icon-filter-add/default.svg" {{/if}} alt="icône filtres additionnels">
               <p class="text-left mb-0 d-inline ml-3">{{this.title}}</p>
             </button>
             <form>
@@ -38,7 +38,7 @@
     <div class="col p-0" id="city">
       <div class="dropdown">
         <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
-          <img class="d-inline" src="/Location.svg" alt="icône localisation">
+          <img class="d-inline" src="/City.svg" alt="icône localisation ville">
           <p class="text-left mb-0 d-inline ml-3">{{i18n 'city'}}</p>
         </button>
         <form>
@@ -133,3 +133,19 @@
   </div>
 </div>
 {{/if}}
+
+  <div class="row p-0 m-0 hidden-map map-canvas container">
+    <div class="col mt-md-3 px-0">
+      <div class="my-4">
+            {{filter
+              name='geo'
+              mapClass='map-container'
+              height='180px'
+              searchMessage=(i18n 'searchWhenMoving')
+              searchWithMap=true
+              tileAttribution='Map data © OpenStreetMap contributors'
+              tileUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            }} 
+      </div>
+    </div>
+  </div>

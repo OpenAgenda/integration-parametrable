@@ -47,7 +47,10 @@ const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',')
 
 const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',')
 
-const additionalFilters = titles?.map((title, index) => ({title, slug: slugs[index]} ))
+const imgs = process.env.STYLES_ADDITIONAL_IMG_FILTER?.split(',')
+
+const additionalFilters = titles?.map((title, index) => ({title, slug: slugs[index], img:imgs[index]} ))
+console.log('hey', additionalFilters)
 
 Portal({
   dir: __dirname,
