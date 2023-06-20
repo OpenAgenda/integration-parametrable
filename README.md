@@ -94,9 +94,9 @@ STYLES_ADDITIONAL_TITLE_FILTER=Filtre1,Filtre2
 
 STYLES_ADDITIONAL_SLUG_FILTER=Slug1,Slug2
 
-**Définir une icone associée aux filtres additionnels (icone par default si aucune n'est définit):**
+**Définir une icone associée aux filtres additionnels (icone par default si aucune n'est définie):**
 
-Choisir une icone parmis : default, access, accessibility, categories, themes, conditions, location, public, 
+Choisir une icone parmi : default, access, accessibility, categories, themes, conditions, location, public, 
 
 STYLES_ADDITIONAL_IMG_FILTER=default,access
 
