@@ -133,19 +133,3 @@
   </div>
 </div>
 {{/if}}
-
-  <div class="row p-0 m-0 hidden-map map-canvas container">
-    <div class="col mt-md-3 px-0">
-      <div class="my-4">
-            {{filter
-              name='geo'
-              mapClass='map-container'
-              height='180px'
-              searchMessage=(i18n 'searchWhenMoving')
-              searchWithMap=true
-              tileAttribution='Map data © OpenStreetMap contributors'
-              tileUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-            }} 
-      </div>
-    </div>
-  </div>
