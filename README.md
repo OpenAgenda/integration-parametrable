@@ -10,7 +10,7 @@ PORTAL_VISIBILITY_PAST_EVENTS=1
 
 PORTAL_PREFILTER=
 
-## Les couleurs
+## Les couleurs et les marges
 
 **Une couleur de background à définir (couleur par défaut : white):**
 
@@ -29,6 +29,12 @@ STYLES_COLOR_BANNER=
 **Une couleur de footer à définir :**
 
 STYLES_FOOTER_COLOR=
+
+**Une couleur de texte et de background à définir pour la mention "à la une":**
+
+STYLES_FEATURED_BG_COLOR=
+
+STYLES_FEATURED_COLOR=
 
 **À définir pour supprimer les marges :**
 
