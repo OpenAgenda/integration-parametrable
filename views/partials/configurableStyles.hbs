@@ -1,65 +1,71 @@
 <style>
-    body {
-        background-color: {{styles.bgColor}};
-    }
-    .secondary-color,
-    .oa-filter-total,
-    .event-text a,
-    li.show .btn {
-        color: {{styles.secondaryColor}};
-    }  
+  body {
+    background-color: {{styles.bgColor}};
+  }
+  .secondary-color,
+  .oa-filter-total,
+  .event-text a,
+  li.show .btn {
+    color: {{styles.secondaryColor}};
+  }  
 
-    .rdrSelected,
-    .rdrInRange,
-    .rdrStartEdge,
-    .rdrEndEdge,
-    .rdrSelected,
-    .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
-    .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
-    .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
-    .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after,
-    .total-filter .badge,
-    .page-item.active .page-link:hover,
-    .registration {
-        background-color: {{styles.secondaryColor}};
-    }
-    .rdrDayStartPreview,
-    .rdrDayInPreview,
-    .rdrDayEndPreview,
-    .rdrInputRangeInput:focus,
-    .rdrInputRangeInput:hover {
-        border-color: {{styles.secondaryColor}};
-    }
+  .rdrSelected,
+  .rdrInRange,
+  .rdrStartEdge,
+  .rdrEndEdge,
+  .rdrSelected,
+  .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
+  .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
+  .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
+  .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after,
+  .total-filter .badge,
+  .page-item.active .page-link:hover,
+  .registration {
+    background-color: {{styles.secondaryColor}};
+  }
+  .rdrDayStartPreview,
+  .rdrDayInPreview,
+  .rdrDayEndPreview,
+  .rdrInputRangeInput:focus,
+  .rdrInputRangeInput:hover {
+    border-color: {{styles.secondaryColor}};
+  }
 
-    .primary-color,
-    .event-text a:hover,
-    .month i:hover,
-    .nav .nav-link:hover {
-        color: {{styles.primaryColor}};
-    }
-    .rdrDayToday:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
-    .rdrDayToday:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
-    .rdrDayToday:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
-    .rdrDayToday:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after,
-    .rdrDayToday .rdrDayNumber span:after {
-        background-color: {{styles.primaryColor}};
-    }
-    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
-    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
-    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
-    .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after {
-        background-color: {{styles.primaryColor}}!important;
-    }
-    .nav-link:hover .arrow path {
-        stroke: {{styles.primaryColor}};
-    }
-    .footer-color {
-        background-color: {{styles.footerColor}}
-    }
-    .img-banner {
-        background-image: url('{{styles.banner.imgBanner}}');
-    }
-    .banner-color {
-        background-color: {{styles.bannerColor}}
+  .primary-color,
+  .event-text a:hover,
+  .month i:hover,
+  .nav .nav-link:hover {
+    color: {{styles.primaryColor}};
+  }
+  .rdrDayToday:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
+  .rdrDayToday:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
+  .rdrDayToday:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
+  .rdrDayToday:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after,
+  .rdrDayToday .rdrDayNumber span:after {
+    background-color: {{styles.primaryColor}};
+  }
+  .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span:after,
+  .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
+  .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
+  .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after {
+    background-color: {{styles.primaryColor}}!important;
+  }
+  .nav-link:hover .arrow path {
+    stroke: {{styles.primaryColor}};
+  }
+  .footer-color {
+    background-color: {{styles.footerColor}}
+  }
+  .img-banner {
+    background-image: url('{{styles.banner.imgBanner}}');
+  }
+  .banner-color { 
+    background-color: {{styles.bannerColor}}
+  }
+  .featured {
+    background-color: {{styles.featuredBGColor}};
+  }
+  .featured-text {
+      color: {{styles.featuredColor}};
     }
 </style>
