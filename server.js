@@ -135,7 +135,7 @@ Portal({
   visibilityPastEvents : process.env.PORTAL_VISIBILITY_PAST_EVENTS,
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
-    relative: process.env.PORTAL_PREFILTER?.split(','),  
+    relative: process.env.PORTAL_PREFILTER?.split(','),
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
@@ -168,5 +168,10 @@ Portal({
     cookieBannerLink: 'https://support.google.com/analytics/answer/6004245?hl=fr'
   },
   eventHook,
-  // proxyHookBeforeGet
+  proxyHookBeforeGet: params => {
+    return {
+      ...params,
+      order: 'lastTimingWithFeatured.asc',
+    };
+  }
 }).then(({ app }) => app.launch(process.env.PORTAL_PORT));
