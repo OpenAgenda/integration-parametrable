@@ -8,6 +8,6 @@
     "prepack": "build-portal"
   },
   "dependencies": {
-    "@openagenda/agenda-portal": "^6.9.12"
+    "@openagenda/agenda-portal": "^6.9.13"
   }
 }
