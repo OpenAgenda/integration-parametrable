@@ -82,6 +82,7 @@ Portal({
       displaySearch: process.env.STYLES_DISPLAY_SEARCH_FILTER,
       displayOnlySearch: process.env.STYLES_DISPLAY_ONLY_SEARCH_FILTER,
       displayMap: process.env.STYLES_DISPLAY_MAP_FILTER,
+      displayYoungAudienceFilter: process.env.STYLES_DISPLAY_YOUNG_AUDIENCE_FILTER,
     },
     noButton : {
       contribute : process.env.STYLES_NO_CONTRIBUTE_BUTTON,

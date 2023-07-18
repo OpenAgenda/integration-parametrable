@@ -6,6 +6,14 @@
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
   background-color: white;
 }
+.row-filter {
+  @media (min-width: 1058px) {
+    padding-left: 1.4rem !important;
+  }
+}
+#young-audience {
+  vertical-align: middle;
+}
 
 .sidebar-wrapper {
   background-color: white;
@@ -13,8 +21,8 @@
   .dropdown-m {
     min-width: 100%;
     @media (min-width: 494px) {
-      max-width: 95%;
-      min-width: 95%;
+      max-width: 96%;
+      min-width: 96%;
     }
   }
   
@@ -46,6 +54,7 @@
     }
     
   }
+  
   #filter,
   #calendar,
   #city,
@@ -264,7 +273,6 @@
   #searchbaronly {
     margin-bottom: 15px;
     .dropdown-m {
-      max-width: 70%;
       min-width: 98%;
       img {
         @media (max-width: 338px) {

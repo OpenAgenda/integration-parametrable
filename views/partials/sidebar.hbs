@@ -102,10 +102,29 @@
   </div>
 </div>
 
+{{#if @root.styles.filter.displayYoungAudienceFilter}}
+  <div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}}">
+    <div class="row p-0 m-0 mt-md-1 {{#if @root.styles.noMargin}}px-3 row-filter{{else}}container px-lg-1{{/if}}">
+      {{#customFilter
+        query=(object categories-specifiques-la-cart=(array 16))
+        activeClass='active'
+        inactiveClass='inactive'
+        className='custom-example checkbox'
+        activeFilterLabel='Jeune public'
+        }}
+        <label for="young-audience" class="m-0">
+          <input id="young-audience" type="checkbox" tabindex="-1" readonly />
+          Jeune public
+        </label>
+      {{/customFilter}}
+    </div>
+  </div>
+{{/if}}
+
 {{#if @root.styles.filter.displayMap}}
 <div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}}">
-  <div class="row p-0 m-0 hidden-map map-canvas {{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
-    <div class="col mt-md-3 px-0">
+  <div class="row p-0 m-0 hidden-map map-canvas {{#if @root.styles.noMargin}}px-3 row-filter{{else}}container px-lg-1{{/if}}">
+    <div class="col px-0">
       <div class="my-4">
         {{#if @root.styles.map.mapTilesUrl}}
           {{filter
