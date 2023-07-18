@@ -68,7 +68,7 @@ STYLES_DARKER_BANNER=1
 
 STYLES_DISPLAY_ONLY_SEARCH_FILTER=1
 
-### Sinon définir les filtres à afficher (3 minimum)
+### Sinon définir les filtres à afficher (nombre paire)
 
 **Afficher le filtre "calendrier" :**
 
@@ -100,7 +100,7 @@ STYLES_ADDITIONAL_TITLE_FILTER=Filtre1,Filtre2
 
 STYLES_ADDITIONAL_SLUG_FILTER=Slug1,Slug2
 
-**Définir une icone associée aux filtres additionnels (icone par default si aucune n'est définie):**
+**Définir une icone associée aux filtres additionnels :**
 
 Choisir une icone parmi : default, access, accessibility, categories, themes, conditions, location, public, 
 
