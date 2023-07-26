@@ -11,9 +11,22 @@
   }
   .featured {
     height: 28px;
-    width: 90px;
+    padding: 0 15px;
     position: absolute;
     top: 0;
+    right: 0; 
+    display: table;
+    p {
+      text-align:center; 
+      vertical-align: middle;
+      display: table-cell;
+    }
+  }
+  .category {
+    height: 28px;
+    padding: 0 15px;
+    position: absolute;
+    top: 142px;
     right: 0; 
     display: table;
     p {
@@ -28,10 +41,12 @@
       font-size: 14px;
       font-weight: 600;
     }
-    .event-title {
+    .event-title,
+    .event-description {
       font-size: 14px;
     }
-    .event-location {
+    .event-location,
+    .event-more {
       font-size: 12px;
       margin-top: auto;
       margin-bottom: 0px;

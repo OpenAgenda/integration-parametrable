@@ -1652,10 +1652,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@openagenda/agenda-portal@^6.9.12":
-  version "6.9.12"
-  resolved "https://registry.yarnpkg.com/@openagenda/agenda-portal/-/agenda-portal-6.9.12.tgz#70c9395bdff4f05ab1bbfb107352366fda072f43"
-  integrity sha512-NZ0U3v086iCq4rjIJw4DRN7TfQ0Ji/lT9BMiFzzBvIGebwadRd+OrYl+YkbfoaQFXRSKybWvVem36X4i11raOg==
+"@openagenda/agenda-portal@^6.9.13":
+  version "6.9.13"
+  resolved "https://registry.yarnpkg.com/@openagenda/agenda-portal/-/agenda-portal-6.9.13.tgz#a4b5f6acc9961131a22ad87ab6c4f52ea74e7ecb"
+  integrity sha512-+sqq+IDlBJKiNPLX0eYWQEnWlfOoUjRyK+q6qZwaV8knPky5nGXqNWrvOEhFwCpgK1jxHIErRxtCDHOC9LnUYw==
   dependencies:
     "@babel/core" "^7.21.0"
     "@babel/runtime-corejs3" "^7.21.0"

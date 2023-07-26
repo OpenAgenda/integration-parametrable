@@ -40,6 +40,23 @@ function eventHook(inputEvent, { agenda } ) {
   
   Object.assign(res, extractDate(res))
 
+   
+  const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY
+
+  if (inputEvent[keyCategory]) {
+    inputEvent.extactCategory = inputEvent[keyCategory][0].label
+  }
+
+  const keyLocation= process.env.STYLES_LIST_KEY_LOCATION
+  if (inputEvent[keyLocation]) {
+    inputEvent.extactLocation = inputEvent[keyLocation]
+  }
+
+  const keyMore= process.env.STYLES_LIST_KEY_MORE
+  if (inputEvent[keyMore]) {
+    inputEvent.extactMore = inputEvent[keyMore]
+  }
+
   return res;
 }
 
@@ -85,8 +102,17 @@ Portal({
       displayYoungAudienceFilter: process.env.STYLES_DISPLAY_YOUNG_AUDIENCE_FILTER,
     },
     noButton : {
-      contribute : process.env.STYLES_NO_CONTRIBUTE_BUTTON,
-      export : process.env.STYLES_NO_EXPORT_BUTTON,
+      contribute: process.env.STYLES_NO_CONTRIBUTE_BUTTON,
+      export: process.env.STYLES_NO_EXPORT_BUTTON,
+    },
+    list : {
+      displayDescription: process.env.STYLES_DISPLAY_LIST_DESCRIPTION,
+      defineLocation: process.env.STYLES_DEFINE_LIST_LOCATION,
+      locationKey: process.env.STYLES_LIST_LOCATION,
+      displayCategory: process.env.STYLES_DISPLAY_LIST_CATEGORY,
+      categoryBGColor: process.env.STYLES_LIST_CATEGORY_BG_COLOR,
+      categoryColor: process.env.STYLES_LIST_CATEGORY_COLOR,
+      defineMore: process.env.STYLES_DISPLAY_LIST_MORE
     },
     event: {
       displayInfos: process.env.STYLES_DISPLAY_RIGHT_EVENT_INFOS,

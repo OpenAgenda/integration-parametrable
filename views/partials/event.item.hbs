@@ -17,12 +17,30 @@
       <p class="featured-text">À la une</p>
     </div>
     {{/if}}
+    {{#if @root.styles.list.displayCategory}}
+    <div class="category">
+      <p class="category-text">{{extactCategory}}</p>
+    </div>
+    {{/if}}
       <div class="wbg px-4 py-3 text-event-cover-col">
         <div class='event-cover-row'>
           <p class="date primary-color">{{dateRange}}</p>
           <h5 class='event-title mb-md-3'>{{title}}</h5>
+          {{#if @root.styles.list.displayDescription}}
+            <p class="event-description">{{description}}</p>
+          {{/if}}
+          <div class="event-more">
+            {{#if @root.styles.list.defineMore}}
+              <p class="m-0">{{extactMore}}</p> 
+            {{else}}
+            {{/if}}
+          </div>
           <div class="event-location">
+            {{#if @root.styles.list.defineLocation}}
+              <p class="m-0">{{extactLocation}}</p> 
+            {{else}}
             <p class="m-0">{{location.name}}</p> 
+            {{/if}}
           </div>
         </div>
       </div>

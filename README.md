@@ -120,6 +120,35 @@ STYLES_NO_CONTRIBUTE_BUTTON=1
 
 STYLES_NO_EXPORT_BUTTON=1
 
+## La vue liste
+
+**Afficher la dscription courtes :**
+
+STYLES_DISPLAY_LIST_DESCRIPTION=1
+
+**Definir le champ lieu (si ces variables ne sont pas définies le champ lieu est par défaut: location.name)**
+
+STYLES_DEFINE_LIST_LOCATION=1
+
+STYLES_LIST_KEY_LOCATION=lieu-de-lanimation
+
+**Définir le champ catégorie (si ces variables ne sont pas définies le champ catégorie n'apparaît pas)**
+
+STYLES_DISPLAY_LIST_CATEGORY=1
+
+STYLES_LIST_KEY_CATEGORY=categorie-danimation
+
+**Une couleur de texte et de background à définir pour le champ catégorie:**
+
+STYLES_LIST_CATEGORY_BG_COLOR=
+
+STYLES_LIST_CATEGORY_COLOR=
+
+**Définir un champ à afficher en plus (si ces variables ne sont pas définies rien n'apparaît)**
+STYLES_DISPLAY_LIST_MORE=1
+
+STYLES_LIST_KEY_MORE=exposant
+
 ## La vue détail
 
 **Afficher les infos se situant à droite (partage, calendrier, localisation) :**
