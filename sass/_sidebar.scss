@@ -6,11 +6,7 @@
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
   background-color: white;
 }
-.row-filter {
-  @media (min-width: 1058px) {
-    padding-left: 1.4rem !important;
-  }
-}
+
 #young-audience {
   vertical-align: middle;
 }
@@ -21,8 +17,16 @@
   .dropdown-m {
     min-width: 100%;
     @media (min-width: 494px) {
-      max-width: 96%;
-      min-width: 96%;
+      max-width: 92%;
+      min-width: 92%;
+    }
+    @media (min-width: 495px) and (max-width: 767px){
+      max-width: 94%;
+      min-width: 94%;
+    }
+    @media (min-width: 768px) and (max-width: 991px){
+      max-width: 94%;
+      min-width: 94%;
     }
   }
   
@@ -79,9 +83,8 @@
       margin-bottom: 15px;
     }
   }
-
-  #searchbar,
-  #searchbaronly {
+  
+  #searchbar {
     img {
       position: absolute;
       top: 10px;
@@ -118,230 +121,258 @@
     }
   }
   #searchbar {
-    .dropdown-m {
-      img {
-        @media (max-width: 338px) {
-          left: 7%;
-        }
-        @media (min-width: 339px ) and (max-width: 493px) {
-          left: 4%;
-        }
-        @media (min-width: 494px ) and (max-width: 575px) {
-          left: 9%;
-        }
-        @media (min-width: 576px ) and (max-width: 711px) {
-          left: 8%;
-        }
-        @media (min-width: 712px ) and (max-width: 767px) {
-          left: 8%;
-        }
-        @media (min-width: 768px ) and (max-width: 991px) {
-          left: 4%;
-        }
-        @media (min-width: 992px ) and (max-width: 2000px) {
-          left: 7%;
-        }
-        @media (min-width: 2001px) {
-          left: 6%;
-        }
-      }
-      div {
-        .input-group {
-          .form-control {
-            @media (max-width: 299px) {
-              max-width:84%;
-            }
-            @media (min-width: 300px ) and (max-width: 345px) {
-              max-width: 85%;
-            }
-            @media (min-width: 346px ) and (max-width: 420px) {
-              max-width: 88%;
-            }
-            @media (min-width: 421px ) and (max-width: 453px) {
-              max-width: 90%;
-            }
-            @media (min-width: 454px ) and (max-width: 493px) {
-              max-width: 91%;
-            }
-            @media (min-width: 494px ) and (max-width: 515px) {
-              max-width: 81%;
-            }
-            @media (min-width: 516px ) and (max-width: 575px) {
-              max-width: 83%;
-            }
-            @media (min-width: 576px ) and (max-width: 711px) {
-              max-width: 81%;
-            }
-            @media (min-width: 712px ) and (max-width: 767px) {
-              max-width: 80%;
-            }
-            @media (min-width: 768px ) and (max-width: 943px) {
-              max-width: 94%;
-            }
-            @media (min-width: 944px ) and (max-width: 991px) {
-              max-width: 93%;
-            }
-            @media (min-width: 992px) and (max-width: 1700px){
-              max-width: 81%;
-            }
-            @media (min-width: 1701px){
-              max-width: 84%;
-            }
-          }
-        }
-      }
-    }
     .dropdown-s-nm {
       min-width: 100%;
       @media (min-width: 494px) {
-        max-width: 95%;
-        min-width: 95%;
+        max-width: 94%;
+        min-width: 94%;
       }
-      img {
-        @media (max-width: 338px) {
-          left: 7%;
-        }
-        @media (min-width: 339px ) and (max-width: 493px) {
-          left: 4%;
-        }
-        @media (min-width: 494px ) and (max-width: 575px) {
-          left: 9%;
-        }
-        @media (min-width: 576px ) and (max-width: 711px) {
-          left: 8%;
-        }
-        @media (min-width: 712px ) and (max-width: 943px) {
-          left: 4%;
-        }
-        @media (min-width: 944px ) and (max-width: 1055px) {
-          left: 8%;
-        }
-        @media (min-width: 1056px ) and (max-width: 2000px) {
-          left: 7%;
-        }
-        @media (min-width: 2001px) {
-          left: 6%;
-        }
+      @media (min-width: 712px) and (max-width: 991px){
+        max-width: 98%;
+        min-width: 98%;
       }
-      .form-control {
-        @media (max-width: 299px) {
-          max-width:84%;
-        }
-        @media (min-width: 300px ) and (max-width: 345px) {
-          max-width: 85%;
-        }
-        @media (min-width: 346px ) and (max-width: 420px) {
-          max-width: 88%;
-        }
-        @media (min-width: 421px ) and (max-width: 453px) {
-          max-width: 90%;
-        }
-        @media (min-width: 454px ) and (max-width: 493px) {
-          max-width: 91%;
-        }
-        @media (min-width: 494px ) and (max-width: 515px) {
-          max-width: 81%;
-        }
-        @media (min-width: 516px ) and (max-width: 575px) {
-          max-width: 83%;
-        }
-        @media (min-width: 576px ) and (max-width: 711px) {
-          max-width: 81%;
-        }
-        @media (min-width: 712px ) and (max-width: 767px) {
-          max-width: 92%;
-        }
-        @media (min-width: 768px ) and (max-width: 943px) {
-          max-width: 94%;
-        }
-        @media (min-width: 944px ) and (max-width: 1280px) {
-          max-width: 80%;
-        }
-        @media (min-width: 1280px) and (max-width: 1700px){
-          max-width: 81%;
-        }
-        @media (min-width: 1701px){
-          max-width: 86%;
-        }
+      @media (min-width: 712px) and (max-width: 943px){
+        max-width: 98%;
+        min-width: 98%;
       }
+      @media (min-width: 944px) and (max-width: 1170px){
+        max-width: 94%;
+        min-width: 94%;
+      }
+      @media (min-width: 1171px) {
+        max-width: 96%;
+        min-width: 96%;
+      }
+      
     }
   }
 }
-
-//Style if only one search bar
-.sidebar-wrapper {
-  #searchbaronly {
-    margin-bottom: 15px;
-    .dropdown-m {
-      min-width: 98%;
-      img {
-        @media (max-width: 338px) {
-          left: 7%;
-        }
-        @media (min-width: 339px ) and (max-width: 490px) {
-          left: 4%;
-        }
-        @media (min-width: 491px ) and (max-width: 575px) {
-          left: 5%;
-        }
-        @media (min-width: 576px ) and (max-width: 762px) {
-          left: 4%;
-        }
-        @media (min-width: 763px ) and (max-width: 1055px) {
-          left: 2%;
-        }
-        @media (min-width: 1056px ) and (max-width: 2000px) {
-          left: 2%;
-        }
-        @media (min-width: 2001px) {
-          left: 2%;
+#searchbaronly {
+  margin-bottom: 15px;
+  .dropdown-toggle {
+    border-radius: 2px;
+    border: none;
+    background-color: white;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    @include media-breakpoint-up(sm) {
+      height: 50px;
+    }
+    &::after {
+      display: none;
+    }
+    p {
+      font-size: 14px;
+      color: black;
+      @include media-breakpoint-up(sm) {
+        font-size: 16px;
+      }
+    }
+    img {
+      width: 16px;
+      @include media-breakpoint-up(sm) {
+        width: auto;
+      }
+    }
+  }
+  img {
+    position: absolute;
+    top: 10px;
+  }
+  .input-group {
+    margin: 0px!important;
+    justify-content: end;
+    .form-control {
+      height: 39px;
+      border: none;
+      background: none;
+      box-shadow: none;
+      @include media-breakpoint-up(sm) {
+        height: 49px;
+      }
+      &::-webkit-search-decoration,
+      &::-webkit-search-cancel-button,
+      &::-webkit-search-results-button,
+      &::-webkit-search-results-decoration {
+        display: none;
+      }
+      &::placeholder {
+        color: black;
+        margin-left: 16px;
+        font-size: 14px;
+        @include media-breakpoint-up(sm) {
+          font-size: 16px;
         }
       }
-      div {
-        .input-group {
-          .form-control {
-            @media (max-width: 299px) {
-              max-width:84%;
-            }
-            @media (min-width: 300px ) and (max-width: 345px) {
-              max-width: 85%;
-            }
-            @media (min-width: 346px ) and (max-width: 420px) {
-              max-width: 88%;
-            }
-            @media (min-width: 421px ) and (max-width: 453px) {
-              max-width: 90%;
-            }
-            @media (min-width: 454px ) and (max-width: 493px) {
-              max-width: 91%;
-            }
-            @media (min-width: 494px ) and (max-width: 575px) {
-              max-width: 92%;
-            }
-            @media (min-width: 576px ) and (max-width: 767px) {
-              max-width: 91%;
-            }
-            @media (min-width: 768px ) and (max-width: 1040px) {
-              max-width: 94%;
-            }
-            @media (min-width: 1041px) and (max-width: 1700px){
-              max-width: 96%;
-            }
-            @media (min-width: 1701px){
-              max-width: 96%;
-            }
+    }
+    .input-group-append {
+      display: none;
+    }
+  }
+  
+  .dropdown-m {
+    @media (max-width: 991px) {
+      min-width: 100%;
+      max-width: 100%;
+    }
+    min-width: 98%;
+    max-width: 99.5%;
+    img {
+      @media (max-width: 338px) {
+        left: 6%;
+      }
+      @media (min-width: 339px ) and (max-width: 490px) {
+        left: 4%;
+      }
+      @media (min-width: 491px ) and (max-width: 575px) {
+        left: 3%;
+      }
+      @media (min-width: 576px ) and (max-width: 762px) {
+        left: 4%;
+      }
+      @media (min-width: 763px ) and (max-width: 1055px) {
+        left: 3%;
+      }
+      @media (min-width: 1056px ) and (max-width: 2000px) {
+        left: 3%;
+      }
+      @media (min-width: 2001px) {
+        left: 2%;
+      }
+    }
+    div {
+      .input-group {
+        .form-control {
+          @media (max-width: 299px) {
+            max-width:84%;
+          }
+          @media (min-width: 300px ) and (max-width: 345px) {
+            max-width: 85%;
+          }
+          @media (min-width: 346px ) and (max-width: 420px) {
+            max-width: 89%;
+          }
+          @media (min-width: 421px ) and (max-width: 453px) {
+            max-width: 90%;
+          }
+          @media (min-width: 454px ) and (max-width: 493px) {
+            max-width: 91%;
+          }
+          @media (min-width: 494px ) and (max-width: 575px) {
+            max-width: 92%;
+          }
+          @media (min-width: 576px ) and (max-width: 767px) {
+            max-width: 91%;
+          }
+          @media (min-width: 768px ) and (max-width: 1040px) {
+            max-width: 94%;
+          }
+          @media (min-width: 1041px) and (max-width: 1700px){
+            max-width: 95%;
+          }
+          @media (min-width: 1701px){
+            max-width: 95%;
           }
         }
       }
     }
   }
   .dropdown-nm {
+    img {
+      @media (max-width: 338px) {
+        left: 6%;
+      }
+      @media (min-width: 339px ) and (max-width: 490px) {
+        left: 4%;
+      }
+      @media (min-width: 491px ) and (max-width: 575px) {
+        left: 3%;
+      }
+      @media (min-width: 576px ) and (max-width: 762px) {
+        left: 3%;
+      }
+      @media (min-width: 763px ) and (max-width: 1055px) {
+        left: 1%;
+      }
+      @media (min-width: 1056px ) and (max-width: 2000px) {
+        left: 1%;
+      }
+      @media (min-width: 2001px) {
+        left: 1%;
+      }
+    }
+    div {
+      .input-group {
+        .form-control {
+          @media (max-width: 299px) {
+            max-width:84%;
+          }
+          @media (min-width: 300px ) and (max-width: 345px) {
+            max-width: 85%;
+          }
+          @media (min-width: 346px ) and (max-width: 420px) {
+            max-width: 89%;
+          }
+          @media (min-width: 421px ) and (max-width: 453px) {
+            max-width: 90%;
+          }
+          @media (min-width: 454px ) and (max-width: 493px) {
+            max-width: 91%;
+          }
+          @media (min-width: 494px ) and (max-width: 575px) {
+            max-width: 92%;
+          }
+          @media (min-width: 576px ) and (max-width: 767px) {
+            max-width: 91%;
+          }
+          @media (min-width: 768px ) and (max-width: 880px) {
+            max-width: 94%;
+          }
+          @media (min-width: 881px ) and (max-width: 1145px) {
+            max-width: 95%;
+          }
+          @media (min-width: 1146px) and (max-width: 1455px){
+            max-width: 96%;
+          }
+          @media (min-width: 1456px) and (max-width: 1700px){
+            max-width: 96.5%;
+          }
+          @media (min-width: 1701px){
+            max-width: 97%;
+          }
+        }
+      }
+    }  
+  }
+}
+
+//Style if only one search bar
+.sidebar-wrapper {
+  .dropdown-nm {
     max-width: 100%;
     min-width: 100%;
     @media (min-width: 494px) {
       max-width: 98%;
-      min-width: 98%;
+      min-width: 96%;
     }
+    @media (min-width: 495px) and (max-width: 711px){
+      max-width: 94%;
+      min-width: 94%;
+    }
+    @media (min-width: 712px) and (max-width: 943px){
+      max-width: 99%;
+      min-width: 95%;
+    }
+    @media (min-width: 944px) and (max-width: 1170px){
+      max-width: 96%;
+      min-width: 93%;
+    }
+    @media (min-width: 1171px) {
+      max-width: 96%;
+      min-width: 96%;
+    }
+    
     img {
       @media (max-width: 338px) {
         left: 7%;
@@ -429,3 +460,564 @@ li.show {
     margin: 0px 22px;
   }
 }
+
+//Style if two filters with one is search bar
+
+.sidebar-wrapper {
+  #searchbar.two_filters {
+    .dropdown-m {
+      img {
+        @media (max-width: 338px) {
+          left: 6%;
+        }
+        @media (min-width: 339px ) and (max-width: 493px) {
+          left: 4%;
+        }
+        @media (min-width: 494px ) and (max-width: 575px) {
+          left: 9%;
+        }
+        @media (min-width: 576px ) and (max-width: 711px) {
+          left: 8%;
+        }
+        @media (min-width: 712px ) and (max-width: 767px) {
+          left: 8%;
+        }
+        @media (min-width: 768px ) and (max-width: 991px) {
+          left: 6%;
+        }
+        @media (min-width: 992px ) and (max-width: 2000px) {
+          left: 5%;
+        }
+        @media (min-width: 2001px) {
+          left: 5%;
+        }
+      }
+      .form-control {
+        @media (max-width: 299px) {
+          max-width:83%;
+        }
+        @media (min-width: 300px ) and (max-width: 335px) {
+          max-width: 85%;
+        }
+        @media (min-width: 336px ) and (max-width: 345px) {
+          max-width: 86%;
+        }
+        @media (min-width: 346px ) and (max-width: 420px) {
+          max-width: 89%;
+        }
+        @media (min-width: 421px ) and (max-width: 453px) {
+          max-width: 90%;
+        }
+        @media (min-width: 454px ) and (max-width: 493px) {
+          max-width: 91%;
+        }
+        @media (min-width: 494px ) and (max-width: 515px) {
+          max-width: 81%;
+        }
+        @media (min-width: 516px ) and (max-width: 575px) {
+          max-width: 83%;
+        }
+        @media (min-width: 576px ) and (max-width: 711px) {
+          max-width: 80%;
+        }
+        @media (min-width: 712px ) and (max-width: 767px) {
+          max-width: 83%;
+        }
+        @media (min-width: 768px ) and (max-width: 943px) {
+          max-width: 85%;
+        }
+        @media (min-width: 944px ) and (max-width: 1280px) {
+          max-width: 90%;
+        }
+        @media (min-width: 1056px) and (max-width: 1500px){
+          max-width: 91%;
+        }
+        @media (min-width: 1501px) and (max-width: 2000px){
+          max-width: 91%;
+        }
+        @media (min-width: 2001px){
+          max-width: 91%;
+        }
+      }
+    }
+    .dropdown-s-nm {
+      img {
+        @media (max-width: 338px) {
+          left: 6%;
+        }
+        @media (min-width: 339px ) and (max-width: 493px) {
+          left: 4%;
+        }
+        @media (min-width: 494px ) and (max-width: 575px) {
+          left: 9%;
+        }
+        @media (min-width: 576px ) and (max-width: 711px) {
+          left: 8%;
+        }
+        @media (min-width: 712px ) and (max-width: 943px) {
+          left: 6%;
+        }
+        @media (min-width: 944px ) and (max-width: 1055px) {
+          left: 5%;
+        }
+        @media (min-width: 1056px ) and (max-width: 1500px) {
+          left: 5%;
+        }
+        @media (min-width: 1501px ) and (max-width: 2000px) {
+          left: 3%;
+        }
+        @media (min-width: 2001px) {
+          left: 3%;
+        }
+      }
+      .form-control {
+        @media (max-width: 299px) {
+          max-width:83%;
+        }
+        @media (min-width: 300px ) and (max-width: 335px) {
+          max-width: 85%;
+        }
+        @media (min-width: 336px ) and (max-width: 345px) {
+          max-width: 86%;
+        }
+        @media (min-width: 346px ) and (max-width: 420px) {
+          max-width: 89%;
+        }
+        @media (min-width: 421px ) and (max-width: 453px) {
+          max-width: 90%;
+        }
+        @media (min-width: 454px ) and (max-width: 493px) {
+          max-width: 91%;
+        }
+        @media (min-width: 494px ) and (max-width: 515px) {
+          max-width: 81%;
+        }
+        @media (min-width: 516px ) and (max-width: 575px) {
+          max-width: 83%;
+        }
+        @media (min-width: 576px ) and (max-width: 711px) {
+          max-width: 80%;
+        }
+        @media (min-width: 712px ) and (max-width: 767px) {
+          max-width: 83%;
+        }
+        @media (min-width: 768px ) and (max-width: 943px) {
+          max-width: 85%;
+        }
+        @media (min-width: 944px ) and (max-width: 1280px) {
+          max-width: 90%;
+        }
+        @media (min-width: 1056px) and (max-width: 1500px){
+          max-width: 91%;
+        }
+        @media (min-width: 1501px) and (max-width: 2000px){
+          max-width: 93%;
+        }
+        @media (min-width: 2001px){
+          max-width: 94%;
+        }
+      }
+    }
+  }
+}
+
+.two_filters {
+  .dropdown-m {
+    @media (min-width: 768px) and (max-width: 991px){
+      max-width: 96%;
+      min-width: 96%;
+    }
+    @media (min-width: 992px){
+      max-width: 96%;
+      min-width: 96%;
+    }
+  }
+  .dropdown-nm {
+    @media (min-width: 768px) and (max-width: 991px){
+      max-width: 97%;
+      min-width: 97%;
+    }
+    @media (min-width: 992px){
+      max-width: 98%;
+      min-width: 98%;
+    }
+  }
+  .dropdown-s-nm {
+    @media (min-width: 712px) and (max-width: 991px){
+      max-width: 96%!important;
+      min-width: 96%!important;
+    }
+    @media (min-width: 992px) and (max-width: 1400px){
+      max-width: 97%!important;
+      min-width: 97%!important;
+    }
+    @media (min-width: 1401px) {
+      max-width: 98%!important;
+      min-width: 98%!important;
+    }
+  }
+}
+.last_child {
+  .dropdown-m {
+    @media (min-width: 768px) and (max-width: 991px){
+      max-width: 99%;
+      min-width: 99%;
+    }
+  }
+}
+.for_filters {
+  .dropdown-m {
+    @media (min-width: 768px) and (max-width: 991px){
+      max-width: 98%!important;
+      min-width: 98%!important;
+    }
+  }
+  .dropdown-nm {
+    @media (min-width: 712px) and (max-width: 943px){
+      max-width: 98%!important;
+      min-width: 98%!important;
+    }
+  }
+}
+.for_last_child {
+  .dropdown-m {
+    @media (min-width: 768px) and (max-width: 991px){
+      max-width: 98%!important;
+      min-width: 98%!important;
+    }
+    .form-control {
+      @media (max-width: 299px) {
+        max-width:84%;
+      }
+      @media (min-width: 300px ) and (max-width: 345px) {
+        max-width: 86%;
+      }
+      @media (min-width: 346px ) and (max-width: 420px) {
+        max-width: 88%;
+      }
+      @media (min-width: 421px ) and (max-width: 453px) {
+        max-width: 90%;
+      }
+      @media (min-width: 454px ) and (max-width: 493px) {
+        max-width: 91%;
+      }
+      @media (min-width: 494px ) and (max-width: 515px) {
+        max-width: 81%;
+      }
+      @media (min-width: 516px ) and (max-width: 575px) {
+        max-width: 82%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        max-width: 79%;
+      }
+      @media (min-width: 712px ) and (max-width: 767px) {
+        max-width: 80%;
+      }
+      @media (min-width: 768px ) and (max-width: 943px) {
+        max-width: 93%;
+      }
+      @media (min-width: 944px ) and (max-width: 991px) {
+        max-width: 93%;
+      }
+      @media (min-width: 992px) and (max-width: 1700px){
+        max-width: 78%;
+      }
+      @media (min-width: 1701px){
+        max-width: 79%;
+      }
+    }
+    img {
+      @media (max-width: 338px) {
+        left: 7%;
+      }
+      @media (min-width: 339px ) and (max-width: 493px) {
+        left: 4%;
+      }
+      @media (min-width: 494px ) and (max-width: 575px) {
+        left: 9%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        left: 8%;
+      }
+      @media (min-width: 712px ) and (max-width: 767px) {
+        left: 8%;
+      }
+      @media (min-width: 768px ) and (max-width: 991px) {
+        left: 3%;
+      }
+      @media (min-width: 992px ) and (max-width: 2000px) {
+        left: 10%;
+      }
+      @media (min-width: 2001px) {
+        left: 10%;
+      }
+    }
+  }
+  .dropdown-nm {
+    @media (min-width: 712px) and (max-width: 943px){
+      max-width: 98%!important;
+      min-width: 98%!important;
+    }
+  }
+  .dropdown-s-nm {
+    .form-control {
+      @media (max-width: 299px) {
+        max-width:84%;
+      }
+      @media (min-width: 300px ) and (max-width: 345px) {
+        max-width: 86%;
+      }
+      @media (min-width: 346px ) and (max-width: 420px) {
+        max-width: 88%;
+      }
+      @media (min-width: 421px ) and (max-width: 453px) {
+        max-width: 90%;
+      }
+      @media (min-width: 454px ) and (max-width: 493px) {
+        max-width: 91%;
+      }
+      @media (min-width: 494px ) and (max-width: 515px) {
+        max-width: 81%;
+      }
+      @media (min-width: 516px ) and (max-width: 575px) {
+        max-width: 82%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        max-width: 83%;
+      }
+      @media (min-width: 712px ) and (max-width: 767px) {
+        max-width: 93%;
+      }
+      @media (min-width: 768px ) and (max-width: 943px) {
+        max-width: 94%;
+      }
+      @media (min-width: 944px ) and (max-width: 1175px) {
+        max-width: 80%;
+      }
+      @media (min-width: 1176px ) and (max-width: 1280px) {
+        max-width: 82%;
+      }
+      @media (min-width: 1280px) and (max-width: 1407px){
+        max-width: 83%;
+      }
+      @media (min-width: 1408px) and (max-width: 1700px){
+        max-width: 85%;
+      }
+      @media (min-width: 1701px){
+        max-width: 87%;
+      }
+    }
+    img {
+      @media (max-width: 338px) {
+        left: 6%;
+      }
+      @media (min-width: 339px ) and (max-width: 493px) {
+        left: 4.5%;
+      }
+      @media (min-width: 494px ) and (max-width: 575px) {
+        left: 9%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        left: 7%;
+      }
+      @media (min-width: 712px ) and (max-width: 943px) {
+        left: 3%;
+      }
+      @media (min-width: 944px ) and (max-width: 1055px) {
+        left: 8%;
+      }
+      @media (min-width: 1056px ) and (max-width: 1175px) {
+        left: 9%;
+      }
+      @media (min-width: 1176px) and (max-width: 1407px){
+        left: 7%;
+      }
+      @media (min-width: 1408px) {
+        left: 6%;
+      }
+    }
+  }
+}
+
+
+
+.six_last_child {
+  .dropdown-m {
+    @media (min-width: 992px) {
+      max-width: 96%;
+      min-width: 96%;
+    }
+    .form-control {
+      @media (max-width: 299px) {
+        max-width:84%;
+      }
+      @media (min-width: 300px ) and (max-width: 345px) {
+        max-width: 85%;
+      }
+      @media (min-width: 346px ) and (max-width: 420px) {
+        max-width: 88%;
+      }
+      @media (min-width: 421px ) and (max-width: 453px) {
+        max-width: 90%;
+      }
+      @media (min-width: 454px ) and (max-width: 493px) {
+        max-width: 91%;
+      }
+      @media (min-width: 494px ) and (max-width: 515px) {
+        max-width: 81%;
+      }
+      @media (min-width: 516px ) and (max-width: 575px) {
+        max-width: 83%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        max-width: 81%;
+      }
+      @media (min-width: 712px ) and (max-width: 767px) {
+        max-width: 80%;
+      }
+      @media (min-width: 768px ) and (max-width: 943px) {
+        max-width: 78%;
+      }
+      @media (min-width: 944px ) and (max-width: 991px) {
+        max-width: 80%;
+      }
+      @media (min-width: 992px) and (max-width: 1700px){
+        max-width: 90%;
+      }
+      @media (min-width: 1701px){
+        max-width: 90%;
+      }
+    }
+    img {
+      @media (max-width: 338px) {
+        left: 7%;
+      }
+      @media (min-width: 339px ) and (max-width: 493px) {
+        left: 4%;
+      }
+      @media (min-width: 494px ) and (max-width: 575px) {
+        left: 9%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        left: 8%;
+      }
+      @media (min-width: 712px ) and (max-width: 767px) {
+        left: 8%;
+      }
+      @media (min-width: 768px ) and (max-width: 991px) {
+        left: 8%;
+      }
+      @media (min-width: 992px ) and (max-width: 2000px) {
+        left: 5%;
+      }
+      @media (min-width: 2001px) {
+        left: 5%;
+      }
+    }
+  }
+  .dropdown-s-nm {
+    @media (min-width: 712px) and (max-width: 943px){
+      max-width: 95%!important;
+      min-width: 95%!important;
+    }
+    @media (min-width: 944px) and (max-width: 1175px){
+      max-width: 97%!important;
+      min-width: 97%!important;
+    }
+    @media (min-width: 1176px) and (max-width: 1407px){
+      max-width: 99%!important;
+      min-width: 99%!important;
+    }
+    .form-control {
+      @media (max-width: 299px) {
+        max-width:84%;
+      }
+      @media (min-width: 300px ) and (max-width: 345px) {
+        max-width: 86%;
+      }
+      @media (min-width: 346px ) and (max-width: 420px) {
+        max-width: 88%;
+      }
+      @media (min-width: 421px ) and (max-width: 453px) {
+        max-width: 90%;
+      }
+      @media (min-width: 454px ) and (max-width: 493px) {
+        max-width: 91%;
+      }
+      @media (min-width: 494px ) and (max-width: 515px) {
+        max-width: 81%;
+      }
+      @media (min-width: 516px ) and (max-width: 575px) {
+        max-width: 82%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        max-width: 81%;
+      }
+      @media (min-width: 712px ) and (max-width: 767px) {
+        max-width: 76%;
+      }
+      @media (min-width: 768px ) and (max-width: 943px) {
+        max-width: 81%;
+      }
+      @media (min-width: 944px ) and (max-width: 1175px) {
+        max-width: 90%;
+      }
+      @media (min-width: 1176px ) and (max-width: 1280px) {
+        max-width: 96%;
+      }
+      @media (min-width: 1280px) and (max-width: 1407px){
+        max-width: 96.5%;
+      }
+      @media (min-width: 1408px) and (max-width: 1700px){
+        max-width: 79%;
+      }
+      @media (min-width: 1701px){
+        max-width: 83%;
+      }
+    }
+    img {
+      @media (max-width: 338px) {
+        left: 6%;
+      }
+      @media (min-width: 339px ) and (max-width: 493px) {
+        left: 4.5%;
+      }
+      @media (min-width: 494px ) and (max-width: 575px) {
+        left: 9%;
+      }
+      @media (min-width: 576px ) and (max-width: 711px) {
+        left: 9%;
+      }
+      @media (min-width: 712px ) and (max-width: 943px) {
+        left: 7%;
+      }
+      @media (min-width: 944px ) and (max-width: 1055px) {
+        left: 5%;
+      }
+      @media (min-width: 1056px ) and (max-width: 1175px) {
+        left: 4%;
+      }
+      @media (min-width: 1176px) and (max-width: 1407px){
+        left: 1.5%;
+      }
+      @media (min-width: 1408px) {
+        left: 8%;
+      }
+    }
+  }
+}
+.next_to_last_child {
+  .dropdown-m {
+    @media (min-width: 992px) {
+      max-width: 96%;
+      min-width: 96%;
+    }
+  }
+  .dropdown-nm {
+    @media (min-width: 944px) and (max-width: 1175px){
+      max-width: 97%!important;
+      min-width: 97%!important;
+    }
+  }
+}
+

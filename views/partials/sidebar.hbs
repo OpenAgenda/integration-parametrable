@@ -1,9 +1,10 @@
 <div class="sidebar-wrapper container-fluid">   
-  <div class="row justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0 px-sm-2{{/if}}">
+  <div class="row justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0 px-sm-2{{/if}}" id="filters">
+        
     {{#if @root.styles.filter.displayCalendar}}
     <div class="col p-0" id="calendar">
       <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+        <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 {{#if @root.styles.noMargin}}dropdown-nm{{else}}dropdown-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
           <img class="d-inline" src="/Calendrier.svg" alt="icône calendrier">
           <p class="text-left mb-0 d-inline ml-3">Date</p>
         </button>
@@ -20,7 +21,7 @@
       {{#each @root.styles.filter.additionalFilters}}
         <div class="col p-0" id="filter">
           <div class="dropdown">
-            <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+            <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 {{#if @root.styles.noMargin}}dropdown-nm{{else}}dropdown-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
               <img class="d-inline" {{#if this.img}} src="/icon-filter-add/{{this.img}}.svg" {{else}} src="/icon-filter-add/default.svg" {{/if}} alt="icône filtres additionnels">
               <p class="text-left mb-0 d-inline ml-3">{{this.title}}</p>
             </button>
@@ -37,7 +38,7 @@
     {{#if @root.styles.filter.displayCity}}
     <div class="col p-0" id="city">
       <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+        <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 {{#if @root.styles.noMargin}}dropdown-nm{{else}}dropdown-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
           <img class="d-inline" src="/City.svg" alt="icône localisation ville">
           <p class="text-left mb-0 d-inline ml-3">{{i18n 'city'}}</p>
         </button>
@@ -53,7 +54,7 @@
     {{#if @root.styles.filter.displayAttendanceMode}}
     <div class="col p-0" id="participation">
       <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+        <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 {{#if @root.styles.noMargin}}dropdown-nm{{else}}dropdown-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
           <img class="d-inline" src="/Participation.svg" alt="icône mode de participation">
           <p class="text-left mb-0 d-inline ml-3">Participation</p>
         </button>
@@ -69,7 +70,7 @@
     {{#if @root.styles.filter.displayKeywords}}
     <div class="col p-0" id="keywords">
       <div class="dropdown">
-        <button class="btn btn-secondary btn-lg dropdown-toggle dropdown-m text-left py-0 {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
+        <button class="btn btn-secondary btn-lg dropdown-toggle text-left py-0 {{#if @root.styles.noMargin}}dropdown-nm{{else}}dropdown-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-flip="false">
           <img class="d-inline" class="d-inline" src="/MotsCles.svg" alt="icône mots-clés">
           <p class="text-left mb-0 filtre-type d-inline ml-3">{{i18n 'keywords'}}</p>
         </button>
@@ -90,17 +91,20 @@
       </div>
     </div>
     {{/if}}
-    {{#if @root.styles.filter.displayOnlySearch}}
-    <div class="col-12 p-0" id="searchbaronly">
+  </div>
+</div>
+
+<div class="row mx-auto {{#if @root.styles.noMargin}}px-3{{else}}container px-3 px-sm-2{{/if}}">
+  {{#if @root.styles.filter.displayOnlySearch}}
+    <div class="col p-0 justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0 px-sm-2{{/if}}" id="searchbaronly">
       <div class="dropdown-toggle {{#if @root.styles.noMargin}}dropdown-nm{{else}}dropdown-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}">
       <img src="/Search.svg" alt="icône barre de recherche">
       {{filter name="search"}}
       </div>
     </div>
-    {{/if}}
-
-  </div>
+  {{/if}}
 </div>
+
 
 {{#if @root.styles.filter.displayYoungAudienceFilter}}
   <div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}}">
@@ -152,3 +156,52 @@
   </div>
 </div>
 {{/if}}
+
+<script>
+  var filters = document.getElementById("filters");
+  var lastChild = filters.lastElementChild;
+  var nextToLastChild = document.querySelector(".filters .col:nth-child(5)")
+  var search = document.getElementById("searchbar");
+  var filter = document.getElementById("filter");
+  var calendar = document.getElementById("calendar");
+  var city = document.getElementById("city");
+  var participation = document.getElementById("participation");
+  var keywords = document.getElementById("keywords");
+
+  if (filters.childElementCount === 2) {
+    if (search !== null) {
+    search.setAttribute("class", "col p-0 two_filters");
+    }
+    if (filter !== null) {
+    filter.setAttribute("class", "col p-0 two_filters") ;
+    }
+    if (calendar !== null) {
+    calendar.setAttribute("class", "col p-0 two_filters") ;
+    }
+    if (city !== null) {
+    city.setAttribute("class", "col p-0 two_filters") ;
+    }
+    if (participation !== null) {
+    participation.setAttribute("class", "col p-0 two_filters") ;
+    }
+    if (keywords !== null) {
+    keywords.setAttribute("class", "col p-0 two_filters") ;
+    }
+    if (search === null) {
+      lastChild.setAttribute("class", "col p-0 two_filters last_child");
+    }
+  }
+  if (filters.childElementCount === 4) {
+    if (search === null) {
+      lastChild.setAttribute("class", "col p-0 for_filters");
+    }
+    if (search !== null) {
+      search.setAttribute("class", "col p-0 for_last_child");
+    }
+  }
+  if (filters.childElementCount === 6) {
+    nextToLastChild.setAttribute("class", "col p-0 next_to_last_child");
+    lastChild.setAttribute("class", "col p-0 six_last_child");
+  }
+
+</script>
