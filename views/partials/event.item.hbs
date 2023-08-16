@@ -25,10 +25,11 @@
       <div class="wbg px-4 py-3 text-event-cover-col">
         <div class='event-cover-row'>
           <p class="date primary-color">{{dateRange}}</p>
-          <h5 class='event-title mb-md-3'>{{title}}</h5>
           {{#if @root.styles.list.displayDescription}}
             <h5 class='event-title-bold mb-md-3'>{{title}}</h5>
             <p class="event-description">{{description}}</p>
+          {{else}}
+            <h5 class='event-title mb-md-3'>{{title}}</h5>
           {{/if}}
           <div class="event-more">
             {{#if @root.styles.list.more}}
