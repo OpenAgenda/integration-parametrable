@@ -198,6 +198,7 @@ Portal({
   proxyHookBeforeGet: params => {
     return {
       ...params,
+      ...process.env.PORTAL_FORCE_PASSED_DISPLAY === '1' ? { relative: ['passed', 'upcoming', 'current'] } : {},
       order: 'lastTimingWithFeatured.asc',
     };
   }
