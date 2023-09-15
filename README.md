@@ -6,6 +6,10 @@
 
 PORTAL_VISIBILITY_PAST_EVENTS=1
 
+**Si les événements passés doivent toujours être affichés:**
+
+PORTAL_FORCE_PASSED_DISPLAY=1
+
 **Définir les événements à afficher par leur statut (par defaut : current, upcoming):**
 
 PORTAL_PREFILTER=
