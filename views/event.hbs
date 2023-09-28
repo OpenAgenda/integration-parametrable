@@ -48,12 +48,15 @@
         <div class="conditions mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Conditions.svg" alt="icône prix">{{event.conditions}}</div>
         {{/if}}
         <div class="range mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Calendrier.svg" alt="icône horaire">{{event.dateRange}}</div>
-        <div class="location mb-1 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{event.location.name}}, {{event.location.address}}</div>
-        {{#if event.registrationPhone}}
-        <div class="phone mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Phone.svg" alt="icône prix">{{event.registrationPhone}}</div>
+        <div class="location mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{event.location.name}}, {{event.location.address}}</div>
+        {{#if event.registration.phone.[0].value}}
+        <div class="phone mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Phone.svg" alt="icône phone"><a href="tel:{{event.registration.phone.[0].value}}" target="_blank">{{event.registration.phone.[0].value}}</a></div>
         {{/if}}
-        {{#if event.registrationEmail}}
-        <div class="email mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Email.svg" alt="icône prix">{{event.registrationEmail}}</div>
+        {{#if event.registration.email.[0].value}}
+        <div class="email mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Email.svg" alt="icône email"><a href="mailto:{{event.registration.email.[0].value}}" target="_blank">{{event.registration.email.[0].value}}</a></div>
+        {{/if}}
+        {{#if event.registration.link.[0].value}}
+        <div class="link mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Link.svg" alt="icône link"><a href="{{event.registration.link.[0].value}}" target="_blank">{{event.registration.link.[0].value}}</a></div>
         {{/if}}
       </div>
       

@@ -38,7 +38,9 @@
       margin-bottom: 0!important;
     }
   }
-
+  .event-details div:first-child {
+    margin-top: 1rem !important;
+  }
   .event-details {
     border-radius: 2px;
     margin: 2em auto;
@@ -48,6 +50,9 @@
     .details-icon {
       width: 17px;
       margin-right: 20px;
+    }
+    a {
+      color: black;
     }
   }
   .conditions .details-icon {
