@@ -49,6 +49,12 @@
 
 </div>
 
+{{#if @root.styles.footer.linkAbout}}
+  <div class="col-12 d-sm-flex justify-content-center p-0 about">               
+    {{>about}}
+  </div>
+{{/if}}
+
 <div data-oa-filters-root></div>
 
 {{>layout.bottom}}
