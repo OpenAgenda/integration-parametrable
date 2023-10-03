@@ -25,22 +25,3 @@
 .export ~ .contribute {
   margin-top: 0.5rem;
 }
-.about {
-  .btn {
-    color: #41acdd;
-    background-color: transparent;
-    font-size: 12px;
-    border: none;
-    .oa-logo {
-      width: 20px;
-    }
-    &:hover {
-      box-shadow: none;
-    }
-  }
-  .btn:not(:disabled):not(.disabled):active,
-  .btn-:not(:disabled):not(.disabled).active {
-  background-color: white;
-  color: #41acdd;
-  }
-}

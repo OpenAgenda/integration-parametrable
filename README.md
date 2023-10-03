@@ -161,9 +161,9 @@ STYLES_DISPLAY_RIGHT_EVENT_INFOS=1
 
 ## Le footer
 
-### Afficher un lien vers la page "à propos" d'OpenAgenda
+### Afficher un lien vers OpenAgenda
 
-STYLES_DISPLAY_LINK_ABOUT=1
+STYLES_DISPLAY_LINK_OA=1
 
 ### Afficher le footer
 

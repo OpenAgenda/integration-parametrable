@@ -130,7 +130,7 @@ Portal({
       linkTwitter: process.env.STYLES_LINK_TWITTER,
       linkInstagram: process.env.STYLES_LINK_INSTAGRAM,
       linkYoutube: process.env.STYLES_LINK_YOUTUBE,
-      linkAbout: process.env.STYLES_DISPLAY_LINK_ABOUT,
+      linkOa: process.env.STYLES_DISPLAY_LINK_OA,
     },
     map: {
       mapTilesAttribution: process.env.MAP_TILES_ATTRIBUTION,
