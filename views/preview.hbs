@@ -8,6 +8,11 @@
         </div>
       {{/each}}
     </div>
+    {{#if @root.styles.preview.displayListBtn}}
+      <div class="col text-center">
+        <button class="btn prev-btn"><a href="{{root}}" target="_blank">Voir tous les événements</a></button>
+      </div>
+    {{/if}}
   </main>
 </div>
 {{>layout.bottom}}

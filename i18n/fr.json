@@ -1,6 +1,7 @@
 {
   "attendanceMode": "Mode de participation",
-  "backToList": "Retour à la liste",
+  "backToList": "Retour à l'agenda",
+  "backToListPreview": "Voir tous les événements",
   "customFilters": "Filtres personnalisés",
   "filters": "Filtres",
   "searchInAgenda": "Rechercher dans cet agenda",

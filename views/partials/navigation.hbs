@@ -1,9 +1,15 @@
 <nav role="navigation">
   <ul class="nav d-flex sub-header-nav {{#if @root.styles.noMargin}}{{else}}mx-4{{/if}}">
     <li class="nav-item back-list mr-auto ">
+      {{#if navigation.available}}
       <a class="nav-link" href="{{navigation.list}}">
-        Retour à l'agenda
+        {{i18n 'backToList'}}
       </a>
+      {{else}}
+      <a class="nav-link" href="{{navigation.list}}">
+        {{i18n 'backToListPreview'}}
+      </a>
+      {{/if}}
     </li>
     {{#if navigation.total}}
     <li class="nav-item previous">

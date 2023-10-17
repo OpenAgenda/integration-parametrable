@@ -1,0 +1,15 @@
+.prev-btn {
+  a {
+    color: black;
+  }
+  border: 1px solid rgba(0, 0, 0, 0.1490196078);
+  background-color: white;
+  border-radius: 2px;
+  font-size: 12px;
+  @media (min-width: 575px) {
+    font-size: 14px;
+  }
+  &:hover {
+    border: 1px solid black;
+  }
+}

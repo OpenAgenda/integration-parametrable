@@ -1,6 +1,7 @@
 {
   "attendanceMode": "Attendance mode",
   "backToList": "Back to list",
+  "backToListPreview": "View all events",
   "customFilters": "Custom filters",
   "filters": "Filters",
   "searchInAgenda": "Search events",

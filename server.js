@@ -9,24 +9,25 @@ const extractDate = require('./lib/extractDate');
 
 Portal.utils.loadEnvironment(__dirname);
 
-function eventHook(inputEvent, { agenda } ) {
+function eventHook(inputEvent, { agenda }) {
 
-  const currentEvents = agenda.summary.publishedEvents.current
-  const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents
+  const currentEvents = agenda.summary.publishedEvents.current;
+  const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents;
   if (currentEvents === 0 && upcomingEvents === 0) {
     agenda.noEvents = "Tous les événements sont passés"
   }
 
   inputEvent.registration = !inputEvent.registration
-   ? inputEvent.registration
-   : inputEvent.registration.reduce((group, obj) => {
-    const type = obj.type
-    if(group[type] == null) group[type] = []
-    group[type].push(obj)
-    return group
-   }, {})
+    ? inputEvent.registration
+    : inputEvent.registration.reduce((group, obj) => {
+      const type = obj.type
+      if(group[type] == null) group[type] = []
+      group[type].push(obj)
+      return group
+    }, {})
   
-  
+  inputEvent.linkWithoutContext = inputEvent.link.split('?').shift();
+    
   const res = agenda.schema.fields.filter(f => !!f.options).reduce((event, field) => {
     if (event[field.field] === undefined) {
       return event;
@@ -42,7 +43,6 @@ function eventHook(inputEvent, { agenda } ) {
 
    
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY
-
   if (inputEvent[keyCategory]) {
     inputEvent.extactCategory = inputEvent[keyCategory][0].label
   }
@@ -135,6 +135,9 @@ Portal({
     map: {
       mapTilesAttribution: process.env.MAP_TILES_ATTRIBUTION,
       mapTilesUrl: process.env.MAP_TILES_URL,
+    },
+    preview: {
+      displayListBtn: process.env.STYLES_DISPLAY_LIST_BTN,
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
