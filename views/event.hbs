@@ -3,10 +3,10 @@
 <div {{#unless @root.styles.noShadows}}class="shadow"{{/unless}}>
   {{>navigation}}
 </div>
-<div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}} event-page">
-  <div class="row col-12 py-5 m-0 {{#if @root.styles.noMargin}}px-0{{else}}{{/if}}">
+<div class="{{#if @root.styles.noMargin}}{{else}}container p-0{{/if}} event-page">
+  <div class="row col-12 py-5 m-0 p-0{{#if @root.styles.noMargin}}px-0{{else}}{{/if}}">
     {{#if @root.styles.event.displayInfos}}
-    <div class="col-md-4 order-12 mr-0 px-3">
+    <div class="col-md-4 order-12 mr-0 pl-0 pl-md-3 pr-0">
       <div class="share-buttons">
         {{>event/share}}
       </div>
@@ -24,7 +24,7 @@
       {{>event/map}}
     </div>
 
-    <div class="col order-sm-1 px-3">
+    <div class="col order-sm-1 pr-0 pr-md-3 pl-0">
 
       <div>
         <h1>{{event.title}}</h1>

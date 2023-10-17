@@ -1,25 +1,41 @@
 
 .nav {
-    background-color: white;
-    .disabled.nav-link { 
-        .arrow path {
-            stroke: #00000026;
-        }
+  background-color: white;
+  .disabled.nav-link { 
+    .arrow path {
+        stroke: #00000026;
     }
-    .nav-item a {
-        color: black;
-        padding: 0;
-        margin: 0.8rem 15px;
-        
-        @include media-breakpoint-up(md) {
-            margin: 0.8rem 30px;
-        }
-    }
-    .arrow {
-        width: 10px;
-        @include media-breakpoint-up(md) {
-            width: 12px;
-        }
-    }
+  }
+  .nav-item a {
+    color: black;
+    padding: 0;
+    // margin: 0.8rem 15px;
     
+    // @include media-breakpoint-up(md) {
+    //     margin: 0.8rem 30px;
+    // }
+  }
+  .previous a,
+  .back-list a {
+    margin-right: 15px;
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+    @include media-breakpoint-up(md) {
+      margin-right:30px;
+    }
+  }
+  .next a {
+    margin-left: 15px;
+    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
+    @include media-breakpoint-up(md) {
+      margin-left:30px;
+    }
+  }
+  .arrow {
+    width: 10px;
+    @include media-breakpoint-up(md) {
+      width: 12px;
+    }
+  }
 }
