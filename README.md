@@ -232,3 +232,9 @@ MAP_TILES_ATTRIBUTION=
 **URL à définir :**
 
 MAP_TILES_URL=
+
+## Le Preview
+
+**Afficher le bouton "Voir tous les événements" :**
+
+STYLES_DISPLAY_LIST_BTN=1
