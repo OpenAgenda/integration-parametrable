@@ -238,3 +238,4 @@ MAP_TILES_URL=
 **Afficher le bouton "Voir tous les événements" :**
 
 STYLES_DISPLAY_LIST_BTN=1
+STYLES_LINK_LIST_BTN=https://www.lien-vers-la-vue-liste.com

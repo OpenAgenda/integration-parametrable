@@ -138,6 +138,7 @@ Portal({
     },
     preview: {
       displayListBtn: process.env.STYLES_DISPLAY_LIST_BTN,
+      linkListBtn: process.env.STYLES_LINK_LIST_BTN,
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
