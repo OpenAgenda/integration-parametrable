@@ -204,7 +204,7 @@ Portal({
     return {
       ...params,
       ...process.env.PORTAL_FORCE_PASSED_DISPLAY === '1' ? { relative: ['passed', 'upcoming', 'current'] } : {},
-      order: 'lastTimingWithFeatured.asc',
+      sort: process.env.OPTION_SORT ?? 'lastTimingWithFeatured.asc',
     };
   }
 }).then(({ app }) => app.launch(process.env.PORTAL_PORT));
