@@ -153,6 +153,12 @@ STYLES_DISPLAY_LIST_MORE=1
 
 STYLES_LIST_KEY_MORE=exposant
 
+**Changer le tri**
+
+OPTION_SORT=timingsWithFeatured.asc
+
+Les tris disponibles sont documentés ici: https://developers.openagenda.com/10-lecture/
+
 ## La vue détail
 
 **Afficher les infos se situant à droite (partage, calendrier, localisation) :**
