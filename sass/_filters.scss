@@ -8,3 +8,21 @@
 
   }
 }
+
+.dropdown-menu {
+  .checkbox {
+    padding: 0px 22px;
+    cursor: pointer;
+    &:hover {
+      background-color: $oa-gray-lightest;
+    }
+    width: auto;
+    .oa-choice-option-label {
+      font-size: 14px;
+      span {
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
