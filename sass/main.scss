@@ -24,6 +24,11 @@ $theme-colors: (
 
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
 body {
   min-height: 100%;
   font-family: "Poppins";
