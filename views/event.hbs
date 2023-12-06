@@ -59,7 +59,23 @@
         <div class="link mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Link.svg" alt="icône link"><a href="{{event.registration.link.[0].value}}" target="_blank">{{event.registration.link.[0].value}}</a></div>
         {{/if}}
       </div>
-      
+      {{#if @root.config.additionalFields.displayAdditionalFieldsEvent}}
+        <div class="additional-fields">
+          {{#each event.additionalFieldsFormatted}}
+              <div>
+                <p>
+                  <span class="label">{{@key}} :</span>
+                  {{#if this.filename}}
+                    <a href="https://cibul.s3.amazonaws.com/{{this.filename}}">{{this.originalName}}</a>
+                  {{else}}
+                  <span>{{this}}</span>
+                  {{/if}}
+                </p>
+              </div>
+          {{/each}}
+        </div>
+      {{/if}}
+
     </div>
   </div>
 </div>

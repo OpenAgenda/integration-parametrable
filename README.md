@@ -165,6 +165,10 @@ Les tris disponibles sont documentés ici: https://developers.openagenda.com/10-
 
 STYLES_DISPLAY_RIGHT_EVENT_INFOS=1
 
+**Afficher les champs additionnels :**
+
+CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT=1
+
 ## Le footer
 
 ### Afficher un lien vers OpenAgenda

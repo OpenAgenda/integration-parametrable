@@ -5,11 +5,37 @@
 // Set options as a parameter, environment variable, or rc file.
 
 const Portal = require('@openagenda/agenda-portal');
+const { getLocaleValue } = require('@openagenda/intl')
 const extractDate = require('./lib/extractDate');
 
 Portal.utils.loadEnvironment(__dirname);
 
-function eventHook(inputEvent, { agenda }) {
+function flattenLabel(label, lang) {
+  if (typeof label === 'string') return label;
+
+  return label[lang] ?? label[Object.keys(label).shift()];
+}
+
+function optionToLabel(options, id, lang) {
+  return flattenLabel(options.find(v => v.id === id).label, lang);
+}
+function eventHook(inputEvent, { agenda, lang }) {
+
+  inputEvent.additionalFieldsFormatted = agenda.schema.fields
+  .filter(field => field.schemaType !== 'event')
+  .filter(field => field.fieldType !== 'abstract')
+  .filter(field => inputEvent.hasOwnProperty(field.field) && inputEvent[field.field] !== undefined && inputEvent[field.field] !== null)
+  .reduce((accu, fieldSchema) => {
+    let value = inputEvent[fieldSchema.field];
+    const label = flattenLabel(fieldSchema.label, lang);
+
+    if (fieldSchema.options) {
+      value = [].concat(value).map(id => optionToLabel(fieldSchema.options, id, lang));
+    }
+
+    accu[label] = value;
+    return accu;
+  }, {});
 
   const currentEvents = agenda.summary.publishedEvents.current;
   const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents;
@@ -139,6 +165,11 @@ Portal({
     preview: {
       displayListBtn: process.env.STYLES_DISPLAY_LIST_BTN,
       linkListBtn: process.env.STYLES_LINK_LIST_BTN,
+    }
+  },
+  config: {
+    additionalFields: {
+      displayAdditionalFieldsEvent: process.env.CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT,
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,

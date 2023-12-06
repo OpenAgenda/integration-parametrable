@@ -38,10 +38,15 @@
       margin-bottom: 0!important;
     }
   }
-  .event-details div:first-child {
+  .additional-fields .label {
+    font-weight: 600;
+  }
+  .event-details div:first-child,
+  .additional-fields div:first-child {
     margin-top: 1rem !important;
   }
-  .event-details {
+  .event-details,
+  .additional-fields {
     word-break: break-word;
     border-radius: 2px;
     margin: 2em auto;
@@ -51,8 +56,8 @@
       width: 17px;
       margin-right: 20px;
     }
-    a {
-      color: black;
+    a:hover {
+      text-decoration: underline;
     }
   }
   .conditions .details-icon {
@@ -76,7 +81,8 @@
 
 
   @include media-breakpoint-up(sm) {
-    .event-details {
+    .event-details,
+    .additional-fields {
       width: 80%;
 
     }
