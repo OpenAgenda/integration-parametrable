@@ -126,6 +126,10 @@ STYLES_NO_EXPORT_BUTTON=1
 
 ## La vue liste
 
+**Définir le type d'affichage des items (mozaïque par défaut) :**
+
+STYLES_TYPE_LIST=line
+
 **Afficher la dscription courtes :**
 
 STYLES_DISPLAY_LIST_DESCRIPTION=1

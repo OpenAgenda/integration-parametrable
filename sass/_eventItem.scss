@@ -10,30 +10,35 @@
     background-size: cover;
     height: 170px;
   }
-  .featured {
+  .img-line,
+  .img-empty-line {
+    height: 220px
+  }
+  
+  .featured,
+  .category {
     height: 28px;
     padding: 0 15px;
     position: absolute;
     top: 0;
     right: 0; 
     display: table;
+    z-index: 1;
     p {
       text-align:center; 
       vertical-align: middle;
       display: table-cell;
     }
   }
+  .featured {
+    top: 0;
+  }
   .category {
-    height: 28px;
-    padding: 0 15px;
-    position: absolute;
     top: 142px;
-    right: 0; 
-    display: table;
-    p {
-      text-align:center; 
-      vertical-align: middle;
-      display: table-cell;
+  }
+  .category-line {
+    @media (min-width: 575px) {
+      top: 192px;
     }
   }
   .text-event-cover-col {

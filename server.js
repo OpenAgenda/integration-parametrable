@@ -19,7 +19,7 @@ function flattenLabel(label, lang) {
 function optionToLabel(options, id, lang) {
   return flattenLabel(options.find(v => v.id === id).label, lang);
 }
-function eventHook(inputEvent, { agenda, lang }) {
+function eventHook(inputEvent, { agenda, lang, styles }) {
 
   inputEvent.additionalFieldsFormatted = agenda.schema.fields
   .filter(field => field.schemaType !== 'event')
@@ -83,6 +83,10 @@ function eventHook(inputEvent, { agenda, lang }) {
     inputEvent.extactMore = inputEvent[keyMore]
   }
 
+  if (process.env.STYLES_TYPE_LIST === 'line') {
+    styles.listDisplay.lineType = true;
+  }
+
   return res;
 }
 
@@ -130,6 +134,9 @@ Portal({
     noButton : {
       contribute: process.env.STYLES_NO_CONTRIBUTE_BUTTON,
       export: process.env.STYLES_NO_EXPORT_BUTTON,
+    },
+    listDisplay: {
+      typeList: process.env.STYLES_TYPE_LIST,
     },
     list : {
       displayDescription: process.env.STYLES_DISPLAY_LIST_DESCRIPTION,

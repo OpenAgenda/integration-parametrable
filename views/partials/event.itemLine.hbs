@@ -1,0 +1,56 @@
+<div class="col-12 px-3 my-3 event-list-item {{#if @root.styles.noShadows}}ns-event-border{{else}}shadow{{/if}}">
+  <a
+    class="row event-item"
+    {{#if isPreview}}
+    data-event-slug="{{slug}}"
+    href="{{linkWithoutContext}}"
+    {{slug}}
+    {{else}}
+      href="{{link}}"
+    {{/if}}>
+    {{#if image}}
+      <div class="col-3 img-cover-event-col img-line" style='background-image:url(https://img.openagenda.com/u/700x0/cibul/{{image.filename}})'>
+      </div>
+    {{else}}
+      <div class="col-3 img-cover-event img-cover-event-empty img-empty-line">
+      </div>
+    {{/if}}
+    {{#if featured}}
+    <div class="featured">
+      <p class="featured-text">À la une</p>
+    </div>
+    {{/if}}
+    {{#if @root.styles.list.displayCategory}}
+    <div class="category category-line">
+      <p class="category-text">{{extactCategory}}</p>
+    </div>
+    {{/if}}
+      <div class="col-9 wbg px-4 py-3 text-event-cover-col">
+        <div class='event-cover-row'>
+          <p class="date primary-color">{{dateRange}}</p>
+          {{#if @root.styles.list.displayDescription}}
+            <h5 class='event-title-bold mb-md-3'>{{title}}</h5>
+            <p class="event-description">{{description}}</p>
+          {{else}}
+            <h5 class='event-title mb-md-3'>{{title}}</h5>
+          {{/if}}
+          <div class="event-more">
+            {{#if @root.styles.list.more}}
+              <p class="m-0">{{extactMore}}</p> 
+            {{else}}
+            {{/if}}
+          </div>
+          <div class="event-location">
+            {{#if @root.styles.list.defineLocation}}
+              <p class="m-0">Lieu : {{extactLocation}}</p> 
+            {{else}}
+            <p class="m-0">{{location.name}}, {{location.city}}</p> 
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    <script type="application/ld+json">
+    {{{JSONLD}}}
+    </script>
+  </a>
+</div>
