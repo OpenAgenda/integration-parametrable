@@ -43,7 +43,7 @@
       </div>
       {{/if}}
 
-      <div class="event-details {{#unless @root.styles.noShadows}}shadow{{/unless}}">
+      <div class="event-details{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
         {{#if event.conditions}}
         <div class="conditions mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Conditions.svg" alt="icône prix">{{event.conditions}}</div>
         {{/if}}
@@ -60,9 +60,9 @@
         {{/if}}
       </div>
       {{#if @root.config.additionalFields.displayAdditionalFieldsEvent}}
-        <div class="additional-fields">
+        <div class="additional-fields{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
           {{#each event.additionalFieldsFormatted}}
-              <div>
+              <div class="mb-3">
                 <p>
                   <span class="label">{{@key}} :</span>
                   {{#if this.filename}}

@@ -37,6 +37,10 @@
     p {
       margin-bottom: 0!important;
     }
+  } 
+ 
+  .additional-fields p {
+    margin: 0;
   }
   .additional-fields .label {
     font-weight: 600;
@@ -50,14 +54,30 @@
     word-break: break-word;
     border-radius: 2px;
     margin: 2em auto;
-    padding: 2em 3em;
+    padding: 1em 3em;
     color: black;
+    @media (min-width: 768px) {
+      padding: 2em 3em;
+    }
     .details-icon {
       width: 17px;
       margin-right: 20px;
     }
     a:hover {
       text-decoration: underline;
+    }
+  }
+  .event-details.p-noshadow {
+    padding: 1em 3em 0 3em;
+  }
+  .additional-fields.p-noshadow{
+    padding: 0 3em 1em 3em;
+  }
+  .event-details,
+  .additional-fields {
+    font-size: 14px;
+    @media (min-width: 768px) {
+      font-size: 16px;
     }
   }
   .conditions .details-icon {
