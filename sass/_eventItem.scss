@@ -5,14 +5,14 @@
     color: black;
   }
   .img-cover-event-col,
+  .img-cover-event {
+    height: 170px;
+  }
+  .img-cover-event-col,
+  .img-cover-event-col-line,
   .img-cover-event-empty {
     background-position: 50%;
     background-size: cover;
-    height: 170px;
-  }
-  .img-line,
-  .img-empty-line {
-    height: 220px
   }
   
   .featured,
@@ -46,16 +46,19 @@
     .date {
       font-size: 14px;
       font-weight: 600;
+      margin-bottom: 0.5em;
     }
     .event-description {
       font-size: 12px;
     }
     .event-title {
       font-size: 14px;
+      margin-bottom: 1rem;
     }
     .event-title-bold {
       font-size: 14px;
       font-weight: 600;
+      margin-bottom: 1rem;
     }
     .event-location,
     .event-more {
