@@ -2,7 +2,8 @@
   latitude="{{event.location.latitude}}"
   longitude="{{event.location.longitude}}"
   tiles="{{map.tiles.link}}"
-  attribution="{{map.tiles.attribution}}">
+  attribution="{{map.tiles.attribution}}"
+  path="{{map.path}}">
 </div>
 <style>
 
@@ -24,7 +25,7 @@
 
   L.marker( coords, {
     icon: L.icon( {
-      iconUrl: '//s3-eu-west-1.amazonaws.com/cibulstatic/markerIcon.png',
+      iconUrl: elem.attr( 'path' ),
       iconSize: [18, 25],
       iconAnchor: [9, 25]
     } )

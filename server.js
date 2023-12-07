@@ -165,10 +165,6 @@ Portal({
       linkYoutube: process.env.STYLES_LINK_YOUTUBE,
       linkOa: process.env.STYLES_DISPLAY_LINK_OA,
     },
-    map: {
-      mapTilesAttribution: process.env.MAP_TILES_ATTRIBUTION,
-      mapTilesUrl: process.env.MAP_TILES_URL,
-    },
     preview: {
       displayListBtn: process.env.STYLES_DISPLAY_LIST_BTN,
       linkListBtn: process.env.STYLES_LINK_LIST_BTN,
@@ -231,6 +227,7 @@ Portal({
       longitude: 1.441136
     }, */
     zoom: 20,
+    path: process.env.MAP_MARKER_ICON_PATH || '//s3-eu-west-1.amazonaws.com/cibulstatic/markerIcon.png',
   },
   tracking: {
     useAgendaGoogleAnalytics: process.env.PORTAL_USE_AGENDA_GA_ID ?? false,

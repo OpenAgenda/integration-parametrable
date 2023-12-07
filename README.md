@@ -247,6 +247,10 @@ MAP_TILES_ATTRIBUTION=
 
 MAP_TILES_URL=
 
+**Définir le chemin de l'icone (icone par défaut si cette variable n'est pas définie):**
+
+MAP_MARKER_ICON_PATH=../markerIcon.png
+
 ## Le Preview
 
 **Afficher le bouton "Voir tous les événements" :**
