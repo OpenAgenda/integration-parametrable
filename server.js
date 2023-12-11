@@ -19,6 +19,14 @@ function flattenLabel(label, lang) {
 function optionToLabel(options, id, lang) {
   return flattenLabel(options.find(v => v.id === id).label, lang);
 }
+
+function formatBoolean(value) {
+  if (typeof value === 'boolean') {
+    return value ? 'Oui' : 'Non';
+  }
+  return value;
+}
+
 function eventHook(inputEvent, { agenda, lang, styles }) {
 
   inputEvent.additionalFieldsFormatted = agenda.schema.fields
@@ -33,7 +41,7 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
       value = [].concat(value).map(id => optionToLabel(fieldSchema.options, id, lang));
     }
 
-    accu[label] = value;
+    accu[label] = formatBoolean(value);
     return accu;
   }, {});
 
