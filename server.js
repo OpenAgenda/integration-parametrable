@@ -109,6 +109,7 @@ const additionalFilters = titles?.map((title, index) => ({title, slug: slugs[ind
 Portal({
   dir: __dirname,
   styles: {
+    externeCssLink: process.env.EXTERNE_CSS_LINK,
     bgColor: process.env.STYLES_BG_COLOR || 'white',
     primaryColor: process.env.STYLES_PRIMARY_COLOR,
     secondaryColor: process.env.STYLES_SECONDARY_COLOR,

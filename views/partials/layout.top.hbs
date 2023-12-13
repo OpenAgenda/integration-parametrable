@@ -11,6 +11,7 @@
     {{#each stylesheets}}
     <link rel="stylesheet" href="{{href}}" />
     {{/each}}
+    <link rel="stylesheet" href="{{@root.styles.externeCssLink}}" />
     {{#each scripts.top}}
     <script src="{{src}}"></script>
     {{/each}}
