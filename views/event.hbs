@@ -61,18 +61,15 @@
       </div>
       {{#if @root.config.additionalFields.displayAdditionalFieldsEvent}}
         <div class="additional-fields{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
-          {{#each event.additionalFieldsFormatted}}
-              <div class="mb-3">
-                <p>
-                  <span class="label">{{@key}} :</span>
-                  {{#if this.filename}}
-                    <a href="https://cibul.s3.amazonaws.com/{{this.filename}}">{{this.originalName}}</a>
-                  {{else}}
-                  <span>{{this}}</span>
-                  {{/if}}
-                </p>
-              </div>
-          {{/each}}
+          {{#if @root.config.additionalFields.selectedAdditionalField}}
+            {{#each event.additionalFieldsSelected}}
+              {{> renderAdditionalFields this}}
+            {{/each}}
+          {{else}}
+            {{#each event.additionalFieldsFormatted}}
+              {{> renderAdditionalFields this}}
+            {{/each}}
+          {{/if}}
         </div>
       {{/if}}
 

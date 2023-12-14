@@ -1,0 +1,10 @@
+<div class="mb-3">
+  <p>
+    <span class="label">{{@key}} :</span>
+    {{#if this.filename}}
+      <a href="https://cibul.s3.amazonaws.com/{{this.filename}}">{{this.originalName}}</a>
+    {{else}}
+      <span>{{this}}</span>
+    {{/if}}
+  </p>
+</div>

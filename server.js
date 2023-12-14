@@ -28,22 +28,52 @@ function formatBoolean(value) {
 }
 
 function eventHook(inputEvent, { agenda, lang, styles }) {
-
-  inputEvent.additionalFieldsFormatted = agenda.schema.fields
-  .filter(field => field.schemaType !== 'event')
-  .filter(field => field.fieldType !== 'abstract')
-  .filter(field => inputEvent.hasOwnProperty(field.field) && inputEvent[field.field] !== undefined && inputEvent[field.field] !== null)
-  .reduce((accu, fieldSchema) => {
-    let value = inputEvent[fieldSchema.field];
-    const label = flattenLabel(fieldSchema.label, lang);
-
-    if (fieldSchema.options) {
-      value = [].concat(value).map(id => optionToLabel(fieldSchema.options, id, lang));
-    }
-
-    accu[label] = formatBoolean(value);
-    return accu;
-  }, {});
+  
+  const selectedAdditionalFields = (selectedFields, agenda, inputEvent, lang) => {
+    return selectedFields.reduce((acc, selectedFieldKey) => {
+      const fieldData = agenda.schema.fields.find(item => item.field === selectedFieldKey);
+      if (fieldData) {
+        const { label } = fieldData;
+        let selectedFieldValue = inputEvent[selectedFieldKey];
+        
+        if (fieldData.options) {
+          selectedFieldValue = [].concat(selectedFieldValue).map(id => optionToLabel(fieldData.options, id, lang));
+        }
+        acc[label] = formatBoolean(selectedFieldValue);
+      }
+      return acc;
+    }, {});
+  };
+  
+  const allAdditionalFields = (agenda, inputEvent, lang) => {
+    return agenda.schema.fields
+      .filter(field => field.schemaType !== 'event' && field.fieldType !== 'abstract' &&
+        inputEvent.hasOwnProperty(field.field) && inputEvent[field.field] != null)
+      .reduce((acc, fieldSchema) => {
+        let value = inputEvent[fieldSchema.field];
+        const label = flattenLabel(fieldSchema.label, lang);
+        
+        if (fieldSchema.options) {
+          value = [].concat(value).map(id => optionToLabel(fieldSchema.options, id, lang));
+        }
+        
+        acc[label] = formatBoolean(value);
+        return acc;
+      }, {});
+  };
+  
+  if (process.env.CONFIG_SELECTED_ADDITIONAL_FIELD) {
+    const selectedFields = process.env.CONFIG_SELECTED_ADDITIONAL_FIELD.split(',');
+    const formattedFields = selectedAdditionalFields(selectedFields, agenda, inputEvent, lang);
+    inputEvent.additionalFieldsSelected = formattedFields;
+  } else {
+    const filterFields = allAdditionalFields(agenda, inputEvent, lang);
+    inputEvent.additionalFieldsFormatted = filterFields;
+  }
+  
+  
+  
+  
 
   const currentEvents = agenda.summary.publishedEvents.current;
   const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents;
@@ -182,6 +212,7 @@ Portal({
   config: {
     additionalFields: {
       displayAdditionalFieldsEvent: process.env.CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT,
+      selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
