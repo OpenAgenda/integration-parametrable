@@ -6,17 +6,17 @@
 
 PORTAL_VISIBILITY_PAST_EVENTS=1
 
-**Si les événements passés doivent toujours être affichés:**
+**Si les événements passés doivent toujours être affichés :**
 
 PORTAL_FORCE_PASSED_DISPLAY=1
 
-**Définir les événements à afficher par leur statut (par defaut : current, upcoming):**
+**Définir les événements à afficher par leur statut (par defaut : current, upcoming ):**
 
 PORTAL_PREFILTER=
 
-## Les couleurs et les marges
+## Le style
 
-**Une couleur de background à définir (couleur par défaut : white):**
+**Une couleur de background à définir (couleur par défaut : white) :**
 
 STYLES_BG_COLOR=
 
@@ -47,6 +47,10 @@ STYLES_NO_MARGIN=1
 **À définir pour supprimer les ombres :**
 
 STYLES_NO_SHADOWS=1
+
+**Ajouter un lien css externe :**
+
+EXTERNE_CSS_LINK=
 
 ## La bannière
 
@@ -134,30 +138,30 @@ STYLES_TYPE_LIST=line
 
 STYLES_DISPLAY_LIST_DESCRIPTION=1
 
-**Definir le champ lieu (si ces variables ne sont pas définies le champ lieu est par défaut: location.name)**
+**Definir le champ lieu (si ces variables ne sont pas définies le champ lieu est par défaut: location.name) :**
 
 STYLES_DEFINE_LIST_LOCATION=1
 
 STYLES_LIST_KEY_LOCATION=lieu-de-lanimation
 
-**Définir le champ catégorie (si ces variables ne sont pas définies le champ catégorie n'apparaît pas)**
+**Définir le champ catégorie (si ces variables ne sont pas définies le champ catégorie n'apparaît pas) :**
 
 STYLES_DISPLAY_LIST_CATEGORY=1
 
 STYLES_LIST_KEY_CATEGORY=categorie-danimation
 
-**Une couleur de texte et de background à définir pour le champ catégorie:**
+**Une couleur de texte et de background à définir pour le champ catégorie :**
 
 STYLES_LIST_CATEGORY_BG_COLOR=
 
 STYLES_LIST_CATEGORY_COLOR=
 
-**Définir un champ à afficher en plus (si ces variables ne sont pas définies rien n'apparaît)**
+**Définir un champ à afficher en plus (si ces variables ne sont pas définies rien n'apparaît) :**
 STYLES_DISPLAY_LIST_MORE=1
 
 STYLES_LIST_KEY_MORE=exposant
 
-**Changer le tri**
+**Changer le tri :**
 
 OPTION_SORT=timingsWithFeatured.asc
 
@@ -169,9 +173,13 @@ Les tris disponibles sont documentés ici: https://developers.openagenda.com/10-
 
 STYLES_DISPLAY_RIGHT_EVENT_INFOS=1
 
-**Afficher les champs additionnels :**
+**Afficher les champs additionnels (les affiche tous par défaut) :**
 
 CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT=1
+
+**Définir les champs additionnels à afficher pour n'en afficher que quelques uns :**
+
+CONFIG_SELECTED_ADDITIONAL_FIELD=lieu-de-lanimation,categorie-danimation
 
 ## Le footer
 
