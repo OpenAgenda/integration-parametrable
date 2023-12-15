@@ -540,7 +540,7 @@ $passive-color: rgb(212, 212, 212);
   .rdrDayToday .rdrDayNumber span:after {
   content: $today-content;
   position: absolute;
-  bottom: 4px;
+  bottom: 8px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
@@ -577,7 +577,7 @@ $passive-color: rgb(212, 212, 212);
   top: 5px;
   left: 0;
   right: 0;
-  bottom: 5px;
+  bottom: 0px;
   }
   
   .rdrSelected {
@@ -667,7 +667,7 @@ $passive-color: rgb(212, 212, 212);
   top: 5px;
   left: 0px;
   right: 0px;
-  bottom: 5px;
+  bottom: 0px;
   pointer-events: none;
   z-index: 1;
   }
