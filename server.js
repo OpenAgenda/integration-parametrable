@@ -259,7 +259,7 @@ Portal({
     tiles: {
       link: process.env.MAP_TILES_URL || 'https://img.openagenda.com/u/osm/{s}/{z}/{x}/{y}',
       attribution:
-      process.env.MAP_TILES_ATTRIBUTION || '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      process.env.MAP_TILES_ATTRIBUTION || 'Map data © OpenStreetMap contributors'
     },
     auto: true,
     /* center: {

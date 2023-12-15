@@ -124,33 +124,19 @@
     </div>
   </div>
 {{/if}}
-
 {{#if @root.styles.filter.displayMap}}
 <div class="{{#if @root.styles.noMargin}}{{else}}container{{/if}}">
   <div class="row p-0 m-0 hidden-map map-canvas {{#if @root.styles.noMargin}}px-3 row-filter{{else}}container px-lg-1{{/if}}">
     <div class="col px-0">
-      <div class="my-4">
-        {{#if @root.styles.map.mapTilesUrl}}
           {{filter
             name='geo'
             mapClass='map-container'
             height='180px'
             searchMessage=(i18n 'searchWhenMoving')
             searchWithMap=true
-            tileAttribution=styles.map.mapTilesAttribution
-            tileUrl=styles.map.mapTilesUrl
+            tileAttribution=map.tiles.attribution
+            tileUrl=map.tiles.link
           }}
-          {{else}}
-            {{filter
-              name='geo'
-              mapClass='map-container'
-              height='180px'
-              searchMessage=(i18n 'searchWhenMoving')
-              searchWithMap=true
-              tileAttribution='Map data © OpenStreetMap contributors'
-              tileUrl='https://img.openagenda.com/u/osm/{s}/{z}/{x}/{y}'
-            }} 
-        {{/if}}
       </div>
     </div>
   </div>
