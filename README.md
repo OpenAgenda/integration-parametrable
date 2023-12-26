@@ -144,6 +144,10 @@ STYLES_DEFINE_LIST_LOCATION=1
 
 STYLES_LIST_KEY_LOCATION=lieu-de-lanimation
 
+**Definir le label du champ lieu (par défaut: "Lieu") :**
+
+STYLES_LIST_KEY_LOCATION_LABEL
+
 **Définir le champ catégorie (si ces variables ne sont pas définies le champ catégorie n'apparaît pas) :**
 
 STYLES_DISPLAY_LIST_CATEGORY=1
@@ -160,6 +164,10 @@ STYLES_LIST_CATEGORY_COLOR=
 STYLES_DISPLAY_LIST_MORE=1
 
 STYLES_LIST_KEY_MORE=exposant
+
+**Definir le label du champ à afficher en plus :**
+
+STYLES_LIST_KEY_MORE_LABEL=Exposant
 
 **Changer le tri :**
 

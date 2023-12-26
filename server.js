@@ -106,20 +106,32 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   Object.assign(res, extractDate(res))
 
    
-  const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY
-  if (inputEvent[keyCategory]) {
-    inputEvent.extactCategory = inputEvent[keyCategory][0].label
+  function extractValueFromKey(inputEvent, key, defaultValue = '') {
+    return inputEvent[key] || defaultValue;
   }
-
-  const keyLocation= process.env.STYLES_LIST_KEY_LOCATION
-  if (inputEvent[keyLocation]) {
-    inputEvent.extactLocation = inputEvent[keyLocation]
+  
+  function extractLabelFromArray(inputEvent, key) {
+    const value = inputEvent[key];
+    if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object' && value[0].hasOwnProperty('label')) {
+      return value[0].label;
+    }
+    return value;
   }
-
-  const keyMore= process.env.STYLES_LIST_KEY_MORE
-  if (inputEvent[keyMore]) {
-    inputEvent.extactMore = inputEvent[keyMore]
-  }
+  
+  const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
+  inputEvent.extractCategory = extractValueFromKey(inputEvent, keyCategory);
+  
+  const keyLocation = process.env.STYLES_LIST_KEY_LOCATION;
+  inputEvent.extractLocation = extractLabelFromArray(inputEvent, keyLocation);
+  
+  const keyLocationLabel = process.env.STYLES_LIST_KEY_LOCATION_LABEL;
+  inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
+  
+  const keyMore = process.env.STYLES_LIST_KEY_MORE;
+  inputEvent.extractMore = extractValueFromKey(inputEvent, keyMore);
+  
+  const keyMoreLabel = process.env.STYLES_LIST_KEY_MORE_LABEL;
+  inputEvent.extractMoreLabel = keyMoreLabel ? keyMoreLabel + ' : ' : '';  
 
   if (process.env.STYLES_TYPE_LIST === 'line') {
     styles.listDisplay.lineType = true;

@@ -22,7 +22,7 @@
     {{/if}}
     {{#if @root.styles.list.displayCategory}}
     <div class="category category-line">
-      <p class="category-text">{{extactCategory}}</p>
+      <p class="category-text">{{extractCategory}}</p>
     </div>
     {{/if}}
       <div class="col-9 wbg px-4 py-3 text-event-cover-col">
@@ -36,13 +36,13 @@
           {{/if}}
           <div class="event-more">
             {{#if @root.styles.list.more}}
-              <p class="m-0">{{extactMore}}</p> 
+              <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p> 
             {{else}}
             {{/if}}
           </div>
           <div class="event-location">
             {{#if @root.styles.list.defineLocation}}
-              <p class="m-0">Lieu : {{extactLocation}}</p> 
+              <p class="m-0">{{extractLocationLabel}} {{extractLocation}}</p> 
             {{else}}
             <p class="m-0">{{location.name}}, {{location.city}}</p> 
             {{/if}}
