@@ -163,6 +163,7 @@ Portal({
     noShadows: process.env.STYLES_NO_SHADOWS,
     featuredBGColor: process.env.STYLES_FEATURED_BG_COLOR,
     featuredColor: process.env.STYLES_FEATURED_COLOR,
+    periodFilterSizeBtn: process.env.STYLES_PERIOD_FILTER_SIZE_BTN,
 
     banner: {
       displayBanner: process.env.STYLES_DISPLAY_BANNER,

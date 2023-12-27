@@ -114,6 +114,18 @@ Choisir une icone parmi : default, access, accessibility, categories, themes, co
 
 STYLES_ADDITIONAL_IMG_FILTER=default,access
 
+### Afficher le filtre calendrier d'une periode donnée
+
+CONFIG_DISPLAY_PERIOD_FILTER=1
+
+**Définir la periode :**
+CONFIG_DATE_PERIOD_FILTER_BEGIN=2024-01-01
+CONFIG_DATE_PERIOD_FILTER_END=2024-01-05
+
+**Définir la taille du bouton**
+
+STYLES_PERIOD_FILTER_SIZE_BTN=33%
+
 ### Afficher le filtre map
 
 STYLES_DISPLAY_MAP_FILTER=1
