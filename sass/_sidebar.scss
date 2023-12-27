@@ -13,7 +13,7 @@
 
 .sidebar-wrapper {
   padding-top: 15px;
-  .dropdown-m {
+  .button-m {
     min-width: 100%;
     @media (min-width: 494px) {
       max-width: 92%;
@@ -210,7 +210,7 @@
     }
   }
   
-  .dropdown-m {
+  .button-m {
     @media (max-width: 991px) {
       min-width: 100%;
       max-width: 100%;
@@ -277,7 +277,7 @@
       }
     }
   }
-  .dropdown-nm {
+  .button-nm {
     img {
       @media (max-width: 338px) {
         left: 6%;
@@ -348,7 +348,7 @@
 
 //Style if only one search bar
 .sidebar-wrapper {
-  .dropdown-nm {
+  .button-nm {
     max-width: 100%;
     min-width: 100%;
     @media (min-width: 494px) {
@@ -453,7 +453,7 @@ li.show {
 
 .sidebar-wrapper {
   #searchbar.two_filters {
-    .dropdown-m {
+    .button-m {
       img {
         @media (max-width: 338px) {
           left: 6%;
@@ -610,7 +610,7 @@ li.show {
 }
 
 .two_filters {
-  .dropdown-m {
+  .button-m {
     @media (min-width: 768px) and (max-width: 991px){
       max-width: 96%;
       min-width: 96%;
@@ -620,7 +620,7 @@ li.show {
       min-width: 96%;
     }
   }
-  .dropdown-nm {
+  .button-nm {
     @media (min-width: 768px) and (max-width: 991px){
       max-width: 97%;
       min-width: 97%;
@@ -646,7 +646,7 @@ li.show {
   }
 }
 .last_child {
-  .dropdown-m {
+  .button-m {
     @media (min-width: 768px) and (max-width: 991px){
       max-width: 99%;
       min-width: 99%;
@@ -654,13 +654,13 @@ li.show {
   }
 }
 .for_filters {
-  .dropdown-m {
+  .button-m {
     @media (min-width: 768px) and (max-width: 991px){
       max-width: 98%!important;
       min-width: 98%!important;
     }
   }
-  .dropdown-nm {
+  .button-nm {
     @media (min-width: 712px) and (max-width: 943px){
       max-width: 98%!important;
       min-width: 98%!important;
@@ -668,7 +668,7 @@ li.show {
   }
 }
 .for_last_child {
-  .dropdown-m {
+  .button-m {
     @media (min-width: 768px) and (max-width: 991px){
       max-width: 98%!important;
       min-width: 98%!important;
@@ -741,7 +741,7 @@ li.show {
       }
     }
   }
-  .dropdown-nm {
+  .button-nm {
     @media (min-width: 712px) and (max-width: 943px){
       max-width: 98%!important;
       min-width: 98%!important;
@@ -830,7 +830,7 @@ li.show {
 
 
 .six_last_child {
-  .dropdown-m {
+  .button-m {
     @media (min-width: 992px) {
       max-width: 96%;
       min-width: 96%;
@@ -995,17 +995,87 @@ li.show {
   }
 }
 .next_to_last_child {
-  .dropdown-m {
+  .button-m {
     @media (min-width: 992px) {
       max-width: 96%;
       min-width: 96%;
     }
   }
-  .dropdown-nm {
+  .button-nm {
     @media (min-width: 944px) and (max-width: 1175px){
       max-width: 97%!important;
       min-width: 97%!important;
     }
   }
 }
+#dates + .map-el {
+  @media (max-width: 767px) {
+  margin-top: 10px;
+  }
+}
 
+.map-el + script +.container-list .total-filter {
+  margin-top: 15px!important;
+}
+
+#dates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 8px;
+  font-size: 14px;
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  .date-btn {
+    display: table;
+    margin: auto;
+  }
+
+  .button {
+    margin-bottom: 8px;
+    flex: 0 0 calc(50% - 10px); 
+    @include media-breakpoint-up(md) {
+      margin-bottom: 15px;
+      flex: 0 0 calc(20% - 20px); 
+    }
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 15px;
+      flex: 0 0 calc(20% - 10px); 
+    }
+  }
+
+  .date-filter {
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 10px;
+    height: 40px;
+
+    @include media-breakpoint-up(sm) {
+      height: 50px;
+    }
+    &:hover {
+      background-color: #fafafa;
+    }
+  }
+
+  .agenda-filter-date-week-day {
+    font-weight: 600;
+    color: #000;
+    margin-right: 3px;
+  }
+
+  .agenda-filter-date-month-day {
+    color: #000;
+    margin-right: 3px;
+    font-size: 20px;
+    @include media-breakpoint-up(sm) {
+      font-size: 22px;
+    }
+  }
+
+  .agenda-filter-date-month {
+    color: #495057;
+  }
+}

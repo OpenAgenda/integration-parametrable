@@ -1,5 +1,4 @@
 .total-filter {
-  padding: 0 15px;
   .total {
     div {
       margin-top: auto;
@@ -10,7 +9,7 @@
     margin-top: 3px;
   }
   .active-filters {
-    margin-top: 1rem !important;
+    padding-top: 15px;
     .badge {
       color: white;
       font-size: 12px;

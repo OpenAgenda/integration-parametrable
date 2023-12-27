@@ -7,6 +7,7 @@
 const Portal = require('@openagenda/agenda-portal');
 const { getLocaleValue } = require('@openagenda/intl')
 const extractDate = require('./lib/extractDate');
+const defineDateFilterValues = require('./lib/defineDateFilterValues');
 
 Portal.utils.loadEnvironment(__dirname);
 
@@ -119,7 +120,8 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   }
   
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
-  inputEvent.extractCategory = extractValueFromKey(inputEvent, keyCategory);
+
+  inputEvent.extractCategory = extractLabelFromArray(inputEvent, keyCategory);
   
   const keyLocation = process.env.STYLES_LIST_KEY_LOCATION;
   inputEvent.extractLocation = extractLabelFromArray(inputEvent, keyLocation);
@@ -225,7 +227,8 @@ Portal({
     additionalFields: {
       displayAdditionalFieldsEvent: process.env.CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT,
       selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD
-    }
+    },
+    displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
   devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,
@@ -286,6 +289,7 @@ Portal({
     // url of the link displayed in the cookie consent banner
     cookieBannerLink: 'https://support.google.com/analytics/answer/6004245?hl=fr'
   },
+  dateFilterValues: defineDateFilterValues({ begin: process.env.CONFIG_DATE_PERIOD_FILTER_BEGIN, end: process.env.CONFIG_DATE_PERIOD_FILTER_END, timeZone: 'Europe/Paris', langs: 'fr'}),
   eventHook,
   proxyHookBeforeGet: params => {
     return {
