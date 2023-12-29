@@ -1,5 +1,5 @@
 <div class="sidebar-wrapper container-fluid">   
-  <div class="row justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0 px-sm-2{{/if}}" id="filters">
+  <div class="row justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0 px-sm-2 px-lg-1{{/if}}" id="filters">
         
     {{#if @root.styles.filter.displayCalendar}}
     <div class="col p-0" id="calendar">
@@ -94,9 +94,9 @@
   </div>
 </div>
 
-<div class="row mx-auto {{#if @root.styles.noMargin}}px-3{{else}}container px-3 px-sm-2{{/if}}">
+<div class="row mx-auto {{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
   {{#if @root.styles.filter.displayOnlySearch}}
-    <div class="col p-0 justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0 px-sm-2{{/if}}" id="searchbaronly">
+    <div class="col p-0 justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container px-0{{/if}}" id="searchbaronly">
       <div class="dropdown-toggle {{#if @root.styles.noMargin}}button-nm{{else}}button-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}">
       <img src="/Search.svg" alt="icône barre de recherche">
       {{filter name="search"}}
@@ -126,9 +126,9 @@
 {{/if}}
 
 {{#if @root.config.displayPeriodFilter}}
-  <div class="row container-fluid mx-auto" id="dates">
+  <div class="row mx-auto {{#if @root.styles.noMargin}}px-3 row-filter{{else}}container{{/if}}" id="dates">
     {{#each dateFilterValues}}
-      <div class="button {{#if @root.styles.noMargin}}button-nm{{else}}button-m{{/if}} {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}">
+      <div class="button  {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}">
         {{#customFilter
             query=(object timings=(object gte=this.gte lte=this.lte))
             handlerSelector='.checkbox'
@@ -147,19 +147,18 @@
 {{/if}}
 
 {{#if @root.styles.filter.displayMap}}
-<div class="map-el{{#if @root.styles.noMargin}}{{else}}container{{/if}}">
-  <div class="row p-0 m-0 hidden-map map-canvas {{#if @root.styles.noMargin}}px-3 row-filter{{else}}container px-lg-1{{/if}}">
+<div class="map-el {{#if @root.styles.noMargin}}px-3 row-filter{{else}}container{{/if}}">
+  <div class="row p-0 m-0 hidden-map map-canvas">
     <div class="col px-0">
-          {{filter
-            name='geo'
-            mapClass='map-container'
-            height='180px'
-            searchMessage=(i18n 'searchWhenMoving')
-            searchWithMap=true
-            tileAttribution=map.tiles.attribution
-            tileUrl=map.tiles.link
-          }}
-      </div>
+      {{filter
+        name='geo'
+        mapClass='map-container'
+        height='180px'
+        searchMessage=(i18n 'searchWhenMoving')
+        searchWithMap=true
+        tileAttribution=map.tiles.attribution
+        tileUrl=map.tiles.link
+      }}
     </div>
   </div>
 </div>
