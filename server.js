@@ -18,7 +18,10 @@ function flattenLabel(label, lang) {
 }
 
 function optionToLabel(options, id, lang) {
-  return flattenLabel(options.find(v => v.id === id).label, lang);
+  const foundOption = options.find(v => v.id === id);
+  if (foundOption) {
+    return flattenLabel(foundOption.label, lang);
+  }
 }
 
 function formatBoolean(value) {
@@ -29,7 +32,6 @@ function formatBoolean(value) {
 }
 
 function eventHook(inputEvent, { agenda, lang, styles }) {
-  
   const selectedAdditionalFields = (selectedFields, agenda, inputEvent, lang) => {
     return selectedFields.reduce((acc, selectedFieldKey) => {
       const fieldData = agenda.schema.fields.find(item => item.field === selectedFieldKey);
@@ -72,10 +74,6 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     inputEvent.additionalFieldsFormatted = filterFields;
   }
   
-  
-  
-  
-
   const currentEvents = agenda.summary.publishedEvents.current;
   const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents;
   if (currentEvents === 0 && upcomingEvents === 0) {
