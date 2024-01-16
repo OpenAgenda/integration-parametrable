@@ -197,7 +197,8 @@ Portal({
       displayCategory: process.env.STYLES_DISPLAY_LIST_CATEGORY,
       categoryBGColor: process.env.STYLES_LIST_CATEGORY_BG_COLOR,
       categoryColor: process.env.STYLES_LIST_CATEGORY_COLOR,
-      more: process.env.STYLES_DISPLAY_LIST_MORE
+      more: process.env.STYLES_DISPLAY_LIST_MORE,
+      itemImageHeight: process.env.STYLES_LIST_ITEM_IMAGE_HEIGHT ?? '170px',
     },
     event: {
       displayInfos: process.env.STYLES_DISPLAY_RIGHT_EVENT_INFOS,
