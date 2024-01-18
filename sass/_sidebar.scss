@@ -13,6 +13,18 @@
 
 .sidebar-wrapper {
   padding-top: 15px;
+  .filters-padding {
+    padding: 0;
+    // px-0 px-sm-2 px-lg-1
+    @media (min-width: 576px){
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem!important;
+    }
+    @media (min-width: 992px) {
+      padding-left: 0.25rem !important;
+      padding-right: 0.25rem!important;
+    }
+  }
   .button-m {
     min-width: 100%;
     @media (min-width: 494px) {
@@ -97,7 +109,7 @@
         background: none;
         box-shadow: none;
         @include media-breakpoint-up(sm) {
-          height: 49px;
+          height: 50px;
         }
         &::-webkit-search-decoration,
         &::-webkit-search-cancel-button,
@@ -188,7 +200,7 @@
       background: none;
       box-shadow: none;
       @include media-breakpoint-up(sm) {
-        height: 49px;
+        height: 50px;
       }
       &::-webkit-search-decoration,
       &::-webkit-search-cancel-button,
@@ -211,12 +223,6 @@
   }
   
   .button-m {
-    @media (max-width: 991px) {
-      min-width: 100%;
-      max-width: 100%;
-    }
-    min-width: 98%;
-    max-width: 99.5%;
     img {
       @media (max-width: 338px) {
         left: 6%;
@@ -648,8 +654,8 @@ li.show {
 .last_child {
   .button-m {
     @media (min-width: 768px) and (max-width: 991px){
-      max-width: 99%;
-      min-width: 99%;
+      max-width: 96%;
+      min-width: 96%;
     }
   }
 }
@@ -1009,9 +1015,7 @@ li.show {
   }
 }
 #dates + .map-el {
-  @media (max-width: 767px) {
-  margin-top: 10px;
-  }
+  margin-top:7px;
 }
 
 .map-el + script +.container-list .total-filter {
@@ -1035,6 +1039,7 @@ li.show {
 
   .button {
     margin-bottom: 8px;
+    border-radius: 2px;
     @media (max-width: 494px) {
       flex: 0 0 calc(50% - 10px)!important; 
     }
@@ -1047,10 +1052,11 @@ li.show {
   .date-filter {
     background-color: #fff;
     border-radius: 2px;
-    padding: 10px;
+    padding: 5px;
     height: 40px;
 
     @include media-breakpoint-up(sm) {
+      padding: 10px;
       height: 50px;
     }
     &:hover {
