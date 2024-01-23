@@ -111,8 +111,17 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   
   function extractLabelFromArray(inputEvent, key) {
     const value = inputEvent[key];
-    if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object' && value[0].hasOwnProperty('label')) {
-      return value[0].label;
+    if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object') {
+      if (value[0].hasOwnProperty('label')) {
+        if (typeof value[0].label === 'object') {
+          const keys = Object.keys(value[0].label);
+          if (keys.length > 0) {
+            return value[0].label[keys[0]];
+          }
+        } else {
+          return value[0].label;
+        }
+      }
     }
     return value;
   }
@@ -120,7 +129,8 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
 
   inputEvent.extractCategory = extractLabelFromArray(inputEvent, keyCategory);
-  
+  console.log(extractLabelFromArray(inputEvent, keyCategory))
+
   const keyLocation = process.env.STYLES_LIST_KEY_LOCATION;
   inputEvent.extractLocation = extractLabelFromArray(inputEvent, keyLocation);
   
