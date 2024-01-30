@@ -190,6 +190,7 @@ Portal({
       displaySearch: process.env.STYLES_DISPLAY_SEARCH_FILTER,
       displayOnlySearch: process.env.STYLES_DISPLAY_ONLY_SEARCH_FILTER,
       displayMap: process.env.STYLES_DISPLAY_MAP_FILTER,
+      mapHeight: process.env.STYLES_MAP_FILTER_HEIGHT ?? '220px',
       displayYoungAudienceFilter: process.env.STYLES_DISPLAY_YOUNG_AUDIENCE_FILTER,
     },
     noButton : {

@@ -130,6 +130,9 @@ STYLES_PERIOD_FILTER_SIZE_BTN=33%
 
 STYLES_DISPLAY_MAP_FILTER=1
 
+Optionnellement, définir la hauteur de la carte:
+STYLES_MAP_FILTER_HEIGHT=456px
+
 ## Les boutons
 
 **À définir pour ne pas afficher le bouton de contribution :**
