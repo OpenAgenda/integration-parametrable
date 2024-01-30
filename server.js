@@ -158,7 +158,7 @@ const additionalFilters = titles?.map((title, index) => ({
   title,
   slug: slugs[index],
   img: imgs[index],
-  sort: sorts[index],
+  sort: sorts?.[index],
 }));
 
 Portal({
