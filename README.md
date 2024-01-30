@@ -114,6 +114,14 @@ Choisir une icone parmi : default, access, accessibility, categories, themes, co
 
 STYLES_ADDITIONAL_IMG_FILTER=default,access
 
+**Définir un tri pour les filtres additionnels :**
+
+Au delà du choix par défaut, un tri est disponible: 'alphabetical'.
+
+STYLES_ADDITIONAL_SORT_FILTER=,alphabetical,,alphabetical
+
+Préciser des valeurs (ou une non valeur) pour chaque champ additionnel.
+
 ### Afficher le filtre calendrier d'une periode donnée
 
 CONFIG_DISPLAY_PERIOD_FILTER=1

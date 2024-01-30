@@ -149,13 +149,17 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   return res;
 }
 
-const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',')
+const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',');
+const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',');
+const imgs = process.env.STYLES_ADDITIONAL_IMG_FILTER?.split(',');
+const sorts = process.env.STYLES_ADDITIONAL_SORT_FILTER?.split(',');
 
-const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',')
-
-const imgs = process.env.STYLES_ADDITIONAL_IMG_FILTER?.split(',')
-
-const additionalFilters = titles?.map((title, index) => ({title, slug: slugs[index], img:imgs[index]} ))
+const additionalFilters = titles?.map((title, index) => ({
+  title,
+  slug: slugs[index],
+  img: imgs[index],
+  sort: sorts[index],
+}));
 
 Portal({
   dir: __dirname,
