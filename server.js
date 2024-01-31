@@ -205,6 +205,7 @@ Portal({
       typeList: process.env.STYLES_TYPE_LIST,
     },
     list : {
+      boldTitleFont: process.env.STYLES_BOLD_TITLE_FONT,
       displayDescription: process.env.STYLES_DISPLAY_LIST_DESCRIPTION,
       defineLocation: process.env.STYLES_DEFINE_LIST_LOCATION,
       locationKey: process.env.STYLES_LIST_LOCATION,

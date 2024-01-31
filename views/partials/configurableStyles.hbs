@@ -91,4 +91,10 @@
   .map-canvas .map-container {
     height: {{styles.filter.mapHeight}}
   }
+
+  {{#if styles.list.boldTitleFont}}
+  .event-list-item .text-event-cover-col .event-title {
+    font-weight: bold;
+  }
+  {{/if}}
 </style>
