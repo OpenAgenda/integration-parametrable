@@ -1,5 +1,9 @@
 .total-filter {
   .total {
+    font-size: 14px;
+    @include media-breakpoint-up(sm) {
+      font-size: 16px;
+    }
     div {
       margin-top: auto;
       margin-bottom: auto;
@@ -9,7 +13,7 @@
     margin-top: 3px;
   }
   .active-filters {
-    padding-top: 15px;
+    padding-top: 16px;
     .badge {
       color: white;
       font-size: 12px;
@@ -30,6 +34,44 @@
       button {
         line-height: 1;
         padding: 0 0 0 0.5rem;
+      }
+    }
+  }
+  .btn-total {
+    font-size: 14px;
+    @include media-breakpoint-up(sm) {
+      font-size: 16px;
+    }
+    label {
+      margin-bottom: 0.5rem;
+    }
+    .checkbox {
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .checkbox.active {
+      .passed {
+        display: none;
+      }
+      .upcoming {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .checkbox.inactive {
+      .passed {
+        display: inline-block;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .upcoming {
+        display: none;
       }
     }
   }

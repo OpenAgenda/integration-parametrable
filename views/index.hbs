@@ -6,41 +6,53 @@
 
 <div class="container-list {{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
   <div class="total-filter px-0">
-    <div>
-      <div class="row">
-        
-        <div class="col-12 col-sm-8 order-sm-last pb-4 pb-sm-0 ">
-          {{#if @root.styles.noButton.export}}
-          {{else}} 
-            <div class="col-12 d-sm-flex justify-content-end p-0 export">
-              {{>export}}
-            </div>
-          {{/if}}
+    <div class="row">
+      <div class="col-12 col-md-5 order-md-last pb-3 pb-md-0 ">
+        {{#if @root.styles.noButton.export}}
+        {{else}} 
+          <div class="col-12 d-md-flex justify-content-end p-0 export">
+            {{>export}}
+          </div>
+        {{/if}}
 
-          {{#if @root.styles.noButton.contribute}}
-          {{else}} 
-            <div class="col-12 d-sm-flex justify-content-end p-0 contribute">               
-              {{>contribute}}
-            </div>
-          {{/if}}
-
-        </div>
-        <div class="col-12 col-sm-4 d-sm-flex total">
-          {{widget name='total' message='eventsTotal'}}
-        </div>
+        {{#if @root.styles.noButton.contribute}}
+        {{else}} 
+          <div class="col-12 d-md-flex justify-content-end p-0 contribute">               
+            {{>contribute}}
+          </div>
+        {{/if}}
       </div>
 
-      {{#if agenda.noEvents}}
-        <p>{{agenda.noEvents}}</p>
-      {{/if}}
-
-      {{widget name='activeFilters' className='active-filters'}}
-
-      <!--<button class="main-show-sidebar float-right btn btn-outline-primary btn-sm wbg" data-sidebar-toggle>
-        <i class="fa fa-plus"></i>
-        {{i18n 'filters'}}
-      </button>-->
+      <div class="col-12 col-md-7 total my-auto">
+        <div class="btn-total">
+          {{#customFilter
+          query=(object relative=(array 'upcoming' ))
+          activeClass='active'
+          inactiveClass='inactive'
+          className='checkbox'
+          }}
+          <label class="passed">
+            Afficher uniquement les événements à venir
+          </label>
+          <label class="upcoming">
+            Afficher tous les événements
+          </label>
+          {{/customFilter}}
+        </div> 
+        {{widget name='total' message='eventsTotal'}}
+      </div>
     </div>
+
+    {{#if agenda.noEvents}}
+      <p>{{agenda.noEvents}}</p>
+    {{/if}}
+
+    {{widget name='activeFilters' className='active-filters'}}
+
+    <!--<button class="main-show-sidebar float-right btn btn-outline-primary btn-sm wbg" data-sidebar-toggle>
+      <i class="fa fa-plus"></i>
+      {{i18n 'filters'}}
+    </button>-->
   </div>
 
   <div class="events">
