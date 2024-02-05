@@ -26,16 +26,16 @@
       <div class="col-12 col-md-7 total my-auto">
         <div class="btn-total">
           {{#customFilter
-          query=(object relative=(array 'upcoming' ))
+          query=(object relative=(array 'passed' ))
           activeClass='active'
           inactiveClass='inactive'
           className='checkbox'
           }}
           <label class="passed">
-            Afficher uniquement les événements à venir
+            Afficher les événements passés
           </label>
           <label class="upcoming">
-            Afficher tous les événements
+            Afficher uniquement les événements à venir
           </label>
           {{/customFilter}}
         </div> 
