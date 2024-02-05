@@ -149,13 +149,17 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   return res;
 }
 
-const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',')
+const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',');
+const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',');
+const imgs = process.env.STYLES_ADDITIONAL_IMG_FILTER?.split(',');
+const sorts = process.env.STYLES_ADDITIONAL_SORT_FILTER?.split(',');
 
-const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',')
-
-const imgs = process.env.STYLES_ADDITIONAL_IMG_FILTER?.split(',')
-
-const additionalFilters = titles?.map((title, index) => ({title, slug: slugs[index], img:imgs[index]} ))
+const additionalFilters = titles?.map((title, index) => ({
+  title,
+  slug: slugs[index],
+  img: imgs[index],
+  sort: sorts?.[index],
+}));
 
 Portal({
   dir: __dirname,
@@ -190,6 +194,7 @@ Portal({
       displaySearch: process.env.STYLES_DISPLAY_SEARCH_FILTER,
       displayOnlySearch: process.env.STYLES_DISPLAY_ONLY_SEARCH_FILTER,
       displayMap: process.env.STYLES_DISPLAY_MAP_FILTER,
+      mapHeight: process.env.STYLES_MAP_FILTER_HEIGHT ?? '220px',
       displayYoungAudienceFilter: process.env.STYLES_DISPLAY_YOUNG_AUDIENCE_FILTER,
     },
     noButton : {
@@ -200,6 +205,7 @@ Portal({
       typeList: process.env.STYLES_TYPE_LIST,
     },
     list : {
+      boldTitleFont: process.env.STYLES_BOLD_TITLE_FONT,
       displayDescription: process.env.STYLES_DISPLAY_LIST_DESCRIPTION,
       defineLocation: process.env.STYLES_DEFINE_LIST_LOCATION,
       locationKey: process.env.STYLES_LIST_LOCATION,

@@ -21,7 +21,9 @@
       </div>
       {{>event/registration}}
       {{>event/timings}}
+      {{#if event.location}}
       {{>event/map}}
+      {{/if}}
     </div>
 
     <div class="col order-sm-1 pr-0 pr-md-3 pl-0">

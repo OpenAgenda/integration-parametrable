@@ -114,6 +114,14 @@ Choisir une icone parmi : default, access, accessibility, categories, themes, co
 
 STYLES_ADDITIONAL_IMG_FILTER=default,access
 
+**Définir un tri pour les filtres additionnels :**
+
+Au delà du choix par défaut, un tri est disponible: 'alphabetical'.
+
+STYLES_ADDITIONAL_SORT_FILTER=,alphabetical,,alphabetical
+
+Préciser des valeurs (ou une non valeur) pour chaque champ additionnel.
+
 ### Afficher le filtre calendrier d'une periode donnée
 
 CONFIG_DISPLAY_PERIOD_FILTER=1
@@ -129,6 +137,9 @@ STYLES_PERIOD_FILTER_SIZE_BTN=33%
 ### Afficher le filtre map
 
 STYLES_DISPLAY_MAP_FILTER=1
+
+Optionnellement, définir la hauteur de la carte:
+STYLES_MAP_FILTER_HEIGHT=456px
 
 ## Les boutons
 
@@ -149,6 +160,10 @@ STYLES_TYPE_LIST=line
 **Afficher la dscription courtes :**
 
 STYLES_DISPLAY_LIST_DESCRIPTION=1
+
+**Mettre le titre en gras :**
+
+STYLES_BOLD_TITLE_FONT=1
 
 **Definir le champ lieu (si ces variables ne sont pas définies le champ lieu est par défaut: location.name) :**
 

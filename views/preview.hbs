@@ -1,7 +1,7 @@
 {{>layout.top}}
 <div class="{{#if @root.styles.noMargin}}px-3 py-1{{else}}container{{/if}}">
   <main role="main">
-    <div class="row d-flex mt-2 mt-md-3">
+    <div class="row d-flex py-3">
       {{#each events}}
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 featured-{{featured}} list-unstyled js_progressive_load_disabled d-flex" >
           {{>event.item this isPreview="1"}}
