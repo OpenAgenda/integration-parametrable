@@ -130,7 +130,7 @@
     {{#each dateFilterValues}}
       <div class="button  {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}">
         {{#customFilter
-            query=(object timings=(object gte=this.gte lte=this.lte))
+            query=(object timings=(object gte=this.lte lte=this.gte))
             handlerSelector='.checkbox'
             activeClass='active'
             inactiveClass='inactive'
