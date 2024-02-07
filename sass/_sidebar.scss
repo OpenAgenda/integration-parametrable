@@ -67,7 +67,12 @@
         width: auto;
       }
     }
-    
+    .form-control {
+      font-size: 14px;
+      @include media-breakpoint-up(sm) {
+        font-size: 16px;
+      }
+    } 
   }
   
   #filter,
@@ -1037,16 +1042,18 @@ li.show {
     margin: auto;
   }
 
-  .button {
+  button {
     margin-bottom: 8px;
     border-radius: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
     @media (max-width: 494px) {
       flex: 0 0 calc(50% - 10px)!important; 
     }
-    // @include media-breakpoint-down(lg) {
-    //   margin-bottom: 15px;
-    //   flex: 0 0 calc(20% - 20px)!important; 
-    // }
   }
 
   .date-filter {
@@ -1054,7 +1061,7 @@ li.show {
     border-radius: 2px;
     padding: 5px;
     height: 40px;
-
+    cursor: pointer;
     @include media-breakpoint-up(sm) {
       padding: 10px;
       height: 50px;
@@ -1065,7 +1072,6 @@ li.show {
   }
 
   .agenda-filter-date-week-day {
-    font-weight: 600;
     color: #000;
     margin-right: 3px;
   }
@@ -1080,7 +1086,7 @@ li.show {
   }
 
   .agenda-filter-date-month {
-    color: #495057;
+    color: #000;
   }
 }
 // #dates,

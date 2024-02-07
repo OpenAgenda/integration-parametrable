@@ -128,7 +128,7 @@
 {{#if @root.config.displayPeriodFilter}}
   <div class="row mx-auto {{#if @root.styles.noMargin}}px-3 row-filter{{else}}container{{/if}}" id="dates">
     {{#each dateFilterValues}}
-      <div class="button  {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}">
+      <button class="button  {{#if @root.styles.noShadows}}ns-border{{else}}shadow{{/if}}">
         {{#customFilter
             query=(object timings=(object gte=this.lte lte=this.gte))
             handlerSelector='.checkbox'
@@ -141,7 +141,7 @@
               <span class="agenda-filter-date-week-day">{{this.labels.day}}</span> <span class="agenda-filter-date-month-day">{{this.labels.dayNumber}}</span> <span class="agenda-filter-date-month">{{this.labels.dayMonth}}</span>
             </label>
           {{/customFilter}}
-      </div>
+      </button>
     {{/each}}
   </div>
 {{/if}}
