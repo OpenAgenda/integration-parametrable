@@ -28,5 +28,8 @@
   "trackConsent.informationText": "Cet agenda utilise des cookies du service de suivi d'audience Google Analytics. Ils aident les administrateur de l'agenda, par la collecte et la communication d'informations de navigation, à comprendre comment les visiteurs interagissent avec les sites web. Les acceptez-vous?",
   "trackConsent.moreInfoLink": "Cliquez ici pour en savoir plus",
   "trackConsent.decline": "Refuser",
-  "trackConsent.accept": "Accepter"
+  "trackConsent.accept": "Accepter",
+
+  "showPastEvents": "Afficher les événements passés",
+  "showUpcomingEvents": "Afficher uniquement les événements à venir"
 }

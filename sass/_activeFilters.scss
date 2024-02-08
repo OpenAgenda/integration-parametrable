@@ -58,7 +58,7 @@
       .upcoming {
         cursor: pointer;
         &:hover {
-          text-decoration: underline;
+          filter: brightness(70%);
         }
       }
     }
@@ -67,7 +67,7 @@
         display: inline-block;
         cursor: pointer;
         &:hover {
-          text-decoration: underline;
+          filter: brightness(70%);
         }
       }
       .upcoming {
