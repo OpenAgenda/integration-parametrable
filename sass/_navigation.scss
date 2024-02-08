@@ -14,6 +14,9 @@
     //     margin: 0.8rem 30px;
     // }
   }
+  .nav-item:hover a {
+    filter: brightness(70%);
+  }
   .previous a,
   .back-list a {
     margin-right: 15px;
