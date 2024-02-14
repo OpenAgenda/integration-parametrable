@@ -9,10 +9,22 @@
       href="{{link}}"
     {{/if}}>
     {{#if image}}
-      <div class="text-center img-cover-event-col" style='background-image:url(https://img.openagenda.com/u/700x0/cibul/{{image.filename}})'>
+      <div class="text-center img-container">
+        <img 
+          class="img-fluid img-cover-event-col"
+          src="https://img.openagenda.com/u/700x0/cibul/{{image.filename}}"
+          sizes="(min-width: 768px) 475px,
+                (min-width: 576px) 350px,
+                (max-width: 575px) calc(100vw - 30px)"
+          srcset="https://img.openagenda.com/u/350x0/cibul/{{image.filename}} 350w,
+                  https://img.openagenda.com/u/475x0/cibul/{{image.filename}} 475w,
+                  https://img.openagenda.com/u/545x0/cibul/{{image.filename}} 545w"
+          alt="{{event.description}}"
+          height="auto"
+        />
       </div>
     {{else}}
-      <div class="text-center img-cover-event img-cover-event-empty">
+      <div class="text-center img-cover-event-empty">
       </div>
     {{/if}}
     {{#if featured}}
@@ -25,7 +37,7 @@
       <p class="category-text">{{extractCategory}}</p>
     </div>
     {{/if}}
-      <div class="wbg px-4 py-3 text-event-cover-col">
+      <div class="wbg px-4 py-3 text-event-cover-col top-border">
         <div class='event-cover-row'>
           <p class="date primary-color">{{dateRange}}</p>
           {{#if @root.styles.list.displayDescription}}

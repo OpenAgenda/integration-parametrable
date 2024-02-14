@@ -9,10 +9,24 @@
       href="{{link}}"
     {{/if}}>
     {{#if image}}
-      <div class="col-3 img-cover-event-col-line" style='background-image:url(https://img.openagenda.com/u/700x0/cibul/{{image.filename}})'>
+      <div class="col-3 p-0 img-container">
+        <img 
+          class="img-fluid img-cover-event-col-line"
+          src="https://img.openagenda.com/u/700x0/cibul/{{image.filename}}"
+          sizes="(min-width: 974px) 363px,
+                (min-width: 752px) 235px,
+                (min-width: 493px) 179px,
+                (max-width: 493px) 115px"
+          srcset="https://img.openagenda.com/u/115x0/cibul/{{image.filename}} 115w,
+                  https://img.openagenda.com/u/179x0/cibul/{{image.filename}} 179w,
+                  https://img.openagenda.com/u/235x0/cibul/{{image.filename}} 235w,
+                  https://img.openagenda.com/u/363x0/cibul/{{image.filename}} 363w"
+          alt="{{event.description}}"
+          height="auto"
+        />
       </div>
     {{else}}
-      <div class="col-3 img-cover-event-line img-cover-event-empty">
+      <div class="col-3 img-cover-event-line-empty">
       </div>
     {{/if}}
     {{#if featured}}
