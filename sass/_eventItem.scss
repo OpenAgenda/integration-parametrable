@@ -4,11 +4,19 @@
   a {
     color: black;
   }
-  .img-cover-event-col,
-  .img-cover-event-col-line {
+
+  .img-cover-event-col {
     object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+
+  .line {
+    .img-container {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
   }
   
   .featured,
