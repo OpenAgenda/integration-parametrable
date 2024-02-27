@@ -82,6 +82,11 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     agenda.noEvents = "Tous les événements sont passés"
   }
 
+  if (inputEvent.age.min === null && inputEvent.age.max === null) {
+    console.log(inputEvent.title)
+    inputEvent.age = false;
+  }
+
   inputEvent.registration = !inputEvent.registration
     ? inputEvent.registration
     : inputEvent.registration.reduce((group, obj) => {
