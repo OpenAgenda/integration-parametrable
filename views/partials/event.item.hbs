@@ -8,7 +8,7 @@
     {{else}}
       href="{{link}}"
     {{/if}}>
-    {{#if image}}
+    {{#if image.filename}}
       <div class="text-center img-container">
         <img 
           class="img-fluid img-cover-event-col"
@@ -24,8 +24,19 @@
         />
       </div>
     {{else}}
-      <div class="text-center img-cover-event-empty">
+      {{#if defaultImage}}
+        <div class="text-center img-container">
+        <img 
+          class="img-fluid img-cover-event-col"
+          src="../{{defaultImage}}"
+          alt="{{event.description}}"
+          height="auto"
+        />
       </div>
+      {{else}}
+        <div class="text-center img-cover-event-empty">
+        </div>
+      {{/if}}
     {{/if}}
     {{#if featured}}
     <div class="featured">

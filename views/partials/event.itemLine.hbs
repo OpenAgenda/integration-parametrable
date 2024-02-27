@@ -8,7 +8,7 @@
     {{else}}
       href="{{link}}"
     {{/if}}>
-    {{#if image}}
+    {{#if fullImage}}
       <div class="col-3 p-0 img-container">
         <img 
           src="https://img.openagenda.com/u/700x0/cibul/{{fullImage}}"
@@ -25,8 +25,19 @@
         />
       </div>
     {{else}}
-      <div class="col-3 img-cover-event-line-empty">
+      {{#if defaultImage}}
+        <div class="col-3 p-0 img-container">
+        <img 
+          class="img-fluid"
+          src="../{{defaultImage}}"
+          alt="{{event.description}}"
+          height="auto"
+        />
       </div>
+      {{else}}
+        <div class="col-3 img-cover-event-line-empty">
+        </div>
+      {{/if}}
     {{/if}}
     {{#if featured}}
     <div class="featured">

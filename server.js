@@ -83,9 +83,14 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   }
 
   if (inputEvent.age.min === null && inputEvent.age.max === null) {
-    console.log(inputEvent.title)
     inputEvent.age = false;
   }
+  
+  if (process.env.CONFIG_DEFAULT_IMAGE) {
+    inputEvent.defaultImage = process.env.CONFIG_DEFAULT_IMAGE
+  }
+
+  console.log()
 
   inputEvent.registration = !inputEvent.registration
     ? inputEvent.registration
@@ -250,7 +255,8 @@ Portal({
       displayAdditionalFieldsEvent: process.env.CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT,
       selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD
     },
-    displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER
+    displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER,
+    defaultImage: process.env.CONFIG_DEFAULT_IMAGE
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
   devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,
