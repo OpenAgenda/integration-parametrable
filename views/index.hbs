@@ -24,6 +24,7 @@
       </div>
 
       <div class="col-12 col-md-7 total my-auto">
+        {{widget name='total' message='eventsTotal'}}
         <div class="btn-total">
           {{#customFilter
           query=(object relative=(array 'passed' ))
@@ -39,7 +40,6 @@
           </label>
           {{/customFilter}}
         </div> 
-        {{widget name='total' message='eventsTotal'}}
       </div>
     </div>
 
