@@ -120,7 +120,13 @@ Au delà du choix par défaut, un tri est disponible: 'alphabetical'.
 
 STYLES_ADDITIONAL_SORT_FILTER=,alphabetical,,alphabetical
 
-Préciser des valeurs (ou une non valeur) pour chaque champ additionnel.
+Lorsque cette variable est définie, définir le même nombre d'éléments qu'il y en a dans STYLES_ADDITIONAL_SLUG_FILTER
+
+**Déterminer le nombre de valeurs à charger dans les options présentées dans le filtre:**
+
+STYLES_ADDITIONAL_SIZE_FILTER=,,120
+
+Lorsque cette variable est définie, définir le même nombre d'éléments qu'il y en a dans STYLES_ADDITIONAL_SLUG_FILTER
 
 ### Afficher le filtre calendrier d'une periode donnée
 

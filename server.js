@@ -90,8 +90,6 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     inputEvent.defaultImage = process.env.CONFIG_DEFAULT_IMAGE
   }
 
-  console.log()
-
   inputEvent.registration = !inputEvent.registration
     ? inputEvent.registration
     : inputEvent.registration.reduce((group, obj) => {
@@ -165,12 +163,15 @@ const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',');
 const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',');
 const imgs = process.env.STYLES_ADDITIONAL_IMG_FILTER?.split(',');
 const sorts = process.env.STYLES_ADDITIONAL_SORT_FILTER?.split(',');
+const sizes = process.env.STYLES_ADDITIONAL_SIZE_FILTER?.split(',');
 
 const additionalFilters = titles?.map((title, index) => ({
   title,
   slug: slugs[index],
   img: imgs[index],
   sort: sorts?.[index],
+  size: (sizes?.[index] ?? '')?.length ? parseInt(sizes[index], 10) : undefined,
+  aggType: { department: 'departments', city: 'cities', region: 'regions' }[slugs[index]] ?? 'additionalFields',
 }));
 
 Portal({

@@ -27,7 +27,15 @@
             </button>
             <form>
               <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    {{filter type='choice' name=this.slug sort=this.sort inputType='checkbox' pageSize=20}}
+                    {{filter
+                      type='choice'
+                      aggregation=(object size=this.size type=this.aggType field=this.slug missing='null')
+                      name=this.slug
+                      sort=this.sort
+                      inputType='checkbox'
+                      pageSize=20
+                      searchMinSize=1000
+                    }}
               </li>
             </form>
           </div>
