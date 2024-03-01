@@ -169,7 +169,12 @@ const additionalFilters = titles?.map((title, index) => ({
   img: imgs[index],
   sort: sorts?.[index],
   size: (sizes?.[index] ?? '')?.length ? parseInt(sizes[index], 10) : undefined,
-  aggType: { department: 'departments', city: 'cities', region: 'regions' }[slugs[index]] ?? 'additionalFields',
+  aggType: {
+    department: 'departments',
+    city: 'cities',
+    region: 'regions',
+    locationUid: 'locations',
+  }[slugs[index]] ?? 'additionalFields',
 }));
 
 Portal({
