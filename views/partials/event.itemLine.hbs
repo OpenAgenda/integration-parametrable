@@ -8,18 +8,25 @@
     {{else}}
       href="{{link}}"
     {{/if}}>
-    {{#if fullImage}}
+    {{#if image.filename}}
       <div class="col-3 p-0 img-container">
         <img 
-          src="https://img.openagenda.com/u/700x0/cibul/{{fullImage}}"
-          sizes="(min-width: 974px) 363px,
-                (min-width: 752px) 235px,
-                (min-width: 493px) 179px,
-                (max-width: 493px) 115px"
-          srcset="https://img.openagenda.com/u/115x0/cibul/{{fullImage}} 115w,
-                  https://img.openagenda.com/u/179x0/cibul/{{fullImage}} 179w,
-                  https://img.openagenda.com/u/235x0/cibul/{{fullImage}} 235w,
-                  https://img.openagenda.com/u/0x170/cibul/{{fullImage}} 363w"
+          class="img-fluid"
+          src="https://img.openagenda.com/u/700x0/cibul/{{image.filename}}"
+          sizes="(max-width: 492px) 114px,
+          (max-width: 751px) 179px,
+          (max-width: 973px) 235px,
+          363px"
+          srcset="https://img.openagenda.com/u/114x0/cibul/{{image.filename}} 114w,
+            https://img.openagenda.com/u/179x0/cibul/{{image.filename}} 179w,
+            https://img.openagenda.com/u/235x0/cibul/{{image.filename}} 235w,
+            https://img.openagenda.com/u/363x0/cibul/{{image.filename}} 363w,
+            https://img.openagenda.com/u/228x0/cibul/{{image.filename}} 228w,
+            https://img.openagenda.com/u/358x0/cibul/{{image.filename}} 358w,
+            https://img.openagenda.com/u/470x0/cibul/{{image.filename}} 470w,
+            https://img.openagenda.com/u/726x0/cibul/{{image.filename}} 726w,
+            https://img.openagenda.com/u/1146x0/cibul/{{image.filename}} 1146w,
+            https://img.openagenda.com/u/1506x0/cibul/{{image.filename}} 1506w"
           alt="{{event.description}}"
           height="auto"
         />
@@ -27,13 +34,12 @@
     {{else}}
       {{#if defaultImage}}
         <div class="col-3 p-0 img-container">
-        <img 
-          class="img-fluid"
-          src="../{{defaultImage}}"
-          alt="{{event.description}}"
-          height="auto"
-        />
-      </div>
+          <img 
+            class="img-fluid"
+            src="../{{defaultImage}}"
+            height="auto"
+          />
+        </div>
       {{else}}
         <div class="col-3 img-cover-event-line-empty">
         </div>

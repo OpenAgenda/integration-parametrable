@@ -17,6 +17,11 @@
       justify-content: center;
       overflow: hidden;
       align-items: center;
+      img {
+        height: 200px;
+        max-height: 100%;
+        object-fit: cover;
+      }
     }
   }
   
