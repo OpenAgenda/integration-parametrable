@@ -16,9 +16,8 @@
       display: flex;
       justify-content: center;
       overflow: hidden;
-      align-items: center;
+      max-height: 200px;
       img {
-        max-height: 200px;
         object-fit: cover;
       }
     }

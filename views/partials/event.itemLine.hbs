@@ -1,4 +1,4 @@
-<div class="col-12 px-3 my-3 event-list-item {{#if @root.styles.noShadows}}ns-event-border{{else}}shadow{{/if}}">
+<div class="col-12 my-3 event-list-item {{#if @root.styles.noShadows}}ns-event-border{{else}}shadow{{/if}}">
   <a
     class="row event-item line"
     {{#if isPreview}}
@@ -17,13 +17,7 @@
           (max-width: 751px) 179px,
           (max-width: 973px) 235px,
           363px"
-          srcset="https://img.openagenda.com/u/114x0/cibul/{{image.filename}} 114w,
-            https://img.openagenda.com/u/179x0/cibul/{{image.filename}} 179w,
-            https://img.openagenda.com/u/235x0/cibul/{{image.filename}} 235w,
-            https://img.openagenda.com/u/363x0/cibul/{{image.filename}} 363w,
-            https://img.openagenda.com/u/228x0/cibul/{{image.filename}} 228w,
-            https://img.openagenda.com/u/358x0/cibul/{{image.filename}} 358w,
-            https://img.openagenda.com/u/470x0/cibul/{{image.filename}} 470w,
+          srcset="
             https://img.openagenda.com/u/726x0/cibul/{{image.filename}} 726w,
             https://img.openagenda.com/u/1146x0/cibul/{{image.filename}} 1146w,
             https://img.openagenda.com/u/1506x0/cibul/{{image.filename}} 1506w"
