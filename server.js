@@ -32,6 +32,8 @@ function formatBoolean(value) {
 }
 
 function eventHook(inputEvent, { agenda, lang, styles }) {
+  inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
+  
   const selectedAdditionalFields = (selectedFields, agenda, inputEvent, lang) => {
     return selectedFields.reduce((acc, selectedFieldKey) => {
       const fieldData = agenda.schema.fields.find(item => item.field === selectedFieldKey);
