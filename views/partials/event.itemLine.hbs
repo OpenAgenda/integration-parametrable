@@ -58,12 +58,18 @@
           {{else}}
             <h5 class='event-title mb-md-3'>{{title}}</h5>
           {{/if}}
-          <div class="event-more">
-            {{#if @root.styles.list.more}}
-              <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p> 
-            {{else}}
+          {{#if age}}
+            {{#if @root.styles.list.displayAge}}
+              <div class="event-age">
+                <p class="m-0">De {{age.min}} à {{age.max}} ans</p> 
+              </div>
             {{/if}}
-          </div>
+          {{/if}}
+          {{#if @root.styles.list.displayMore}}
+            <div class="event-more">
+              <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p> 
+            </div>
+          {{/if}}
           <div class="event-location">
             {{#if @root.styles.list.defineLocation}}
               <p class="m-0">{{extractLocationLabel}} {{extractLocation}}</p> 
