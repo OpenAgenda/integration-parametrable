@@ -171,6 +171,10 @@ STYLES_DISPLAY_LIST_DESCRIPTION=1
 
 STYLES_BOLD_TITLE_FONT=1
 
+**Afficher l'âge :**
+
+STYLES_DISPLAY_LIST_AGE=1
+
 **Definir le champ lieu (si ces variables ne sont pas définies le champ lieu est par défaut: location.name) :**
 
 STYLES_DEFINE_LIST_LOCATION=1

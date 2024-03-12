@@ -30,6 +30,6 @@
   "trackConsent.decline": "Refuser",
   "trackConsent.accept": "Accepter",
 
-  "showPastEvents": "Afficher les événements passés",
+  "showPastEvents": "Inclure les événements passés",
   "showUpcomingEvents": "Afficher uniquement les événements à venir"
 }

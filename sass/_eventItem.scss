@@ -16,7 +16,11 @@
       display: flex;
       justify-content: center;
       overflow: hidden;
-      align-items: center;
+      max-height: 200px;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
     }
   }
   
@@ -42,9 +46,8 @@
     top: 142px;
   }
   .category-line {
-    @media (min-width: 575px) {
-      top: 192px;
-    }
+    top: auto;
+    bottom: 0;
   }
   .top-border {
     border-top: 1px solid #00000026;
@@ -55,7 +58,8 @@
       font-weight: 600;
       margin-bottom: 0.5em;
     }
-    .event-description {
+    .event-description,
+    .event-age {
       font-size: 12px;
     }
     .event-title {
@@ -73,6 +77,10 @@
       margin-top: auto;
       margin-bottom: 0px;
       color: #545454;
+    }
+    .event-age,
+    .event-more {
+      margin-bottom: 0.5em;
     }
   }
   .event-cover-row{

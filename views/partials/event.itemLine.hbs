@@ -1,4 +1,4 @@
-<div class="col-12 px-3 my-3 event-list-item {{#if @root.styles.noShadows}}ns-event-border{{else}}shadow{{/if}}">
+<div class="col-12 my-3 event-list-item {{#if @root.styles.noShadows}}ns-event-border{{else}}shadow{{/if}}">
   <a
     class="row event-item line"
     {{#if isPreview}}
@@ -12,15 +12,16 @@
       <div class="col-3 p-0 img-container">
         {{#if @root.styles.useSrcSetImages}}
         <img 
+          class="img-fluid"
           src="https://img.openagenda.com/u/700x0/cibul/{{fullImage}}"
-          sizes="(min-width: 974px) 363px,
-                (min-width: 752px) 235px,
-                (min-width: 493px) 179px,
-                (max-width: 493px) 115px"
-          srcset="https://img.openagenda.com/u/115x0/cibul/{{fullImage}} 115w,
-                  https://img.openagenda.com/u/179x0/cibul/{{fullImage}} 179w,
-                  https://img.openagenda.com/u/235x0/cibul/{{fullImage}} 235w,
-                  https://img.openagenda.com/u/0x170/cibul/{{fullImage}} 363w"
+          sizes="(max-width: 492px) 114px,
+          (max-width: 751px) 179px,
+          (max-width: 973px) 235px,
+          363px"
+          srcset="
+            https://img.openagenda.com/u/726x0/cibul/{{fullImage}} 726w,
+            https://img.openagenda.com/u/1146x0/cibul/{{fullImage}} 1146w,
+            https://img.openagenda.com/u/1506x0/cibul/{{fullImage}} 1506w"
           alt="{{event.description}}"
           height="auto"
         />
@@ -35,13 +36,12 @@
     {{else}}
       {{#if defaultImage}}
         <div class="col-3 p-0 img-container">
-        <img 
-          class="img-fluid"
-          src="../{{defaultImage}}"
-          alt="{{event.description}}"
-          height="auto"
-        />
-      </div>
+          <img 
+            class="img-fluid"
+            src="../{{defaultImage}}"
+            height="auto"
+          />
+        </div>
       {{else}}
         <div class="col-3 img-cover-event-line-empty">
         </div>
@@ -66,12 +66,18 @@
           {{else}}
             <h5 class='event-title mb-md-3'>{{title}}</h5>
           {{/if}}
-          <div class="event-more">
-            {{#if @root.styles.list.more}}
-              <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p> 
-            {{else}}
+          {{#if age}}
+            {{#if @root.styles.list.displayAge}}
+              <div class="event-age">
+                <p class="m-0">De {{age.min}} à {{age.max}} ans</p> 
+              </div>
             {{/if}}
-          </div>
+          {{/if}}
+          {{#if @root.styles.list.displayMore}}
+            <div class="event-more">
+              <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p> 
+            </div>
+          {{/if}}
           <div class="event-location">
             {{#if @root.styles.list.defineLocation}}
               <p class="m-0">{{extractLocationLabel}} {{extractLocation}}</p> 

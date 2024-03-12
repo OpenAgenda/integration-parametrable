@@ -30,6 +30,6 @@
   "trackConsent.decline": "Decline",
   "trackConsent.accept": "Accept",
 
-  "showPastEvents": "Show past events",
+  "showPastEvents": "Include past events",
   "showUpcomingEvents": "Show upcoming events"
 }

@@ -33,7 +33,7 @@ function formatBoolean(value) {
 
 function eventHook(inputEvent, { agenda, lang, styles }) {
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
-
+  
   const selectedAdditionalFields = (selectedFields, agenda, inputEvent, lang) => {
     return selectedFields.reduce((acc, selectedFieldKey) => {
       const fieldData = agenda.schema.fields.find(item => item.field === selectedFieldKey);
@@ -227,11 +227,12 @@ Portal({
       boldTitleFont: process.env.STYLES_BOLD_TITLE_FONT,
       displayDescription: process.env.STYLES_DISPLAY_LIST_DESCRIPTION,
       defineLocation: process.env.STYLES_DEFINE_LIST_LOCATION,
+      displayAge: process.env.STYLES_DISPLAY_LIST_AGE,
       locationKey: process.env.STYLES_LIST_LOCATION,
       displayCategory: process.env.STYLES_DISPLAY_LIST_CATEGORY,
       categoryBGColor: process.env.STYLES_LIST_CATEGORY_BG_COLOR,
       categoryColor: process.env.STYLES_LIST_CATEGORY_COLOR,
-      more: process.env.STYLES_DISPLAY_LIST_MORE,
+      displayMore: process.env.STYLES_DISPLAY_LIST_MORE,
       itemImageHeight: process.env.STYLES_LIST_ITEM_IMAGE_HEIGHT ?? '170px',
     },
     event: {

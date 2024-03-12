@@ -1,5 +1,6 @@
 .dropdown-menu {
   z-index: 3000;
+  padding: 0;
   input[type=checkbox] {
     display: none;
   } 
@@ -7,9 +8,25 @@
     margin-left: 4px;
 
   }
-}
-
-.dropdown-menu {
+  .form-control {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    padding: 0 22px 0 22px;
+    &::placeholder {
+      color: #212529;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .checkbox:first-of-type {
+    padding-top: 0.5rem;
+  }
+  .checkbox:last-of-type {
+    padding-bottom: 0.5rem;
+  }
   .checkbox {
     padding: 0px 22px;
     cursor: pointer;
@@ -23,6 +40,12 @@
         margin-left: 10px;
         font-size: 12px;
       }
+    }
+  }
+  .btn-link {
+    padding-bottom: 0 0 0.5rem 0;
+    &:focus {
+      box-shadow: none;
     }
   }
 }
