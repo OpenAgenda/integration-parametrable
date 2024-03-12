@@ -10,6 +10,7 @@
     {{/if}}>
     {{#if fullImage}}
       <div class="col-3 p-0 img-container">
+        {{#if @root.styles.useSrcSetImages}}
         <img 
           src="https://img.openagenda.com/u/700x0/cibul/{{fullImage}}"
           sizes="(min-width: 974px) 363px,
@@ -23,6 +24,13 @@
           alt="{{event.description}}"
           height="auto"
         />
+        {{else}}
+        <img
+          src="https://cibul.s3.amazonaws.com/{{fullImage}}"
+          height="auto"
+          alt="{{event.description}}"
+        />
+        {{/if}}
       </div>
     {{else}}
       {{#if defaultImage}}

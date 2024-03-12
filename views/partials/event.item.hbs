@@ -10,6 +10,7 @@
     {{/if}}>
     {{#if image.filename}}
       <div class="text-center img-container">
+        {{#if @root.styles.useSrcSetImages}}
         <img 
           class="img-fluid img-cover-event-col"
           src="https://img.openagenda.com/u/700x0/cibul/{{image.filename}}"
@@ -22,6 +23,13 @@
           alt="{{event.description}}"
           height="auto"
         />
+        {{else}}
+        <img
+          src="https://cibul.s3.amazonaws.com/{{fullImage}}"
+          height="auto"
+          alt="{{event.description}}"
+        />
+        {{/if}}
       </div>
     {{else}}
       {{#if defaultImage}}

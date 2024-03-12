@@ -36,7 +36,8 @@
       {{/if}}
       {{#if event.image}}
       <div class="text-center">
-        <img 
+        {{#if @root.styles.useSrcSetImages}}
+        <img
           class="img-fluid {{#unless @root.styles.noShadows}}shadow{{/unless}}"
           src="https://img.openagenda.com/u/700x0/cibul/{{event.image.filename}}"
           sizes="(min-width: 992px) 700px,
@@ -48,6 +49,14 @@
           alt="{{event.description}}"
           height="auto"
         />
+        {{else}}
+        <img
+          class="img-fluid {{#unless @root.styles.noShadows}}shadow{{/unless}}"
+          src="https://cibul.s3.amazonaws.com/{{event.fullImage}}"
+          alt="{{event.description}}"
+          height="auto"
+        />
+        {{/if}}
       </div>
       {{/if}}   
       {{#if event.longDescription}}

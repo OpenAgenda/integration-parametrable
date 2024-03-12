@@ -193,6 +193,7 @@ Portal({
     featuredBGColor: process.env.STYLES_FEATURED_BG_COLOR,
     featuredColor: process.env.STYLES_FEATURED_COLOR,
     periodFilterSizeBtn: process.env.STYLES_PERIOD_FILTER_SIZE_BTN,
+    useSrcSetImages: process.env.STYLES_USE_SRCSET_IMG !== '0',
 
     banner: {
       displayBanner: process.env.STYLES_DISPLAY_BANNER,
