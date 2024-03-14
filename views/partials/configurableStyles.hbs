@@ -102,6 +102,16 @@
     height: {{styles.filter.mapHeight}}
   }
 
+  {{#if styles.useSrcSetImages}}
+  {{else}}
+    .event-list-item .img-container {
+      overflow: hidden;
+    }
+    .event-list-item .img-container img {
+      width: 100%;
+    }
+  {{/if}}
+
   {{#if styles.list.boldTitleFont}}
   .event-list-item .text-event-cover-col .event-title {
     font-weight: bold;

@@ -52,6 +52,10 @@ STYLES_NO_SHADOWS=1
 
 EXTERNE_CSS_LINK=
 
+**Ne pas charger les images srcset**
+
+STYLES_USE_SRCSET_IMG=0
+
 ## La bannière
 
 **Afficher la bannière :**
