@@ -234,6 +234,7 @@ Portal({
       categoryColor: process.env.STYLES_LIST_CATEGORY_COLOR,
       displayMore: process.env.STYLES_DISPLAY_LIST_MORE,
       itemImageHeight: process.env.STYLES_LIST_ITEM_IMAGE_HEIGHT ?? '170px',
+      categoryTopPos: `${parseInt(process.env.STYLES_LIST_ITEM_IMAGE_HEIGHT ?? '142', 10) - 28}px`
     },
     event: {
       displayInfos: process.env.STYLES_DISPLAY_RIGHT_EVENT_INFOS,
@@ -262,7 +263,7 @@ Portal({
   config: {
     additionalFields: {
       displayAdditionalFieldsEvent: process.env.CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT,
-      selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD
+      selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD,
     },
     displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER,
     defaultImage: process.env.CONFIG_DEFAULT_IMAGE
