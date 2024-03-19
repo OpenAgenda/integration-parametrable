@@ -240,6 +240,7 @@ Portal({
     },
     footer: {
       displayFooter: process.env.STYLES_DISPLAY_FOOTER,
+      onlyLogo: process.env.STYLES_LOGO_FOOTER && !process.env.STYLES_TEXT_LINK_PRINCIPAL && !process.env.STYLES_DISPLAY_LINK_FACEBOOK && !process.env.STYLES_DISPLAY_LINK_TWITTER && !process.env.STYLES_DISPLAY_LINK_INSTAGRAM && !process.env.STYLES_DISPLAY_LINK_YOUTUBE,
       logoFooter: process.env.STYLES_LOGO_FOOTER,
       linkPrincipal: process.env.STYLES_LINK_PRINCIPAL,
       textPrincipal: process.env.STYLES_TEXT_LINK_PRINCIPAL,

@@ -2,26 +2,32 @@
     <div class="container-fluid footer-container footer-color">
       <div class="container-fluid">
         <div class="row row-align-center">
-          <div class="logo-footer col-12 col-md-2 text-center text-md-left my-3 my-md-none">
-            <img src="{{@root.styles.footer.logoFooter}}" class="logo"/>
-          </div>
-          <div class="center-footer col-12 col-md-8 my-3 my-md-none">
-            <a target='_blank' href="{{@root.styles.footer.linkPrincipal}}">{{@root.styles.footer.textPrincipal}}</a>
-          </div>
-          <div class='social-footer col-12 col-md-2 my-3 my-md-none'>
-            {{#if @root.styles.footer.displayLinkFacebook}}
-            <a target='_blank' href="{{@root.styles.footer.linkFacebook}}"><i class="fab fa-facebook-f"></i></a>
-            {{/if}}
-            {{#if @root.styles.footer.displayLinkTwitter}}
-            <a target='_blank' href="{{@root.styles.footer.linkTwitter}}"><i class="fab fa-twitter"></i></a>
-            {{/if}}
-            {{#if @root.styles.footer.displayLinkInstagram}}
-            <a target='_blank' href="{{@root.styles.footer.linkInstagram}}"><i class="fab fa-instagram"></i></a>
-            {{/if}}
-            {{#if @root.styles.footer.displayLinkYoutube}}
-            <a target='_blank' href="{{@root.styles.footer.linkYoutube}}"><i class="fab fa-youtube"></i></a>
-            {{/if}}
-          </div>
+          {{#if @root.styles.footer.onlyLogo}}
+            <div class="logo-footer col-12 text-center mb-3">
+              <a target='_blank' href="{{@root.styles.footer.linkPrincipal}}"><img src="{{@root.styles.footer.logoFooter}}" class="logo"/></a>
+            </div>
+          {{else}}
+            <div class="logo-footer col-12 col-md-2 text-center text-md-left my-3 my-md-none">
+              <img src="{{@root.styles.footer.logoFooter}}" class="logo"/>
+            </div>
+            <div class="center-footer col-12 col-md-8 my-3 my-md-none">
+              <a target='_blank' href="{{@root.styles.footer.linkPrincipal}}">{{@root.styles.footer.textPrincipal}}</a>
+            </div>
+            <div class='social-footer col-12 col-md-2 my-3 my-md-none'>
+              {{#if @root.styles.footer.displayLinkFacebook}}
+              <a target='_blank' href="{{@root.styles.footer.linkFacebook}}"><i class="fab fa-facebook-f"></i></a>
+              {{/if}}
+              {{#if @root.styles.footer.displayLinkTwitter}}
+              <a target='_blank' href="{{@root.styles.footer.linkTwitter}}"><i class="fab fa-twitter"></i></a>
+              {{/if}}
+              {{#if @root.styles.footer.displayLinkInstagram}}
+              <a target='_blank' href="{{@root.styles.footer.linkInstagram}}"><i class="fab fa-instagram"></i></a>
+              {{/if}}
+              {{#if @root.styles.footer.displayLinkYoutube}}
+              <a target='_blank' href="{{@root.styles.footer.linkYoutube}}"><i class="fab fa-youtube"></i></a>
+              {{/if}}
+            </div>
+          {{/if}}
         </div>
       </div>
     </div>
