@@ -136,17 +136,19 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     return value;
   }
   
-  if (inputEvent.location.name) {
-    inputEvent.fullAddress = inputEvent.location.name;
-    if (inputEvent.location.address) {
-      inputEvent.fullAddress += ", " + inputEvent.location.address;
+  if (inputEvent.location) {
+    if (inputEvent.location.name) {
+      inputEvent.fullAddress = inputEvent.location.name;
+      if (inputEvent.location.address) {
+        inputEvent.fullAddress += ", " + inputEvent.location.address;
+      }
+    } else if (inputEvent.location.address) {
+        inputEvent.fullAddress = inputEvent.location.address;
+    } else if (inputEvent.location.city) {
+        inputEvent.fullAddress = inputEvent.location.city;
+    } else {
+        inputEvent.fullAddress = [];
     }
-  } else if (inputEvent.location.address) {
-      inputEvent.fullAddress = inputEvent.location.address;
-  } else if (inputEvent.location.city) {
-      inputEvent.fullAddress = inputEvent.location.city;
-  } else {
-      inputEvent.fullAddress = [];
   }
 
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
