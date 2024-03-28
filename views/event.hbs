@@ -73,8 +73,9 @@
         <div class="age mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Age.svg" alt="icône age">De {{event.age.min}} à {{event.age.max}} ans</div>
         {{/if}}
         <div class="range mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Calendrier.svg" alt="icône horaire">{{event.dateRange}}</div>
-        <div class="location mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{event.location.name}}, {{event.location.address}}</div>
-        {{#if event.registration.phone.[0].value}}
+        {{#if event.fullAddress}}
+        <div class="location mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{event.fullAddress}}</div>
+        {{/if}}        {{#if event.registration.phone.[0].value}}
         <div class="phone mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Phone.svg" alt="icône phone"><a href="tel:{{event.registration.phone.[0].value}}" target="_blank">{{event.registration.phone.[0].value}}</a></div>
         {{/if}}
         {{#if event.registration.email.[0].value}}
