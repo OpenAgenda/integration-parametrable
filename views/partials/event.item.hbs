@@ -52,11 +52,13 @@
         </div>
       {{/if}}
     {{/if}}
-    {{#if featured}}
-    <div class="featured">
-      <p class="featured-text">À la une</p>
-    </div>
-    {{/if}}
+    {{#unless @root.config.featured.featuredSection}}
+      {{#if featured}}
+      <div class="featured">
+        <p class="featured-text">À la une</p>
+      </div>
+      {{/if}}
+    {{/unless}}
     {{#if @root.styles.list.displayCategory}}
     <div class="category">
       <p class="category-text">{{extractCategory}}</p>

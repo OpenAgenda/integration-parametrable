@@ -2,6 +2,12 @@
 
 {{>head tagName="h1"}}
 
+{{#if @root.config.featured.featuredSection}}
+  {{#if hasFeaturedEvents}}
+    {{>featured}}
+  {{/if}}
+{{/if}}
+
 {{>sidebar}}
 
 <div class="container-list {{#if @root.styles.noMargin}}px-3{{else}}container{{/if}}">
@@ -23,19 +29,20 @@
         {{/if}}
       </div>
 
-      <div class="col-12 col-md-7 total my-auto">
+      <div class="col-12 col-md-7 total my-auto d-flex">
         {{widget name='total' message='eventsTotal'}}
-        <div class="btn-total">
+        <span class="mx-2">-</span>
+        <div class="btn-total d-inline-block">
           {{#customFilter
           query=(object relative=(array 'passed' ))
           activeClass='active'
           inactiveClass='inactive'
           className='checkbox'
           }}
-          <label class="passed">
+          <label class="passed my-auto">
             {{i18n 'showPastEvents'}}
           </label>
-          <label class="upcoming">
+          <label class="upcoming my-auto">
             {{i18n 'showUpcomingEvents'}}
           </label>
           {{/customFilter}}

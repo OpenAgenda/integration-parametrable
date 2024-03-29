@@ -8,6 +8,9 @@ const Portal = require('@openagenda/agenda-portal');
 const { getLocaleValue } = require('@openagenda/intl')
 const extractDate = require('./lib/extractDate');
 const defineDateFilterValues = require('./lib/defineDateFilterValues');
+const fetchEvents = require('./lib/fetchEvents');
+const isFirstPage = require('./lib/isFirstPage');
+const hasActiveFilter = require('./lib/hasActiveFilter');
 
 Portal.utils.loadEnvironment(__dirname);
 
@@ -294,7 +297,10 @@ Portal({
     },
     displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER,
     defaultImage: process.env.CONFIG_DEFAULT_IMAGE,
-    displayDate: process.env.CONFIG_DISPLAY_DATE
+    displayDate: process.env.CONFIG_DISPLAY_DATE,
+    featured : {
+      featuredSection: process.env.CONFIG_FEATURED_SECTION,
+    }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
   devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,
@@ -356,6 +362,27 @@ Portal({
     cookieBannerLink: 'https://support.google.com/analytics/answer/6004245?hl=fr'
   },
   dateFilterValues: defineDateFilterValues({ begin: process.env.CONFIG_DATE_PERIOD_FILTER_BEGIN, end: process.env.CONFIG_DATE_PERIOD_FILTER_END, timeZone: 'Europe/Paris', langs: 'fr'}),
+  middlewareHooks: {
+    list: {
+      preRender: [
+        (req, res, next) => {
+          fetchEvents({
+            filter: {
+              featured: 1,
+              relative: ['current', 'upcoming'],
+              limit: 3,
+            },
+            namespaces: {
+              events: 'featuredEvents',
+              has: 'hasFeaturedEvents',
+            },
+          })(req, res, next);
+        },
+        isFirstPage,
+        hasActiveFilter,
+      ]
+    },
+  },
   eventHook,
   proxyHookBeforeGet: params => {
     return {

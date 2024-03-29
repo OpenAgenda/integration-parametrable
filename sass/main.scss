@@ -97,3 +97,16 @@ header {
     color: white;
   }
 }
+
+.title-section {
+  p {
+    font-size: 25px;
+    font-weight: 500;
+    @include media-breakpoint-up(md) {
+      font-size: 30px;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 35px;
+    }
+  }
+}

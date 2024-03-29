@@ -20,3 +20,9 @@
 <div class="mt-4">
   <div>{{>pagination}}</div>
 </div>
+
+<style>
+  .js_coeur {
+    display: {{#if hasActiveFilter}}none!important{{else}}flex!important{{/if}}
+  }
+</style>
