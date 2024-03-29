@@ -164,7 +164,7 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   const keyLocationLabel = process.env.STYLES_LIST_KEY_LOCATION_LABEL;
   inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
 
-  inputEvent.more = keyMoreLabel.map((label, index,) => {
+  inputEvent.more = keyMoreLabel?.map((label, index,) => {
     const slugData = inputEvent[keyMoreSlug[index]];
     if (Array.isArray(slugData)) {
         return {
