@@ -77,14 +77,14 @@
           {{#if age}}
             {{#if @root.styles.list.displayAge}}
               <div class="event-age">
-                <p class="m-0">De {{age.min}} à {{age.max}} ans</p> 
+                <p class="mb-3">De {{age.min}} à {{age.max}} ans</p> 
               </div>
             {{/if}}
           {{/if}}
           {{#if @root.styles.list.displayMore}}
             <div class="event-more">
               {{#each more}}
-                <p class="m-0">{{this.label}}: {{this.slug}}</p> 
+                <p class="mb-3">{{this.label}}: {{this.slug}}</p> 
               {{/each}}
             </div>
           {{/if}}
