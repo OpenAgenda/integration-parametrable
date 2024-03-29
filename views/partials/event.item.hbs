@@ -26,14 +26,14 @@
             https://img.openagenda.com/u/1050x0/cibul/{{image.filename}} 1050w,
             https://img.openagenda.com/u/1275x0/cibul/{{image.filename}} 1275w,
             https://img.openagenda.com/u/1635x0/cibul/{{image.filename}} 1635w"
-          alt="{{event.description}}"
+          alt="{{description}}"
           height="auto"
         />
         {{else}}
         <img
           src="https://cibul.s3.amazonaws.com/{{image.filename}}"
           height="auto"
-          alt="{{event.description}}"
+          alt="{{description}}"
         />
         {{/if}}
       </div>
@@ -43,7 +43,7 @@
         <img 
           class="img-fluid img-cover-event-col"
           src="../{{defaultImage}}"
-          alt="{{event.description}}"
+          alt="{{description}}"
           height="auto"
         />
       </div>
@@ -64,7 +64,10 @@
     {{/if}}
       <div class="wbg px-4 py-3 text-event-cover-col top-border">
         <div class='event-cover-row'>
-          <p class="date primary-color">{{dateRange}}</p>
+          {{#if @root.config.displayDate}}
+          {{else}}
+            <p class="date primary-color">{{dateRange}}</p>
+          {{/if}}
           {{#if @root.styles.list.displayDescription}}
             <h5 class='event-title-bold mb-md-3'>{{title}}</h5>
             <p class="event-description">{{description}}</p>
@@ -80,7 +83,9 @@
           {{/if}}
           {{#if @root.styles.list.displayMore}}
             <div class="event-more">
-              <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p> 
+              {{#each more}}
+                <p class="m-0">{{this.label}}: {{this.slug}}</p> 
+              {{/each}}
             </div>
           {{/if}}
           <div class="event-location">

@@ -31,6 +31,9 @@ function formatBoolean(value) {
   return value;
 }
 
+const keyMoreLabel = process.env.STYLES_LIST_KEY_MORE_LABEL?.split(',');
+const keyMoreSlug = process.env.STYLES_LIST_KEY_MORE?.split(',');
+
 function eventHook(inputEvent, { agenda, lang, styles }) {
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
   
@@ -160,12 +163,21 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   
   const keyLocationLabel = process.env.STYLES_LIST_KEY_LOCATION_LABEL;
   inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
-  
-  const keyMore = process.env.STYLES_LIST_KEY_MORE;
-  inputEvent.extractMore = extractValueFromKey(inputEvent, keyMore);
-  
-  const keyMoreLabel = process.env.STYLES_LIST_KEY_MORE_LABEL;
-  inputEvent.extractMoreLabel = keyMoreLabel ? keyMoreLabel + ' : ' : '';  
+
+  inputEvent.more = keyMoreLabel.map((label, index,) => {
+    const slugData = inputEvent[keyMoreSlug[index]];
+    if (Array.isArray(slugData)) {
+        return {
+            label,
+            slug: slugData.map(value => value.label[lang]),
+        };
+    } else {
+        return {
+            label,
+            slug: [],
+        };
+    }
+  });
 
   if (process.env.STYLES_TYPE_LIST === 'line') {
     styles.listDisplay.lineType = true;
@@ -281,7 +293,8 @@ Portal({
       selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD,
     },
     displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER,
-    defaultImage: process.env.CONFIG_DEFAULT_IMAGE
+    defaultImage: process.env.CONFIG_DEFAULT_IMAGE,
+    displayDate: process.env.CONFIG_DISPLAY_DATE
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
   devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,

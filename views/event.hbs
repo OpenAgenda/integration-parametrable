@@ -11,7 +11,10 @@
         {{>event/share}}
       </div>
       {{>event/registration}}
-      {{>event/timings}}
+      {{#if @root.config.displayDate}}
+      {{else}}
+        {{>event/timings}}
+      {{/if}}
       {{>event/map}}
     </div>
     {{/if}}
@@ -72,7 +75,10 @@
         {{#if event.age}}
         <div class="age mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Age.svg" alt="icône age">De {{event.age.min}} à {{event.age.max}} ans</div>
         {{/if}}
-        <div class="range mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Calendrier.svg" alt="icône horaire">{{event.dateRange}}</div>
+        {{#if @root.config.displayDate}}
+        {{else}}
+          <div class="range mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Calendrier.svg" alt="icône horaire">{{event.dateRange}}</div>
+        {{/if}}
         {{#if event.fullAddress}}
         <div class="location mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{event.fullAddress}}</div>
         {{/if}}
