@@ -174,7 +174,7 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     } else {
         return {
             label,
-            slug: [],
+            slug: slugData,
         };
     }
   });
