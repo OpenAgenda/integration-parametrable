@@ -30,7 +30,7 @@
       </div>
 
       <div class="col-12 col-md-7 total my-auto d-flex">
-        {{widget name='total' message='eventsTotal'}}
+        {{i18n 'eventsTotal' total=total totalLabel=totalLabel totalLabelPlural=totalLabelPlural}} 
         <span class="mx-2">-</span>
         <div class="btn-total d-inline-block">
           {{#customFilter
@@ -40,10 +40,10 @@
           className='checkbox'
           }}
           <label class="passed my-auto">
-            {{i18n 'showPastEvents'}}
+            {{i18n 'showPastEvents' totalLabelPlural=totalLabelPlural}}
           </label>
           <label class="upcoming my-auto">
-            {{i18n 'showUpcomingEvents'}}
+            {{i18n 'showUpcomingEvents' totalLabelPlural=totalLabelPlural}}
           </label>
           {{/customFilter}}
         </div> 

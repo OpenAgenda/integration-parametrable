@@ -11,6 +11,7 @@ const defineDateFilterValues = require('./lib/defineDateFilterValues');
 const fetchEvents = require('./lib/fetchEvents');
 const isFirstPage = require('./lib/isFirstPage');
 const hasActiveFilter = require('./lib/hasActiveFilter');
+const getTotalLabel = require('./lib/getTotalLabel');
 
 Portal.utils.loadEnvironment(__dirname);
 
@@ -41,7 +42,8 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
   
   const selectedAdditionalFields = (selectedFields, agenda, inputEvent, lang) => {
-    return selectedFields.reduce((acc, selectedFieldKey) => {
+    return selectedFields.reduce((acc, selectedFieldKey) => {  inputEvent.messageLabel = message.replace(regex, `{total} ${totalLabel}`);
+
       const fieldData = agenda.schema.fields.find(item => item.field === selectedFieldKey);
       if (fieldData) {
         const { label } = fieldData;
@@ -300,6 +302,10 @@ Portal({
     displayDate: process.env.CONFIG_DISPLAY_DATE,
     featured : {
       featuredSection: process.env.CONFIG_FEATURED_SECTION,
+    },
+    total : {
+      totalLabel: process.env.CONFIG_TOTAL_LABEL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL) : {"fr": "événement", "en": "event"},
+      totalLabelPlural: process.env.CONFIG_TOTAL_LABEL_PLURAL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL_PLURAL): {"fr": "événements", "en": "events"},
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
@@ -380,6 +386,7 @@ Portal({
         },
         isFirstPage,
         hasActiveFilter,
+        getTotalLabel,
       ]
     },
   },

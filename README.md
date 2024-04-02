@@ -14,6 +14,13 @@ PORTAL_FORCE_PASSED_DISPLAY=1
 
 PORTAL_PREFILTER=
 
+## Widget total
+
+**Définir pour changer le label du widget total (valeur par défaut: événement et événements)**
+
+CONFIG_TOTAL_LABEL={"fr": "résultat", "en": "result"}
+CONFIG_TOTAL_LABEL_PLURAL={"fr": "résultats", "en": "results"}
+
 ## Le style
 
 **Une couleur de background à définir (couleur par défaut : white) :**
