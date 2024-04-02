@@ -29,16 +29,16 @@
       {{/if}}
     </div>
 
-    <div class="col order-sm-1 pr-0 pr-md-3 pl-0">
+    <div class="col order-sm-1 pr-0 pr-md-3 pl-0 text-center">
 
-      <div>
+      <div class="text-left">
         <h1>{{event.title}}</h1>
       </div>
       {{#if event.description}}
-        <p class="event-description">{{event.description}}</p>
+        <p class="event-description text-left">{{event.description}}</p>
       {{/if}}
       {{#if event.image}}
-      <div class="text-center">
+      <div class="image-container">
         {{#if @root.styles.useSrcSetImages}}
         <img
           class="img-fluid {{#unless @root.styles.noShadows}}shadow{{/unless}}"
@@ -52,6 +52,9 @@
           alt="{{event.description}}"
           height="auto"
         />
+        <div class="credit d-flex justify-content-end">
+          <p class="m-0">{{event.imageCredits}}</p>
+        </div>
         {{else}}
         <img
           class="img-fluid {{#unless @root.styles.noShadows}}shadow{{/unless}}"
@@ -63,12 +66,12 @@
       </div>
       {{/if}}   
       {{#if event.longDescription}}
-      <div class="event-text">
+      <div class="event-text text-left">
         {{{event.longDescription}}}
       </div>
       {{/if}}
 
-      <div class="event-details{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
+      <div class="event-details text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
         {{#if event.conditions}}
         <div class="conditions mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Conditions.svg" alt="icône prix">{{event.conditions}}</div>
         {{/if}}
@@ -93,7 +96,7 @@
         {{/if}}
       </div>
       {{#if @root.config.additionalFields.displayAdditionalFieldsEvent}}
-        <div class="additional-fields{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
+        <div class="additional-fields text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
           {{#if @root.config.additionalFields.selectedAdditionalField}}
             {{#each event.additionalFieldsSelected}}
               {{> renderAdditionalFields this}}

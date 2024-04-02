@@ -17,6 +17,16 @@
     border-radius: 2px;
   }
 
+  .image-container {
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .credit {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+
   .event-description {
     margin-top: 50px;
     margin-bottom: 0;
