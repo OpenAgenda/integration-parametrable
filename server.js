@@ -39,6 +39,7 @@ const keyMoreLabel = process.env.STYLES_LIST_KEY_MORE_LABEL?.split(',');
 const keyMoreSlug = process.env.STYLES_LIST_KEY_MORE?.split(',');
 
 function eventHook(inputEvent, { agenda, lang, styles }) {
+
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
   
   const processAdditionalFields = (agenda, inputEvent, lang, selectedFields = null) => {
@@ -73,6 +74,8 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     inputEvent = { ...inputEvent, ...processAdditionalFields(agenda, inputEvent, lang) };
   }
   
+  agenda.linkPastEvents = process.env.PORTAL_FORCE_PASSED_DISPLAY === '1' ? false : true;
+
   const currentEvents = agenda.summary.publishedEvents.current;
   const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents;
   if (currentEvents === 0 && upcomingEvents === 0) {
