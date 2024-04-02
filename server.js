@@ -41,47 +41,36 @@ const keyMoreSlug = process.env.STYLES_LIST_KEY_MORE?.split(',');
 function eventHook(inputEvent, { agenda, lang, styles }) {
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
   
-  const selectedAdditionalFields = (selectedFields, agenda, inputEvent, lang) => {
-    return selectedFields.reduce((acc, selectedFieldKey) => {  inputEvent.messageLabel = message.replace(regex, `{total} ${totalLabel}`);
-
-      const fieldData = agenda.schema.fields.find(item => item.field === selectedFieldKey);
-      if (fieldData) {
-        const { label } = fieldData;
-        let selectedFieldValue = inputEvent[selectedFieldKey];
-        
-        if (fieldData.options) {
-          selectedFieldValue = [].concat(selectedFieldValue).map(id => optionToLabel(fieldData.options, id, lang));
-        }
-        acc[label] = formatBoolean(selectedFieldValue);
-      }
-      return acc;
-    }, {});
-  };
+  const processAdditionalFields = (agenda, inputEvent, lang, selectedFields = null) => {
+    const fieldsToProcess = selectedFields ? 
+      agenda.schema.fields.filter(item => selectedFields.includes(item.field)) :
+      agenda.schema.fields.filter(field => field.schemaType !== 'event' && field.fieldType !== 'abstract');
   
-  const allAdditionalFields = (agenda, inputEvent, lang) => {
-    return agenda.schema.fields
-      .filter(field => field.schemaType !== 'event' && field.fieldType !== 'abstract' &&
-        inputEvent.hasOwnProperty(field.field) && inputEvent[field.field] != null)
-      .reduce((acc, fieldSchema) => {
-        let value = inputEvent[fieldSchema.field];
-        const label = flattenLabel(fieldSchema.label, lang);
-        
-        if (fieldSchema.options) {
-          value = [].concat(value).map(id => optionToLabel(fieldSchema.options, id, lang));
-        }
-        
-        acc[label] = formatBoolean(value);
-        return acc;
-      }, {});
+    const processField = fieldSchema => {
+      const { field, label, options } = fieldSchema;
+      if (!inputEvent.hasOwnProperty(field) || inputEvent[field] == null) return {};
+  
+      let value = inputEvent[field];
+      const flattenedLabel = flattenLabel(label, lang);
+      if (options) {
+        value = [].concat(value).map(id => optionToLabel(options, id, lang));
+      }
+      return { [flattenedLabel]: formatBoolean(value) };
+    };
+  
+    const formattedFields = fieldsToProcess.reduce((acc, fieldSchema) => {
+      const processedField = processField(fieldSchema);
+      return { ...acc, ...processedField };
+    }, {});
+  
+    return selectedFields ? { additionalFieldsSelected: formattedFields } : { additionalFieldsFormatted: formattedFields };
   };
   
   if (process.env.CONFIG_SELECTED_ADDITIONAL_FIELD) {
     const selectedFields = process.env.CONFIG_SELECTED_ADDITIONAL_FIELD.split(',');
-    const formattedFields = selectedAdditionalFields(selectedFields, agenda, inputEvent, lang);
-    inputEvent.additionalFieldsSelected = formattedFields;
+    inputEvent = { ...inputEvent, ...processAdditionalFields(agenda, inputEvent, lang, selectedFields) };
   } else {
-    const filterFields = allAdditionalFields(agenda, inputEvent, lang);
-    inputEvent.additionalFieldsFormatted = filterFields;
+    inputEvent = { ...inputEvent, ...processAdditionalFields(agenda, inputEvent, lang) };
   }
   
   const currentEvents = agenda.summary.publishedEvents.current;
