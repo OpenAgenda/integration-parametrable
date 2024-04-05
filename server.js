@@ -327,6 +327,7 @@ Portal({
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
     relative: process.env.PORTAL_PREFILTER?.split(','),
+    featured: 0,
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
@@ -368,7 +369,6 @@ Portal({
             filter: {
               featured: 1,
               relative: ['current', 'upcoming'],
-              limit: 3,
             },
             namespaces: {
               events: 'featuredEvents',
