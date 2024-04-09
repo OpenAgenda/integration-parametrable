@@ -42,9 +42,6 @@
     @include media-breakpoint-up(sm) {
       font-size: 16px;
     }
-    label {
-      margin-bottom: 0.5rem;
-    }
     .checkbox {
       cursor: pointer;
       &:hover {

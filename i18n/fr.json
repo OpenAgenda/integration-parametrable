@@ -10,7 +10,7 @@
   "contribute": "Proposer un événement",
   "powered": "Propulsé par OpenAgenda",
   "export": "Exporter/Télécharger",
-  "eventsTotal": "{total, plural, =0 {Aucun événement ne correspond à cette recherche} one {{total} événement} other {{total} événements}}",
+  "eventsTotal": "{total, plural, =0 {Aucun {totalLabel} ne correspond à cette recherche} one {{total} {totalLabel}} other {{total} {totalLabelPlural}}}",
   "onlineAccessLink": "Accéder à l'événement en ligne",
   "city": "Ville",
   "keywords": "Mots clés",
@@ -30,6 +30,6 @@
   "trackConsent.decline": "Refuser",
   "trackConsent.accept": "Accepter",
 
-  "showPastEvents": "Inclure les événements passés",
-  "showUpcomingEvents": "Afficher uniquement les événements à venir"
+  "showPastEvents": "Inclure les {totalLabelPlural} passés",
+  "showUpcomingEvents": "Afficher uniquement les {totalLabelPlural} à venir"
 }

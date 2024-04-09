@@ -10,7 +10,7 @@
   "contribute": "Contribute an event",
   "powered": "Powered by OpenAgenda",
   "export": "Export/Download",
-  "eventsTotal": "{total, plural, =0 {No events match this search} one {{total} event} other {{total} events}}",
+  "eventsTotal": "{total, plural, =0 {No {totalLabel} match this search} one {{total} {totalLabel}} other {{total} {totalLabelPlural}}}",
   "onlineAccessLink": "Access online event",
   "city": "City",
   "keywords": "Keywords",
@@ -30,6 +30,6 @@
   "trackConsent.decline": "Decline",
   "trackConsent.accept": "Accept",
 
-  "showPastEvents": "Include past events",
-  "showUpcomingEvents": "Show upcoming events"
+  "showPastEvents": "Include past {totalLabelPlural}",
+  "showUpcomingEvents": "Show upcoming {totalLabelPlural}"
 }

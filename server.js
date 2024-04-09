@@ -8,6 +8,10 @@ const Portal = require('@openagenda/agenda-portal');
 const { getLocaleValue } = require('@openagenda/intl')
 const extractDate = require('./lib/extractDate');
 const defineDateFilterValues = require('./lib/defineDateFilterValues');
+const fetchEvents = require('./lib/fetchEvents');
+const isFirstPage = require('./lib/isFirstPage');
+const hasActiveFilter = require('./lib/hasActiveFilter');
+const getTotalLabel = require('./lib/getTotalLabel');
 
 Portal.utils.loadEnvironment(__dirname);
 
@@ -31,10 +35,6 @@ function formatBoolean(value) {
   return value;
 }
 
-function extractValueFromKey(inputEvent, key, defaultValue = '') {
-  return inputEvent[key] || defaultValue;
-}
-
 function extractLabelFromArray(inputEvent, key) {
   const value = inputEvent[key];
   if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object') {
@@ -51,52 +51,47 @@ function extractLabelFromArray(inputEvent, key) {
   }
   return value;
 }
+const keyMoreLabel = process.env.STYLES_LIST_KEY_MORE_LABEL?.split(',');
+const keyMoreSlug = process.env.STYLES_LIST_KEY_MORE?.split(',');
 
 function eventHook(inputEvent, { agenda, lang, styles }) {
+
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
   
-  const selectedAdditionalFields = (selectedFields, agenda, inputEvent, lang) => {
-    return selectedFields.reduce((acc, selectedFieldKey) => {
-      const fieldData = agenda.schema.fields.find(item => item.field === selectedFieldKey);
-      if (fieldData) {
-        const { label } = fieldData;
-        let selectedFieldValue = inputEvent[selectedFieldKey];
-        
-        if (fieldData.options) {
-          selectedFieldValue = [].concat(selectedFieldValue).map(id => optionToLabel(fieldData.options, id, lang));
-        }
-        acc[label] = formatBoolean(selectedFieldValue);
-      }
-      return acc;
-    }, {});
-  };
+  const processAdditionalFields = (agenda, inputEvent, lang, selectedFields = null) => {
+    const fieldsToProcess = selectedFields ? 
+      agenda.schema.fields.filter(item => selectedFields.includes(item.field)) :
+      agenda.schema.fields.filter(field => field.schemaType !== 'event' && field.fieldType !== 'abstract');
   
-  const allAdditionalFields = (agenda, inputEvent, lang) => {
-    return agenda.schema.fields
-      .filter(field => field.schemaType !== 'event' && field.fieldType !== 'abstract' &&
-        inputEvent.hasOwnProperty(field.field) && inputEvent[field.field] != null)
-      .reduce((acc, fieldSchema) => {
-        let value = inputEvent[fieldSchema.field];
-        const label = flattenLabel(fieldSchema.label, lang);
-        
-        if (fieldSchema.options) {
-          value = [].concat(value).map(id => optionToLabel(fieldSchema.options, id, lang));
-        }
-        
-        acc[label] = formatBoolean(value);
-        return acc;
-      }, {});
+    const processField = fieldSchema => {
+      const { field, label, options } = fieldSchema;
+      if (!inputEvent.hasOwnProperty(field) || inputEvent[field] == null) return {};
+  
+      let value = inputEvent[field];
+      const flattenedLabel = flattenLabel(label, lang);
+      if (options) {
+        value = [].concat(value).map(id => optionToLabel(options, id, lang));
+      }
+      return { [flattenedLabel]: formatBoolean(value) };
+    };
+  
+    const formattedFields = fieldsToProcess.reduce((acc, fieldSchema) => {
+      const processedField = processField(fieldSchema);
+      return { ...acc, ...processedField };
+    }, {});
+  
+    return selectedFields ? { additionalFieldsSelected: formattedFields } : { additionalFieldsFormatted: formattedFields };
   };
   
   if (process.env.CONFIG_SELECTED_ADDITIONAL_FIELD) {
     const selectedFields = process.env.CONFIG_SELECTED_ADDITIONAL_FIELD.split(',');
-    const formattedFields = selectedAdditionalFields(selectedFields, agenda, inputEvent, lang);
-    inputEvent.additionalFieldsSelected = formattedFields;
+    inputEvent = { ...inputEvent, ...processAdditionalFields(agenda, inputEvent, lang, selectedFields) };
   } else {
-    const filterFields = allAdditionalFields(agenda, inputEvent, lang);
-    inputEvent.additionalFieldsFormatted = filterFields;
+    inputEvent = { ...inputEvent, ...processAdditionalFields(agenda, inputEvent, lang) };
   }
   
+  agenda.linkPastEvents = process.env.PORTAL_FORCE_PASSED_DISPLAY === '1' ? false : true;
+
   const currentEvents = agenda.summary.publishedEvents.current;
   const upcomingEvents = agenda.summary.publishedEvents.upcomingEvents;
   if (currentEvents === 0 && upcomingEvents === 0) {
@@ -135,6 +130,21 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   
   Object.assign(res, extractDate(res))
   
+  if (inputEvent.location) {
+    if (inputEvent.location.name) {
+      inputEvent.fullAddress = inputEvent.location.name;
+      if (inputEvent.location.address) {
+        inputEvent.fullAddress += ", " + inputEvent.location.address;
+      }
+    } else if (inputEvent.location.address) {
+        inputEvent.fullAddress = inputEvent.location.address;
+    } else if (inputEvent.location.city) {
+        inputEvent.fullAddress = inputEvent.location.city;
+    } else {
+        inputEvent.fullAddress = [];
+    }
+  }
+
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
 
   inputEvent.extractCategory = [].concat(inputEvent[keyCategory]).map(({ label }) => flattenLabel(label, lang)).shift();
@@ -144,12 +154,21 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   
   const keyLocationLabel = process.env.STYLES_LIST_KEY_LOCATION_LABEL;
   inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
-  
-  const keyMore = process.env.STYLES_LIST_KEY_MORE;
-  inputEvent.extractMore = extractValueFromKey(inputEvent, keyMore);
-  
-  const keyMoreLabel = process.env.STYLES_LIST_KEY_MORE_LABEL;
-  inputEvent.extractMoreLabel = keyMoreLabel ? keyMoreLabel + ' : ' : '';  
+
+  inputEvent.more = keyMoreLabel?.map((label, index,) => {
+    const slugData = inputEvent[keyMoreSlug[index]];
+    if (Array.isArray(slugData)) {
+        return {
+            label,
+            slug: slugData.map(value => value.label[lang]),
+        };
+    } else {
+        return {
+            label,
+            slug: slugData,
+        };
+    }
+  });
 
   if (process.env.STYLES_TYPE_LIST === 'line') {
     styles.listDisplay.lineType = true;
@@ -265,7 +284,15 @@ Portal({
       selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD,
     },
     displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER,
-    defaultImage: process.env.CONFIG_DEFAULT_IMAGE
+    defaultImage: process.env.CONFIG_DEFAULT_IMAGE,
+    displayDate: process.env.CONFIG_DISPLAY_DATE,
+    featured : {
+      featuredSection: process.env.CONFIG_FEATURED_SECTION,
+    },
+    total : {
+      totalLabel: process.env.CONFIG_TOTAL_LABEL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL) : {"fr": "événement", "en": "event"},
+      totalLabelPlural: process.env.CONFIG_TOTAL_LABEL_PLURAL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL_PLURAL): {"fr": "événements", "en": "events"},
+    }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
   devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,
@@ -294,6 +321,7 @@ Portal({
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
     relative: process.env.PORTAL_PREFILTER?.split(','),
+    featured: 0,
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
@@ -327,6 +355,27 @@ Portal({
     cookieBannerLink: 'https://support.google.com/analytics/answer/6004245?hl=fr'
   },
   dateFilterValues: defineDateFilterValues({ begin: process.env.CONFIG_DATE_PERIOD_FILTER_BEGIN, end: process.env.CONFIG_DATE_PERIOD_FILTER_END, timeZone: 'Europe/Paris', langs: 'fr'}),
+  middlewareHooks: {
+    list: {
+      preRender: [
+        (req, res, next) => {
+          fetchEvents({
+            filter: {
+              featured: 1,
+              relative: ['current', 'upcoming'],
+            },
+            namespaces: {
+              events: 'featuredEvents',
+              has: 'hasFeaturedEvents',
+            },
+          })(req, res, next);
+        },
+        isFirstPage,
+        hasActiveFilter,
+        getTotalLabel,
+      ]
+    },
+  },
   eventHook,
   proxyHookBeforeGet: params => {
     return {
