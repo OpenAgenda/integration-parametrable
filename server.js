@@ -31,6 +31,27 @@ function formatBoolean(value) {
   return value;
 }
 
+function extractValueFromKey(inputEvent, key, defaultValue = '') {
+  return inputEvent[key] || defaultValue;
+}
+
+function extractLabelFromArray(inputEvent, key) {
+  const value = inputEvent[key];
+  if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object') {
+    if (value[0].hasOwnProperty('label')) {
+      if (typeof value[0].label === 'object') {
+        const keys = Object.keys(value[0].label);
+        if (keys.length > 0) {
+          return value[0].label[keys[0]];
+        }
+      } else {
+        return value[0].label;
+      }
+    }
+  }
+  return value;
+}
+
 function eventHook(inputEvent, { agenda, lang, styles }) {
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
   
@@ -113,32 +134,10 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   }, inputEvent);
   
   Object.assign(res, extractDate(res))
-
-   
-  function extractValueFromKey(inputEvent, key, defaultValue = '') {
-    return inputEvent[key] || defaultValue;
-  }
-  
-  function extractLabelFromArray(inputEvent, key) {
-    const value = inputEvent[key];
-    if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object') {
-      if (value[0].hasOwnProperty('label')) {
-        if (typeof value[0].label === 'object') {
-          const keys = Object.keys(value[0].label);
-          if (keys.length > 0) {
-            return value[0].label[keys[0]];
-          }
-        } else {
-          return value[0].label;
-        }
-      }
-    }
-    return value;
-  }
   
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
 
-  inputEvent.extractCategory = extractLabelFromArray(inputEvent, keyCategory);
+  inputEvent.extractCategory = [].concat(inputEvent[keyCategory]).map(({ label }) => flattenLabel(label, lang)).shift();
 
   const keyLocation = process.env.STYLES_LIST_KEY_LOCATION;
   inputEvent.extractLocation = extractLabelFromArray(inputEvent, keyLocation);
