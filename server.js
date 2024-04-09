@@ -147,7 +147,10 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
 
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
 
-  inputEvent.extractCategory = [].concat(inputEvent[keyCategory]).map(({ label }) => flattenLabel(label, lang)).shift();
+  inputEvent.extractCategory = [].concat(inputEvent[keyCategory])
+    .filter(v => !!v)
+    .map(({ label }) => flattenLabel(label, lang))
+    .shift();
 
   const keyLocation = process.env.STYLES_LIST_KEY_LOCATION;
   inputEvent.extractLocation = extractLabelFromArray(inputEvent, keyLocation);
