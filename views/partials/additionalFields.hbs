@@ -1,0 +1,10 @@
+<div class="mb-3">
+  <span class="label">{{label}} :</span>
+  {{#if formatAsLink}}
+  <span><a href="{{value}}" target="_blank" rel="noreferrer">{{value}}</a></span>
+  {{else if formatAsFile}}
+  <span><a href="https://cibul.s3.amazonaws.com/{{this.filename}}">{{this.originalName}}</a></span>
+  {{else}}
+  <span>{{formatted}}</span>
+  {{/if}}
+</div>

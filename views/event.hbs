@@ -97,15 +97,9 @@
       </div>
       {{#if @root.config.additionalFields.displayAdditionalFieldsEvent}}
         <div class="additional-fields text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
-          {{#if @root.config.additionalFields.selectedAdditionalField}}
-            {{#each event.additionalFieldsSelected}}
-              {{> renderAdditionalFields this}}
-            {{/each}}
-          {{else}}
-            {{#each event.additionalFieldsFormatted}}
-              {{> renderAdditionalFields this}}
-            {{/each}}
-          {{/if}}
+          {{#each event.additionalFields}}
+            {{> additionalFields this}}
+          {{/each}}
         </div>
       {{/if}}
 

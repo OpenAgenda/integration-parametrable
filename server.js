@@ -12,14 +12,10 @@ const fetchEvents = require('./lib/fetchEvents');
 const isFirstPage = require('./lib/isFirstPage');
 const hasActiveFilter = require('./lib/hasActiveFilter');
 const getTotalLabel = require('./lib/getTotalLabel');
+const formatAdditionalFields = require('./lib/formatAdditionalFields');
+const flattenLabel = require('./lib/flattenLabel');
 
 Portal.utils.loadEnvironment(__dirname);
-
-function flattenLabel(label, lang) {
-  if (typeof label === 'string') return label;
-
-  return label[lang] ?? label[Object.keys(label).shift()];
-}
 
 function optionToLabel(options, id, lang) {
   const foundOption = options.find(v => v.id === id);
@@ -58,37 +54,10 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
 
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
   
-  const processAdditionalFields = (agenda, inputEvent, lang, selectedFields = null) => {
-    const fieldsToProcess = selectedFields ? 
-      agenda.schema.fields.filter(item => selectedFields.includes(item.field)) :
-      agenda.schema.fields.filter(field => field.schemaType !== 'event' && field.fieldType !== 'abstract');
-  
-    const processField = fieldSchema => {
-      const { field, label, options } = fieldSchema;
-      if (!inputEvent.hasOwnProperty(field) || inputEvent[field] == null) return {};
-  
-      let value = inputEvent[field];
-      const flattenedLabel = flattenLabel(label, lang);
-      if (options) {
-        value = [].concat(value).map(id => optionToLabel(options, id, lang));
-      }
-      return { [flattenedLabel]: formatBoolean(value) };
-    };
-  
-    const formattedFields = fieldsToProcess.reduce((acc, fieldSchema) => {
-      const processedField = processField(fieldSchema);
-      return { ...acc, ...processedField };
-    }, {});
-  
-    return selectedFields ? { additionalFieldsSelected: formattedFields } : { additionalFieldsFormatted: formattedFields };
-  };
-  
-  if (process.env.CONFIG_SELECTED_ADDITIONAL_FIELD) {
-    const selectedFields = process.env.CONFIG_SELECTED_ADDITIONAL_FIELD.split(',');
-    inputEvent = { ...inputEvent, ...processAdditionalFields(agenda, inputEvent, lang, selectedFields) };
-  } else {
-    inputEvent = { ...inputEvent, ...processAdditionalFields(agenda, inputEvent, lang) };
-  }
+  inputEvent.additionalFields = formatAdditionalFields(agenda.schema, inputEvent, {
+    lang,
+    selection: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD?.split(','),
+  });
   
   agenda.linkPastEvents = process.env.PORTAL_FORCE_PASSED_DISPLAY === '1' ? false : true;
 
