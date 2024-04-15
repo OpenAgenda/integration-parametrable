@@ -1,0 +1,35 @@
+{
+  "attendanceMode": "Teilnahmemodus",
+  "backToList": "Zurück zur Liste",
+  "backToListPreview": "Alle Veranstaltungen anzeigen",
+  "customFilters": "Benutzerdefinierte Filter",
+  "filters": "Filter",
+  "searchInAgenda": "Veranstaltungen suchen",
+  "previous": "Vorherige",
+  "next": "Nächste",
+  "contribute": "Eine Veranstaltung beitragen",
+  "powered": "Bereitgestellt von OpenAgenda",
+  "export": "Exportieren/Herunterladen",
+  "eventsTotal": "{total, plural, =0 {Keine {totalLabel} passen zu dieser Suche} one {{total} {totalLabel}} other {{total} {totalLabelPlural}}}",
+  "onlineAccessLink": "Online-Zugang zur Veranstaltung",
+  "city": "Stadt",
+  "keywords": "Schlagwörter",
+  
+  "searchPlaceholder": "Suche",
+  "searchWhenMoving": "Suchen, wenn ich die Karte bewege",
+  
+  "offline": "Offline",
+  "online": "Online",
+  "mixed": "Gemischt",
+  "passed": "Vergangen",
+  "current": "Aktuell",
+  "upcoming": "Bevorstehend",
+  
+  "trackConsent.informationText": "Dieses Programm verwendet Cookies des Google Analytics-Tracking-Dienstes. Sie ermöglichen es den Administratoren des Programms, Einblicke darüber zu erhalten, welcher Inhalt von Besuchern auf Websites angesehen wird. Akzeptieren Sie sie?",
+  "trackConsent.moreInfoLink": "Klicken Sie hier für weitere Informationen",
+  "trackConsent.decline": "Ablehnen",
+  "trackConsent.accept": "Akzeptieren",
+  
+  "showPastEvents": "{totalLabelPlural} einschließen",
+  "showUpcomingEvents": "Bevorstehende {totalLabelPlural} anzeigen"
+  }
