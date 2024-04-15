@@ -200,6 +200,8 @@ const additionalFilters = titles?.map((title, index) => ({
   }[slugs[index]] ?? 'additionalFields',
 }));
 
+const lang = process.env.PORTAL_LANG ?? 'fr';
+
 Portal({
   dir: __dirname,
   styles: {
@@ -302,7 +304,7 @@ Portal({
   // agenda uid
   uid: process.env.PORTAL_AGENDA_UID,
   // site language
-  lang: process.env.PORTAL_LANG || 'fr',
+  lang,
   // default timezone
   defaultTimezone: process.env.PORTAL_DEFAULT_TIMEZONE || 'Europe/Paris',
   // associated OA account key
@@ -357,7 +359,12 @@ Portal({
     // url of the link displayed in the cookie consent banner
     cookieBannerLink: 'https://support.google.com/analytics/answer/6004245?hl=fr'
   },
-  dateFilterValues: defineDateFilterValues({ begin: process.env.CONFIG_DATE_PERIOD_FILTER_BEGIN, end: process.env.CONFIG_DATE_PERIOD_FILTER_END, timeZone: 'Europe/Paris', langs: 'fr'}),
+  dateFilterValues: defineDateFilterValues({
+    begin: process.env.CONFIG_DATE_PERIOD_FILTER_BEGIN,
+    end: process.env.CONFIG_DATE_PERIOD_FILTER_END,
+    timeZone: 'Europe/Paris',
+    lang,
+  }),
   middlewareHooks: {
     list: {
       preRender: [
