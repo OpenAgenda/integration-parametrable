@@ -171,6 +171,8 @@ const additionalFilters = titles?.map((title, index) => ({
 
 const lang = process.env.PORTAL_LANG ?? 'fr';
 
+const displayFeaturedSection = (process.env.CONFIG_FEATURED_SECTION ?? '0') !== '0';
+
 Portal({
   dir: __dirname,
   styles: {
@@ -261,7 +263,7 @@ Portal({
     defaultImage: process.env.CONFIG_DEFAULT_IMAGE,
     displayDate: process.env.CONFIG_DISPLAY_DATE,
     featured : {
-      featuredSection: process.env.CONFIG_FEATURED_SECTION,
+      featuredSection: displayFeaturedSection,
     },
     total : {
       totalLabel: process.env.CONFIG_TOTAL_LABEL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL) : {"fr": "événement", "en": "event"},
@@ -295,7 +297,7 @@ Portal({
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
     relative: process.env.PORTAL_PREFILTER?.split(','),
-    featured: 0,
+    ...displayFeaturedSection ? { featured: 0 } : {},
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
