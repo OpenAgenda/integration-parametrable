@@ -31,5 +31,8 @@
   "trackConsent.accept": "Akzeptieren",
   
   "showPastEvents": "{totalLabelPlural} einschließen",
-  "showUpcomingEvents": "Bevorstehende {totalLabelPlural} anzeigen"
+  "showUpcomingEvents": "Bevorstehende {totalLabelPlural} anzeigen",
+
+  "totalLabel": "veranstaltung",
+  "totalLabelPlural": "veranstaltungen"
   }

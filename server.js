@@ -266,8 +266,8 @@ Portal({
       featuredSection: displayFeaturedSection,
     },
     total : {
-      totalLabel: process.env.CONFIG_TOTAL_LABEL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL) : {"fr": "événement", "en": "event"},
-      totalLabelPlural: process.env.CONFIG_TOTAL_LABEL_PLURAL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL_PLURAL): {"fr": "événements", "en": "events"},
+      label: process.env.CONFIG_TOTAL_LABEL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL) : undefined,
+      labelPlural: process.env.CONFIG_TOTAL_LABEL_PLURAL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL_PLURAL) : undefined,
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
@@ -336,10 +336,13 @@ Portal({
     timeZone: 'Europe/Paris',
     lang,
   }),
-  middlewareHooks: displayFeaturedSection ? {
+  middlewareHooks: {
     list: {
       preRender: [
         (req, res, next) => {
+          if (!displayFeaturedSection) {
+            return next();
+          }
           fetchEvents({
             filter: {
               featured: 1,
@@ -356,7 +359,7 @@ Portal({
         getTotalLabel,
       ],
     },
-  } : undefined,
+  },
   eventHook,
   proxyHookBeforeGet: params => {
     return {
