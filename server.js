@@ -336,7 +336,7 @@ Portal({
     timeZone: 'Europe/Paris',
     lang,
   }),
-  middlewareHooks: {
+  middlewareHooks: displayFeaturedSection ? {
     list: {
       preRender: [
         (req, res, next) => {
@@ -354,9 +354,9 @@ Portal({
         isFirstPage,
         hasActiveFilter,
         getTotalLabel,
-      ]
+      ],
     },
-  },
+  } : undefined,
   eventHook,
   proxyHookBeforeGet: params => {
     return {
