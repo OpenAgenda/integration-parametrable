@@ -29,12 +29,12 @@
               <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {{filter
                       type='choice'
-                      aggregation=(object size=this.size type=this.aggType field=this.slug missing='null')
+                      aggregation=(object size=this.aggSize type=this.aggType field=this.slug missing='null')
                       name=this.slug
                       sort=this.sort
                       inputType='checkbox'
-                      pageSize=this.size
-                      searchMinSize=this.size
+                      pageSize=this.pageSize
+                      searchMinSize=this.searchMinSize
                     }}
               </li>
             </form>
