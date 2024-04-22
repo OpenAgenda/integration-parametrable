@@ -15,15 +15,15 @@
     <div class="row">
       <div class="col-12 col-md-5 order-md-last pb-3 pb-md-0 ">
         {{#if @root.styles.noButton.export}}
-        {{else}} 
+        {{else}}
           <div class="col-12 d-md-flex justify-content-end p-0 export">
             {{>export}}
           </div>
         {{/if}}
 
         {{#if @root.styles.noButton.contribute}}
-        {{else}} 
-          <div class="col-12 d-md-flex justify-content-end p-0 contribute">               
+        {{else}}
+          <div class="col-12 d-md-flex justify-content-end p-0 contribute">
             {{>contribute}}
           </div>
         {{/if}}
@@ -48,7 +48,7 @@
                 {{i18n 'showUpcomingEvents' totalLabelPlural=totalLabelPlural}}
               </label>
               {{/customFilter}}
-            </div> 
+            </div>
         {{/if}}
       </div>
     </div>
@@ -72,7 +72,7 @@
 </div>
 
 {{#if @root.styles.footer.linkOa}}
-  <div class="col-12 d-sm-flex justify-content-center p-0 powered">               
+  <div class="col-12 d-sm-flex justify-content-center p-0 powered">
     {{>powered}}
   </div>
 {{/if}}
