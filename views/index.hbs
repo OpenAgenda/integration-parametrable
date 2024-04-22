@@ -30,8 +30,8 @@
       </div>
 
       <div class="col-12 col-md-7 total my-auto d-flex">
-        {{i18n 'eventsTotal' total=total totalLabel=totalLabel totalLabelPlural=totalLabelPlural}} 
-        
+        {{widget name='total' message='eventsTotal' totalLabel=totalLabel totalLabelPlural=totalLabelPlural}}
+
         {{#if agenda.linkPastEvents}}
           <span class="mx-2">-</span>
             <div class="btn-total d-inline-block">
