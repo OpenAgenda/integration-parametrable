@@ -297,11 +297,10 @@ Portal({
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
     relative: process.env.PORTAL_PREFILTER?.split(','),
-    ...displayFeaturedSection ? { featured: 0 } : {},
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
-    // featured: 1,
+    ...displayFeaturedSection ? { featured: 0 } : {},
   },
   // true if portal is to be displayed within iframe
   iframable: process.env.PORTAL_IFRAMABLE,
