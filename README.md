@@ -133,9 +133,21 @@ STYLES_ADDITIONAL_SORT_FILTER=,alphabetical,,alphabetical
 
 Lorsque cette variable est définie, définir le même nombre d'éléments qu'il y en a dans STYLES_ADDITIONAL_SLUG_FILTER
 
-**Déterminer le nombre de valeurs à charger dans les options présentées dans le filtre:**
+**Déterminer le nombre total de valeurs à charger dans les options présentées dans le filtre:**
 
-STYLES_ADDITIONAL_SIZE_FILTER=,,120
+STYLES_ADDITIONAL_AGG_SIZE_FILTER=,20,120
+
+Lorsque cette variable est définie, définir le même nombre d'éléments qu'il y en a dans STYLES_ADDITIONAL_SLUG_FILTER
+
+**Déterminer le nombre de valeurs par page à charger dans les options présentées dans le filtre, cette valeur permet d'afficher le lien "Plus d'options"/"Moins d'options":**
+
+STYLES_ADDITIONAL_PAGE_SIZE_FILTER=,20,10
+
+Lorsque cette variable est définie, définir le même nombre d'éléments qu'il y en a dans STYLES_ADDITIONAL_SLUG_FILTER
+
+**Déterminer le nombre de valeurs minimum à avoir pour afficher le champ de recherche de valeur dans le filtre:**
+
+STYLES_ADDITIONAL_SEARCH_MIN_SIZE_FILTER=,,1
 
 Lorsque cette variable est définie, définir le même nombre d'éléments qu'il y en a dans STYLES_ADDITIONAL_SLUG_FILTER
 

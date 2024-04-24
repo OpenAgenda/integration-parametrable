@@ -3,12 +3,13 @@
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
+  "packageManager": "yarn@4.1.1",
   "scripts": {
     "start": "start-portal",
     "prepack": "build-portal"
   },
   "dependencies": {
-    "@openagenda/agenda-portal": "^6.9.22",
+    "@openagenda/agenda-portal": "^6.9.23",
     "moment": "^2.30.1",
     "moment-timezone": "^0.5.43"
   }
