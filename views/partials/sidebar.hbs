@@ -1,6 +1,6 @@
-<div class="sidebar-wrapper container-fluid">   
+<div class="sidebar-wrapper container-fluid">
   <div class="row justify-content-around filters text-center mx-auto {{#if @root.styles.noMargin}}px-0{{else}}container filters-padding{{/if}}" id="filters">
-        
+
     {{#if @root.styles.filter.displayCalendar}}
     <div class="col p-0" id="calendar">
       <div class="dropdown">
@@ -16,7 +16,7 @@
       </div>
     </div>
     {{/if}}
-    
+
     {{#if @root.styles.filter.displayAdditionalFilter}}
       {{#each @root.styles.filter.additionalFilters}}
         <div class="col p-0" id="filter">
@@ -29,12 +29,12 @@
               <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     {{filter
                       type='choice'
-                      aggregation=(object size=this.size type=this.aggType field=this.slug missing='null')
+                      aggregation=(object size=this.aggSize type=this.aggType field=this.slug missing='null')
                       name=this.slug
                       sort=this.sort
                       inputType='checkbox'
-                      pageSize=this.size
-                      searchMinSize=this.size
+                      pageSize=this.pageSize
+                      searchMinSize=this.searchMinSize
                     }}
               </li>
             </form>
@@ -71,7 +71,7 @@
             {{filter type='choice' name='attendanceMode' inputType='checkbox' pageSize=20}}
           </li>
         </form>
-      </div> 
+      </div>
     </div>
     {{/if}}
 

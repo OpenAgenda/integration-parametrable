@@ -5,7 +5,6 @@
 // Set options as a parameter, environment variable, or rc file.
 
 const Portal = require('@openagenda/agenda-portal');
-const { getLocaleValue } = require('@openagenda/intl')
 const extractDate = require('./lib/extractDate');
 const defineDateFilterValues = require('./lib/defineDateFilterValues');
 const fetchEvents = require('./lib/fetchEvents');
@@ -53,12 +52,12 @@ const keyMoreSlug = process.env.STYLES_LIST_KEY_MORE?.split(',');
 function eventHook(inputEvent, { agenda, lang, styles }) {
 
   inputEvent.fullImage = (inputEvent.image?.variants ?? []).find(v => v.type === 'full')?.filename;
-  
+
   inputEvent.additionalFields = formatAdditionalFields(agenda.schema, inputEvent, {
     lang,
     selection: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD?.split(','),
   });
-  
+
   agenda.linkPastEvents = process.env.PORTAL_FORCE_PASSED_DISPLAY === '1' ? false : true;
 
   const currentEvents = agenda.summary.publishedEvents.current;
@@ -70,7 +69,7 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   if (inputEvent.age.min === null && inputEvent.age.max === null) {
     inputEvent.age = false;
   }
-  
+
   if (process.env.CONFIG_DEFAULT_IMAGE) {
     inputEvent.defaultImage = process.env.CONFIG_DEFAULT_IMAGE
   }
@@ -83,9 +82,9 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
       group[type].push(obj)
       return group
     }, {})
-  
+
   inputEvent.linkWithoutContext = inputEvent.link.split('?').shift();
-    
+
   const res = agenda.schema.fields.filter(f => !!f.options).reduce((event, field) => {
     if (event[field.field] === undefined) {
       return event;
@@ -96,9 +95,9 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
         .map(id => field.options.find(o => o.id === id))
     });
   }, inputEvent);
-  
+
   Object.assign(res, extractDate(res))
-  
+
   if (inputEvent.location) {
     if (inputEvent.location.name) {
       inputEvent.fullAddress = inputEvent.location.name;
@@ -123,7 +122,7 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
 
   const keyLocation = process.env.STYLES_LIST_KEY_LOCATION;
   inputEvent.extractLocation = extractLabelFromArray(inputEvent, keyLocation);
-  
+
   const keyLocationLabel = process.env.STYLES_LIST_KEY_LOCATION_LABEL;
   inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
 
@@ -153,14 +152,18 @@ const titles = process.env.STYLES_ADDITIONAL_TITLE_FILTER?.split(',');
 const slugs = process.env.STYLES_ADDITIONAL_SLUG_FILTER?.split(',');
 const imgs = process.env.STYLES_ADDITIONAL_IMG_FILTER?.split(',');
 const sorts = process.env.STYLES_ADDITIONAL_SORT_FILTER?.split(',');
-const sizes = process.env.STYLES_ADDITIONAL_SIZE_FILTER?.split(',');
+const aggSizes = process.env.STYLES_ADDITIONAL_AGG_SIZE_FILTER?.split(',');
+const pageSizes = process.env.STYLES_ADDITIONAL_PAGE_SIZE_FILTER?.split(',');
+const searchMinSizes = process.env.STYLES_ADDITIONAL_SEARCH_MIN_SIZE_FILTER?.split(',');
 
 const additionalFilters = titles?.map((title, index) => ({
   title,
   slug: slugs[index],
   img: imgs[index],
   sort: sorts?.[index],
-  size: (sizes?.[index] ?? '')?.length ? parseInt(sizes[index], 10) : undefined,
+  aggSize: (aggSizes?.[index] ?? '')?.length ? parseInt(aggSizes[index], 10) : undefined,
+  pageSize: (pageSizes?.[index] ?? '')?.length ? parseInt(pageSizes[index], 10) : undefined,
+  searchMinSize: (searchMinSizes?.[index] ?? '')?.length ? parseInt(searchMinSizes[index], 10) : undefined,
   aggType: {
     department: 'departments',
     city: 'cities',
@@ -297,11 +300,10 @@ Portal({
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
     relative: process.env.PORTAL_PREFILTER?.split(','),
-    ...displayFeaturedSection ? { featured: 0 } : {},
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
-    // featured: 1,
+    ...displayFeaturedSection ? { featured: 0 } : {},
   },
   // true if portal is to be displayed within iframe
   iframable: process.env.PORTAL_IFRAMABLE,
