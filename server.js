@@ -294,7 +294,7 @@ Portal({
   // multilingual labels folder
   i18n: process.env.PORTAL_I18N_FOLDER,
   // number of events to be loaded in an event index page
-  eventsPerPage: 20,
+  eventsPerPage: parseInt(process.env.PORTAL_EVENTS_PER_PAGE ?? '20', 10),
   // visibility of past events when relative or timings filter is specified
   visibilityPastEvents : process.env.PORTAL_VISIBILITY_PAST_EVENTS,
   // filters that applies even if other filter is specified, can be overloaded
