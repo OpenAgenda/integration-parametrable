@@ -235,6 +235,10 @@ OPTION_SORT=timingsWithFeatured.asc
 
 Les tris disponibles sont documentés ici: https://developers.openagenda.com/10-lecture/
 
+**Changer le nombre d'items chargés par page**
+
+PORTAL_EVENTS_PER_PAGE=20
+
 ## La vue détail
 
 **Afficher les infos se situant à droite (partage, calendrier, localisation) :**
