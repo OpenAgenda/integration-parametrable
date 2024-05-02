@@ -71,30 +71,40 @@
       </div>
       {{/if}}
 
-      <div class="event-details text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
-        {{#if event.conditions}}
-        <div class="conditions mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Conditions.svg" alt="icône prix">{{event.conditions}}</div>
-        {{/if}}
-        {{#if event.age}}
-        <div class="age mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Age.svg" alt="icône age">De {{event.age.min}} à {{event.age.max}} ans</div>
-        {{/if}}
-        {{#if @root.config.displayDate}}
-        {{else}}
-          <div class="range mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Calendrier.svg" alt="icône horaire">{{event.dateRange}}</div>
-        {{/if}}
-        {{#if event.fullAddress}}
-        <div class="location mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{event.fullAddress}}</div>
-        {{/if}}
-        {{#if event.registration.phone.[0].value}}
-        <div class="phone mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Phone.svg" alt="icône phone"><a href="tel:{{event.registration.phone.[0].value}}" target="_blank">{{event.registration.phone.[0].value}}</a></div>
-        {{/if}}
-        {{#if event.registration.email.[0].value}}
-        <div class="email mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Email.svg" alt="icône email"><a href="mailto:{{event.registration.email.[0].value}}" target="_blank">{{event.registration.email.[0].value}}</a></div>
-        {{/if}}
-        {{#if event.registration.link.[0].value}}
-        <div class="link mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Link.svg" alt="icône link"><a href="{{event.registration.link.[0].value}}" target="_blank">{{event.registration.link.[0].value}}</a></div>
-        {{/if}}
-      </div>
+      {{#if @root.config.fields.displayFieldsEvent}}
+        <div class="event-details text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
+          {{#each event.fields}}
+            {{> fields this}}
+          {{/each}}
+        </div>
+      {{else}}
+        <div class="event-details text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
+          {{#if event.conditions}}
+          <div class="conditions mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Conditions.svg" alt="icône prix">{{event.conditions}}</div>
+          {{/if}}
+          {{#if event.age}}
+          <div class="age mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Age.svg" alt="icône age">De {{event.age.min}} à {{event.age.max}} ans</div>
+          {{/if}}
+          {{#if @root.config.displayDate}}
+          {{else}}
+            <div class="range mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Calendrier.svg" alt="icône horaire">{{event.dateRange}}</div>
+          {{/if}}
+          {{#if event.location.fullAddress}}
+          <div class="location mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{event.location.fullAddress}}</div>
+          {{/if}}
+          {{#if event.registration.phone.[0].value}}
+          <div class="phone mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Phone.svg" alt="icône phone"><a href="tel:{{event.registration.phone.[0].value}}" target="_blank">{{event.registration.phone.[0].value}}</a></div>
+          {{/if}}
+          {{#if event.registration.email.[0].value}}
+          <div class="email mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Email.svg" alt="icône email"><a href="mailto:{{event.registration.email.[0].value}}" target="_blank">{{event.registration.email.[0].value}}</a></div>
+          {{/if}}
+          {{#if event.registration.link.[0].value}}
+          <div class="link mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Link.svg" alt="icône link"><a href="{{event.registration.link.[0].value}}" target="_blank">{{event.registration.link.[0].value}}</a></div>
+          {{/if}}
+        </div>
+      {{/if}}
+
+
       {{#if @root.config.additionalFields.displayAdditionalFieldsEvent}}
         <div class="additional-fields text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
           {{#each event.additionalFields}}

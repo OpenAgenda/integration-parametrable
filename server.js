@@ -12,6 +12,7 @@ const isFirstPage = require('./lib/isFirstPage');
 const hasActiveFilter = require('./lib/hasActiveFilter');
 const getTotalLabel = require('./lib/getTotalLabel');
 const formatAdditionalFields = require('./lib/formatAdditionalFields');
+const formatFields = require('./lib/formatFields');
 const flattenLabel = require('./lib/flattenLabel');
 
 Portal.utils.loadEnvironment(__dirname);
@@ -55,7 +56,12 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
 
   inputEvent.additionalFields = formatAdditionalFields(agenda.schema, inputEvent, {
     lang,
-    selection: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD?.split(','),
+    additionalFieldSelection: process.env.CONFIG_SELECTED_ADDDITIONAL_FIELD?.split(','),
+  });
+
+  inputEvent.fields = formatFields(agenda.schema, inputEvent, {
+    lang,
+    fieldSelection: process.env.CONFIG_SELECTED_FIELD?.split(','),
   });
 
   agenda.linkPastEvents = process.env.PORTAL_FORCE_PASSED_DISPLAY === '1' ? false : true;
@@ -100,16 +106,16 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
 
   if (inputEvent.location) {
     if (inputEvent.location.name) {
-      inputEvent.fullAddress = inputEvent.location.name;
+      inputEvent.location.fullAddress = inputEvent.location.name;
       if (inputEvent.location.address) {
-        inputEvent.fullAddress += ", " + inputEvent.location.address;
+        inputEvent.location.fullAddress += ", " + inputEvent.location.address;
       }
     } else if (inputEvent.location.address) {
-        inputEvent.fullAddress = inputEvent.location.address;
+        inputEvent.location.fullAddress = inputEvent.location.address;
     } else if (inputEvent.location.city) {
-        inputEvent.fullAddress = inputEvent.location.city;
+        inputEvent.location.fullAddress = inputEvent.location.city;
     } else {
-        inputEvent.fullAddress = [];
+        inputEvent.location.fullAddress = [];
     }
   }
 
@@ -260,7 +266,9 @@ Portal({
   config: {
     additionalFields: {
       displayAdditionalFieldsEvent: process.env.CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT,
-      selectedAdditionalField: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD,
+    },
+    fields: {
+      displayFieldsEvent: process.env.CONFIG_DISPLAY_FIELDS_EVENT,
     },
     displayPeriodFilter: process.env.CONFIG_DISPLAY_PERIOD_FILTER,
     defaultImage: process.env.CONFIG_DEFAULT_IMAGE,
@@ -271,6 +279,16 @@ Portal({
     total : {
       label: process.env.CONFIG_TOTAL_LABEL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL) : undefined,
       labelPlural: process.env.CONFIG_TOTAL_LABEL_PLURAL ? JSON.parse(process.env.CONFIG_TOTAL_LABEL_PLURAL) : undefined,
+    },
+    contribute: {
+      label: process.env.CONFIG_CONTRIBUTE_LABEL
+    },
+    backToList: {
+      label: process.env.CONFIG_BACK_TO_LIST_LABEL
+    },
+    extraButton: {
+      buttonLabel: process.env.CONFIG_EXTRA_BUTTON_LABEL,
+      buttonLink: process.env.CONFIG_EXTRA_BUTTON_LINK
     }
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,

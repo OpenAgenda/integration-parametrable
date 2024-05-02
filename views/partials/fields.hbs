@@ -1,0 +1,27 @@
+<div class="mb-3">
+  {{#if conditions}}
+    <div class="conditions mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Conditions.svg" alt="icône prix">{{formatted}}</div>
+  {{else if age}}
+    {{#if formatted.min}}
+      {{#if formatted.max}}
+        <div class="age mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Age.svg" alt="icône age">De {{formatted.min}} à {{formatted.max}} ans</div>
+      {{/if}}
+    {{/if}}
+  {{else if dateRange}}
+    <div class="range mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Calendrier.svg" alt="icône horaire">{{formatted}}</div>
+  {{else if location}}
+    <div class="location mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/City.svg" alt="icône lieu">{{formatted.fullAddress}}</div>
+  {{else if phone}}
+    {{#if formatted}}
+      <div class="phone mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Phone.svg" alt="icône phone"><a href="tel:{{formatted}}" target="_blank">{{formatted}}</a></div>
+    {{/if}}
+  {{else if email}}
+    {{#if formatted}}
+      <div class="email mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Email.svg" alt="icône email"><a href="mailto:{{formatted}}" target="_blank">{{formatted}}</a></div>
+    {{/if}}
+  {{else if link}}
+    {{#if formatted}}
+      <div class="link mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Link.svg" alt="icône link"><a href="{{formatted}}" target="_blank">{{formatted}}</a></div>
+    {{/if}}
+  {{/if}}
+</div>
