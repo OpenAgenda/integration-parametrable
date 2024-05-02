@@ -1,0 +1,30 @@
+.extraButton {
+  .btn {
+      color: #41acdd;
+      background-color: white;
+      border-color: #41acdd;
+      border-radius: 2px;
+      font-size: 12px;
+      @media (min-width: 575px) {
+      font-size: 14px;
+      }
+      .oa-logo {
+          width: 12px;
+      }
+      &:hover {
+          box-shadow: none;
+      }
+      
+  }
+  .btn:not(:disabled):not(.disabled):active,
+  .btn-:not(:disabled):not(.disabled).active {
+      background-color: white;
+      color: #41acdd;
+  }
+
+}
+
+.export ~ .extraButton,
+.contribute ~ .extraButton {
+  margin-top: 0.5rem;
+}
