@@ -27,6 +27,11 @@
             {{>contribute}}
           </div>
         {{/if}}
+        {{#if @root.config.extraButton.buttonLabel}}
+          <div class="col-12 d-md-flex justify-content-end p-0 extraButton">
+            {{>extra.button}}
+          </div>
+        {{/if}}
       </div>
 
       <div class="col-12 col-md-7 total my-auto d-flex">
