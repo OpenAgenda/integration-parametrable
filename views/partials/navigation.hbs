@@ -3,7 +3,7 @@
     <li class="nav-item back-list mr-auto ">
       {{#if navigation.available}}
       <a class="nav-link" href="{{navigation.list}}">
-        {{i18n 'backToList'}}
+        {{#if @root.config.backToList.label}}{{@root.config.backToList.label}}{{else}}{{i18n 'backToList'}}{{/if}}
       </a>
       {{else}}
       <a class="nav-link" href="{{navigation.list}}">
