@@ -55,9 +55,11 @@
       {{/if}}
     {{/unless}}
     {{#if @root.styles.list.displayCategory}}
-    <div class="category category-line">
-      <p class="category-text">{{extractCategory}}</p>
-    </div>
+      {{#if extractCategory}}
+        <div class="category category-line">
+          <p class="category-text">{{extractCategory}}</p>
+        </div>
+      {{/if}}
     {{/if}}
       <div class="col-9 wbg px-4 py-3 text-event-cover-col">
         <div class='event-cover-row'>

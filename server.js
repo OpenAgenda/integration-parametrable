@@ -32,21 +32,31 @@ function formatBoolean(value) {
 }
 
 function extractLabelFromArray(inputEvent, key) {
-  const value = inputEvent[key];
-  if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object') {
-    if (value[0].hasOwnProperty('label')) {
-      if (typeof value[0].label === 'object') {
-        const keys = Object.keys(value[0].label);
-        if (keys.length > 0) {
-          return value[0].label[keys[0]];
-        }
-      } else {
-        return value[0].label;
-      }
+  let value = inputEvent;
+
+  if (!key || typeof key !== 'string') {
+    return value;
+  }
+
+  const keys = key.split('.');
+
+  for (const k of keys) {
+    if (value && typeof value === 'object') {
+      value = value[k];
+    } else {
+      return value;
     }
   }
+
+  if (Array.isArray(value) && value.length > 0 && typeof value[0] === 'object' && value[0].hasOwnProperty('label')) {
+    const labelValue = value[0].label;
+    return typeof labelValue === 'object' ? Object.values(labelValue)[0] : labelValue;
+  }
+  
   return value;
 }
+
+
 const keyMoreLabel = process.env.STYLES_LIST_KEY_MORE_LABEL?.split(',');
 const keyMoreSlug = process.env.STYLES_LIST_KEY_MORE?.split(',');
 
@@ -129,9 +139,11 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
   const keyLocation = process.env.STYLES_LIST_KEY_LOCATION;
   inputEvent.extractLocation = extractLabelFromArray(inputEvent, keyLocation);
 
-  const keyLocationLabel = process.env.STYLES_LIST_KEY_LOCATION_LABEL;
-  inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
-
+  if(inputEvent.extractLocation){
+    const keyLocationLabel = process.env.STYLES_LIST_KEY_LOCATION_LABEL;
+    inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
+  } 
+  
   inputEvent.more = keyMoreLabel?.map((label, index,) => {
     const slugData = inputEvent[keyMoreSlug[index]];
     if (Array.isArray(slugData)) {
