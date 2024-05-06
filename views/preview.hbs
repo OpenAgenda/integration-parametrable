@@ -10,9 +10,21 @@
     </div>
     {{#if @root.styles.preview.displayListBtn}}
       <div class="col text-center">
-        <a href="{{@root.styles.preview.linkListBtn}}" class="btn prev-btn" target="_blank">{{i18n 'backToListPreview'}}</a>
+        <a href="{{@root.styles.preview.linkListBtn}}" class="btn prev-btn" target="_blank" id="listBtn">{{i18n 'backToListPreview'}}</a>
       </div>
     {{/if}}
   </main>
 </div>
 {{>layout.bottom}}
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var listBtn = document.getElementById("listBtn");
+
+    listBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      window.open(listBtn.getAttribute("href"), "_blank");
+    });
+  });
+</script>
