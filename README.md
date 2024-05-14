@@ -253,6 +253,10 @@ CONFIG_DISPLAY_ADDITIONAL_FIELDS_EVENT=1
 
 CONFIG_SELECTED_ADDITIONAL_FIELD=lieu-de-lanimation,categorie-danimation
 
+**Ne pas afficher les champs additionnels non informés :**
+
+CONFIG_HIDE_EMPTY_ADDITIONAL_FIELD=1
+
 ## Le footer
 
 ### Afficher un lien vers OpenAgenda
