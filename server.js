@@ -66,7 +66,8 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
 
   inputEvent.additionalFields = formatAdditionalFields(agenda.schema, inputEvent, {
     lang,
-    additionalFieldSelection: process.env.CONFIG_SELECTED_ADDDITIONAL_FIELD?.split(','),
+    additionalFieldSelection: process.env.CONFIG_SELECTED_ADDITIONAL_FIELD?.split(','),
+    hideEmptyFields: process.env.CONFIG_HIDE_EMPTY_ADDITIONAL_FIELD === '1',
   });
 
   inputEvent.fields = formatFields(agenda.schema, inputEvent, {

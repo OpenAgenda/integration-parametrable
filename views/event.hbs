@@ -108,7 +108,9 @@
       {{#if @root.config.additionalFields.displayAdditionalFieldsEvent}}
         <div class="additional-fields text-left{{#if @root.styles.noShadows}} p-noshadow{{else}} shadow{{/if}}">
           {{#each event.additionalFields}}
+            {{#if display}}
             {{> additionalFields this}}
+            {{/if}}
           {{/each}}
         </div>
       {{/if}}

@@ -47,13 +47,24 @@
     p {
       margin-bottom: 0!important;
     }
+    ul {
+      line-height: 0;
+    }
+    li {
+      line-height: 1.6em;
+    }
   } 
  
-  .additional-fields p {
-    margin: 0;
-  }
-  .additional-fields .label {
-    font-weight: 600;
+  .additional-fields {
+    p {
+      margin: 0;
+    }
+    img {
+      max-width: 100%;
+    }
+    .label {
+      font-weight: 600;
+    }
   }
   .event-details div:first-child,
   .additional-fields div:first-child {
