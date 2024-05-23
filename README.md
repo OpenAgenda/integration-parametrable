@@ -156,6 +156,7 @@ Lorsque cette variable est définie, définir le même nombre d'éléments qu'il
 CONFIG_DISPLAY_PERIOD_FILTER=1
 
 **Définir la periode :**
+
 CONFIG_DATE_PERIOD_FILTER_BEGIN=2024-01-01
 CONFIG_DATE_PERIOD_FILTER_END=2024-01-05
 
@@ -167,8 +168,13 @@ STYLES_PERIOD_FILTER_SIZE_BTN=33%
 
 STYLES_DISPLAY_MAP_FILTER=1
 
-Optionnellement, définir la hauteur de la carte:
+**Optionnellement, définir la hauteur de la carte:**
+
 STYLES_MAP_FILTER_HEIGHT=456px
+
+**Optionnellement, définir les coordonnées géographiques par défaut:**
+
+CONFIG_MAP_COORDINATES=52.99420454841773,180,-25.317547633280487,-180
 
 ## Les boutons
 
