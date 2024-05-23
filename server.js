@@ -195,6 +195,9 @@ const lang = process.env.PORTAL_LANG ?? 'fr';
 
 const displayFeaturedSection = (process.env.CONFIG_FEATURED_SECTION ?? '0') !== '0';
 
+const mapCoordinates = process.env.CONFIG_MAP_COORDINATES ? process.env.CONFIG_MAP_COORDINATES.split(',').map(parseFloat) : 0;
+
+
 Portal({
   dir: __dirname,
   styles: {
@@ -334,7 +337,17 @@ Portal({
   },
   // filter that applies when no other filter is specified
   defaultFilter: {
-    ...displayFeaturedSection ? { featured: 0 } : {},
+    ...(displayFeaturedSection ? { featured: 0 } : {}),
+    ...(mapCoordinates ? { geo: {
+        northEast: {
+          lat: mapCoordinates[0],
+          lng: mapCoordinates[1]
+        },
+        southWest: {
+          lat: mapCoordinates[2],
+          lng: mapCoordinates[3]
+        }
+      }} : {})
   },
   // true if portal is to be displayed within iframe
   iframable: process.env.PORTAL_IFRAMABLE,
