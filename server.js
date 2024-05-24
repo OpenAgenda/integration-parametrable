@@ -226,6 +226,7 @@ Portal({
       additionalTitle: process.env.STYLES_ADDITIONAL_TITLE_FILTER,
       additionalLabel: process.env.STYLES_ADDITIONAL_LABEL_FILTER,
       displayCalendar: process.env.STYLES_DISPLAY_CALENDAR_FILTER,
+      displayCalendarDefineRange: process.env.STYLES_DISPLAY_CALENDAR_DEFINE_RANGE,
       displayCity: process.env.STYLES_DISPLAY_CITY_FILTER,
       displayAttendanceMode: process.env.STYLES_DISPLAY_ATTENDANCEMODE_FILTER,
       displayKeywords: process.env.STYLES_DISPLAY_KEYWORDS_FILTER,

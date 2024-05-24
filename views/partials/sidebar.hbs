@@ -11,9 +11,11 @@
         <form>
           <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {{filter name='timings'}}
-              <div class="calendar-filter">
-                {{filter name='timings' type='definedRange' staticRanges=(array 'today' 'tomorrow' 'currentWeek')}}
-              </div>
+              {{#if @root.styles.filter.displayCalendarDefineRange}}
+                <div class="calendar-filter">
+                  {{filter name='timings' type='definedRange' staticRanges=(array 'today' 'tomorrow' 'currentWeek')}}
+                </div>
+              {{/if}}
           </li>
         </form>
       </div>
