@@ -24,7 +24,7 @@ $header-input-size: $size;
 $header-input-weight: 0;
 
 // Month-Year
-$month-year-color: #3e484f;
+$month-year-color: black;
 $month-year-bg: transparent;
 $month-year-border: transparent;
 $month-year-weight: 0;
@@ -40,8 +40,8 @@ $week-weight: 400;
 $week-size: $size;
 
 // Body
-$body-color-no-selection: #413a42;
-$body-color-with-selection: #413a42;
+$body-color-no-selection: black;
+$body-color-with-selection: black;
 
 $body-bg: #fff;
 $body-bg-radius: 0px;
@@ -59,7 +59,7 @@ $preview-bg: transparent;
 // Today
 $today-weight: 500;
 
-$today-color-not-selected: #413a42;
+$today-color-not-selected: black;
 $today-color-selected:#fff;
 
 $today-content: "";
@@ -721,11 +721,6 @@ $passive-color: rgb(212, 212, 212);
   margin-left: 8px;
   }
   
-  .rdrStaticRange:hover .rdrStaticRangeLabel,
-  .rdrStaticRange:focus .rdrStaticRangeLabel {
-  background: #eff2f7;
-  }
-  
   .rdrStaticRangeLabel {
   display: block;
   outline: 0;
@@ -861,4 +856,11 @@ $passive-color: rgb(212, 212, 212);
 .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span:after,
 .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span:after,
 .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after {
+}
+
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrStartEdge ~ .rdrDayNumber span,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span,
+.rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span {
+  color: $body-color-no-selection!important;
 }

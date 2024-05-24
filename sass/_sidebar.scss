@@ -74,6 +74,33 @@
       }
     } 
   }
+
+  #calendar {
+    .calendar-filter {
+      width: 85%;
+      margin-right: auto;
+      margin-left: auto;
+      .rdrDefinedRangesWrapper {
+        border-right: none;
+      }
+      .rdrStaticRange:hover .rdrStaticRangeLabel,
+      .rdrStaticRange:focus .rdrStaticRangeLabel {
+        background: #fafafa;
+      }
+      .rdrStaticRange {
+        border-radius: 2px;
+        .rdrStaticRangeLabel {
+          border-radius: 2px;
+        }
+      }
+      .rdrStaticRangeSelected {
+        .rdrStaticRangeLabel {
+          color: white;
+          font-weight: 400;
+        }
+      }
+    }
+  }
   
   #filter,
   #calendar,

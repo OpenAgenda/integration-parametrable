@@ -54,6 +54,15 @@
   .rdrNoSelection .rdrDay:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span:after {
     background-color: {{styles.primaryColor}}!important;
   }
+  .rdrStaticRangeSelected {
+    background: {{styles.primaryColor}};
+  }
+
+  .rdrStaticRangeSelected:hover .rdrStaticRangeLabel,
+  .rdrStaticRangeSelected:focus .rdrStaticRangeLabel {
+    background: {{styles.primaryColor}}!important;
+  }
+
   .nav-link .arrow path {
     stroke: {{styles.primaryColor}};
   }

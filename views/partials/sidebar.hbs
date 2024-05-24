@@ -10,7 +10,10 @@
         </button>
         <form>
           <li class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {{filter name='timings'}}
+              {{filter name='timings'}}
+              <div class="calendar-filter">
+                {{filter name='timings' type='definedRange' staticRanges=(array 'today' 'tomorrow' 'currentWeek')}}
+              </div>
           </li>
         </form>
       </div>
