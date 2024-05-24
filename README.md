@@ -93,6 +93,10 @@ STYLES_DISPLAY_ONLY_SEARCH_FILTER=1
 
 STYLES_DISPLAY_CALENDAR_FILTER=1
 
+**Afficher le filtre timing défini (aujourd'hui, demain ...)**
+
+STYLES_DISPLAY_CALENDAR_DEFINE_RANGE=1
+
 **Afficher le filtre "ville" :**
 
 STYLES_DISPLAY_CITY_FILTER=1
