@@ -188,6 +188,7 @@ const additionalFilters = titles?.map((title, index) => ({
     city: 'cities',
     region: 'regions',
     locationUid: 'locations',
+    adminLevel3: 'adminLevels3',
   }[slugs[index]] ?? 'additionalFields',
 }));
 
