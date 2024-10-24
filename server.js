@@ -307,7 +307,8 @@ Portal({
     extraButton: {
       buttonLabel: process.env.CONFIG_EXTRA_BUTTON_LABEL,
       buttonLink: process.env.CONFIG_EXTRA_BUTTON_LINK
-    }
+    },
+    agendaNoIndex : process.env.CONFIG_AGENDA_NO_INDEX,
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
   devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,
