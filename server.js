@@ -35,7 +35,7 @@ function extractLabelFromArray(inputEvent, key) {
   let value = inputEvent;
 
   if (!key || typeof key !== 'string') {
-    return value;
+    return null;
   }
 
   const keys = key.split('.');
@@ -44,7 +44,7 @@ function extractLabelFromArray(inputEvent, key) {
     if (value && typeof value === 'object') {
       value = value[k];
     } else {
-      return value;
+      return null;
     }
   }
 
@@ -128,6 +128,15 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     } else {
         inputEvent.location.fullAddress = [];
     }
+  }
+  
+  if (process.env.CONFIG_EVENT_DEFAULT_REGISTRATION) {
+    const defaultRegistration = process.env.CONFIG_EVENT_DEFAULT_REGISTRATION.split(',');
+
+    inputEvent.registration.default = {
+      label: defaultRegistration[0],
+      value: defaultRegistration[1]
+    };
   }
 
   const keyCategory = process.env.STYLES_LIST_KEY_CATEGORY;
@@ -309,6 +318,7 @@ Portal({
       buttonLink: process.env.CONFIG_EXTRA_BUTTON_LINK
     },
     agendaNoIndex : process.env.CONFIG_AGENDA_NO_INDEX,
+    event: process.env.CONFIG_EVENT_DEFAULT_REGISTRATION
   },
   root: process.env.PORTAL_ROOT || `http://localhost:${process.env.PORTAL_PORT}`,
   devServerPort: process.env.PORTAL_DEV_SERVER_PORT || 3001,

@@ -11,5 +11,6 @@
     "@openagenda/agenda-portal": "^6.11.1",
     "moment": "^2.30.1",
     "moment-timezone": "^0.5.43"
-  }
+  },
+  "packageManager": "yarn@4.5.0"
 }
