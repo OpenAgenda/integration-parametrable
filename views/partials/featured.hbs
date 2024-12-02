@@ -59,12 +59,12 @@
             </div>
           {{/if}}
         {{/if}}
-        {{#if @root.styles.list.displayCategory}}
-        <div class="category">
-          <p class="category-text">{{extractCategory}}</p>
-        </div>
-        {{/if}}
           <div class="wbg px-4 py-3 text-event-cover-col top-border">
+            {{#if @root.styles.list.displayCategory}}
+            <div class="category">
+              <p class="category-text">{{extractCategory}}</p>
+            </div>
+            {{/if}}
             <div class='event-cover-row'>
               <p class="date primary-color">{{dateRange}}</p>
               {{#if @root.styles.list.displayDescription}}
