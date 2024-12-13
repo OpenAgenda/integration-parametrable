@@ -101,6 +101,9 @@
           {{#if event.registration.link.[0].value}}
           <div class="link mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Link.svg" alt="icône link"><a href="{{event.registration.link.[0].value}}" target="_blank">{{event.registration.link.[0].value}}</a></div>
           {{/if}}
+          {{#if event.registration.default}}
+          <div class="link mb-3 d-flex align-items-baseline"><img class="details-icon my-auto" src="/Link.svg" alt="icône lien billeterie"><a href="{{event.registration.default.value}}" target="_blank">{{event.registration.default.label}}</a></div>
+          {{/if}}
         </div>
       {{/if}}
 
