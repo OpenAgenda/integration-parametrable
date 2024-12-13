@@ -42,13 +42,13 @@
         {{#if @root.styles.useSrcSetImages}}
         <img
           class="img-fluid {{#unless @root.styles.noShadows}}shadow{{/unless}}"
-          src="https://img.openagenda.com/u/700x0/cibul/{{event.image.filename}}"
+          src="https://img.openagenda.com/u/700x0/main/{{event.image.filename}}"
           sizes="(min-width: 992px) 700px,
                 (min-width: 768px) 624px,
                 (max-width: 767px) calc(100vw - 30px)"
-          srcset="https://img.openagenda.com/u/624x0/cibul/{{event.image.filename}} 624w,
-                  https://img.openagenda.com/u/700x0/cibul/{{event.image.filename}} 700w,
-                  https://img.openagenda.com/u/737x0/cibul/{{event.image.filename}} 737w"
+          srcset="https://img.openagenda.com/u/624x0/main/{{event.image.filename}} 624w,
+                  https://img.openagenda.com/u/700x0/main/{{event.image.filename}} 700w,
+                  https://img.openagenda.com/u/737x0/main/{{event.image.filename}} 737w"
           alt="{{event.description}}"
           height="auto"
         />
@@ -58,13 +58,13 @@
         {{else}}
         <img
           class="img-fluid {{#unless @root.styles.noShadows}}shadow{{/unless}}"
-          src="https://cibul.s3.amazonaws.com/{{event.fullImage}}"
+          src="https://02034510ef5d488190e4cf17d19a788b.s3.pub1.infomaniak.cloud/main/{{event.fullImage}}"
           alt="{{event.description}}"
           height="auto"
         />
         {{/if}}
       </div>
-      {{/if}}   
+      {{/if}}
       {{#if event.longDescription}}
       <div class="event-text text-left">
         {{{event.longDescription}}}

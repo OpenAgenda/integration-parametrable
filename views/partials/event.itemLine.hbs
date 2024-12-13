@@ -11,23 +11,23 @@
     {{#if fullImage}}
       <div class="col-3 p-0 img-container">
         {{#if @root.styles.useSrcSetImages}}
-        <img 
+        <img
           class="img-fluid"
-          src="https://img.openagenda.com/u/700x0/cibul/{{fullImage}}"
+          src="https://img.openagenda.com/u/700x0/main/{{fullImage}}"
           sizes="(max-width: 492px) 114px,
           (max-width: 751px) 179px,
           (max-width: 973px) 235px,
           363px"
           srcset="
-            https://img.openagenda.com/u/726x0/cibul/{{fullImage}} 726w,
-            https://img.openagenda.com/u/1146x0/cibul/{{fullImage}} 1146w,
-            https://img.openagenda.com/u/1506x0/cibul/{{fullImage}} 1506w"
+            https://img.openagenda.com/u/726x0/main/{{fullImage}} 726w,
+            https://img.openagenda.com/u/1146x0/main/{{fullImage}} 1146w,
+            https://img.openagenda.com/u/1506x0/main/{{fullImage}} 1506w"
           alt="{{description}}"
           height="auto"
         />
         {{else}}
         <img
-          src="https://cibul.s3.amazonaws.com/{{fullImage}}"
+          src="https://02034510ef5d488190e4cf17d19a788b.s3.pub1.infomaniak.cloud/main/{{fullImage}}"
           height="auto"
           alt="{{description}}"
         />
@@ -36,7 +36,7 @@
     {{else}}
       {{#if defaultImage}}
         <div class="col-3 p-0 img-container">
-          <img 
+          <img
             class="img-fluid"
             src="../{{defaultImage}}"
             height="auto"
@@ -76,22 +76,22 @@
           {{#if age}}
             {{#if @root.styles.list.displayAge}}
               <div class="event-age">
-                <p class="mb-3">De {{age.min}} à {{age.max}} ans</p> 
+                <p class="mb-3">De {{age.min}} à {{age.max}} ans</p>
               </div>
             {{/if}}
           {{/if}}
           {{#if @root.styles.list.displayMore}}
             <div class="event-more">
               {{#each more}}
-                <p class="mb-3">{{this.label}}: {{this.slug}}</p> 
+                <p class="mb-3">{{this.label}}: {{this.slug}}</p>
               {{/each}}
             </div>
           {{/if}}
           <div class="event-location">
             {{#if @root.styles.list.defineLocation}}
-              <p class="m-0">{{extractLocationLabel}} {{extractLocation}}</p> 
+              <p class="m-0">{{extractLocationLabel}} {{extractLocation}}</p>
             {{else}}
-            <p class="m-0">{{location.name}}, {{location.city}}</p> 
+            <p class="m-0">{{location.name}}, {{location.city}}</p>
             {{/if}}
           </div>
         </div>
