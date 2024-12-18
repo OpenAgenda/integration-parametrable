@@ -382,7 +382,7 @@ Portal({
       longitude: 1.441136
     }, */
     zoom: 20,
-    path: process.env.MAP_MARKER_ICON_PATH || '//s3-eu-west-1.amazonaws.com/cibulstatic/markerIcon.png',
+    path: process.env.MAP_MARKER_ICON_PATH || 'https://cdn.openagenda.com/static/markerIcon.png',
   },
   tracking: {
     useAgendaGoogleAnalytics: process.env.PORTAL_USE_AGENDA_GA_ID ?? false,
