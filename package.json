@@ -7,6 +7,7 @@
     "start": "start-portal",
     "prepack": "build-portal"
   },
+  "type": "module",
   "dependencies": {
     "@openagenda/agenda-portal": "^6.11.15",
     "moment": "^2.30.1",

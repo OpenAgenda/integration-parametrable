@@ -1,21 +1,19 @@
-'use strict';
-
 // const log = require('@openagenda/agenda-portal/lib/Log')('server');
+
+import '@openagenda/agenda-portal/utils/loadEnvironment.js';
+import Portal from '@openagenda/agenda-portal';
 
 // Set options as a parameter, environment variable, or rc file.
 
-const Portal = require('@openagenda/agenda-portal');
-const extractDate = require('./lib/extractDate');
-const defineDateFilterValues = require('./lib/defineDateFilterValues');
-const fetchEvents = require('./lib/fetchEvents');
-const isFirstPage = require('./lib/isFirstPage');
-const hasActiveFilter = require('./lib/hasActiveFilter');
-const getTotalLabel = require('./lib/getTotalLabel');
-const formatAdditionalFields = require('./lib/formatAdditionalFields');
-const formatFields = require('./lib/formatFields');
-const flattenLabel = require('./lib/flattenLabel');
-
-Portal.utils.loadEnvironment(__dirname);
+import extractDate from './lib/extractDate.js';
+import defineDateFilterValues from './lib/defineDateFilterValues.js';
+import fetchEvents from './lib/fetchEvents.js';
+import isFirstPage from './lib/isFirstPage.js';
+import hasActiveFilter from './lib/hasActiveFilter.js';
+import getTotalLabel from './lib/getTotalLabel.js';
+import formatAdditionalFields from './lib/formatAdditionalFields.js';
+import formatFields from './lib/formatFields.js';
+import flattenLabel from './lib/flattenLabel.js';
 
 function optionToLabel(options, id, lang) {
   const foundOption = options.find(v => v.id === id);
@@ -209,7 +207,7 @@ const mapCoordinates = process.env.CONFIG_MAP_COORDINATES ? process.env.CONFIG_M
 
 
 Portal({
-  dir: __dirname,
+  dir: import.meta.dirname,
   styles: {
     externeCssLink: process.env.EXTERNE_CSS_LINK,
     bgColor: process.env.STYLES_BG_COLOR || 'white',
@@ -339,7 +337,7 @@ Portal({
   // assets folder
   assets: process.env.PORTAL_ASSETS_FOLDER,
   // multilingual labels folder
-  i18n: process.env.PORTAL_I18N_FOLDER,
+  i18n: process.env.PORTAL_I18N_PATH,
   // number of events to be loaded in an event index page
   eventsPerPage: parseInt(process.env.PORTAL_EVENTS_PER_PAGE ?? '20', 10),
   // visibility of past events when relative or timings filter is specified
@@ -382,7 +380,7 @@ Portal({
       longitude: 1.441136
     }, */
     zoom: 20,
-    path: process.env.MAP_MARKER_ICON_PATH || '//s3-eu-west-1.amazonaws.com/cibulstatic/markerIcon.png',
+    path: process.env.MAP_MARKER_ICON_PATH || 'https://cdn.openagenda.com/static/markerIcon.png',
   },
   tracking: {
     useAgendaGoogleAnalytics: process.env.PORTAL_USE_AGENDA_GA_ID ?? false,

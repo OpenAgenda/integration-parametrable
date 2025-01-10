@@ -18,27 +18,27 @@
         {{#if image.filename}}
           <div class="text-center img-container">
             {{#if @root.styles.useSrcSetImages}}
-            <img 
+            <img
               class="img-fluid img-cover-event-col"
-              src="https://img.openagenda.com/u/700x0/cibul/{{image.filename}}"
+              src="https://img.openagenda.com/u/700x0/main/{{image.filename}}"
               sizes="(max-width: 575px) calc(100vw - 30px),
               (max-width: 767px) 351px,
               425px"
-              srcset="https://img.openagenda.com/u/351x0/cibul/{{image.filename}} 351w,
-                https://img.openagenda.com/u/425x0/cibul/{{image.filename}} 425w,
-                https://img.openagenda.com/u/545x0/cibul/{{image.filename}} 545w,
-                https://img.openagenda.com/u/702x0/cibul/{{image.filename}} 702w,
-                https://img.openagenda.com/u/850x0/cibul/{{image.filename}} 850w,
-                https://img.openagenda.com/u/1090x0/cibul/{{image.filename}} 1090w,
-                https://img.openagenda.com/u/1050x0/cibul/{{image.filename}} 1050w,
-                https://img.openagenda.com/u/1275x0/cibul/{{image.filename}} 1275w,
-                https://img.openagenda.com/u/1635x0/cibul/{{image.filename}} 1635w"
+              srcset="https://img.openagenda.com/u/351x0/main/{{image.filename}} 351w,
+                https://img.openagenda.com/u/425x0/main/{{image.filename}} 425w,
+                https://img.openagenda.com/u/545x0/main/{{image.filename}} 545w,
+                https://img.openagenda.com/u/702x0/main/{{image.filename}} 702w,
+                https://img.openagenda.com/u/850x0/main/{{image.filename}} 850w,
+                https://img.openagenda.com/u/1090x0/main/{{image.filename}} 1090w,
+                https://img.openagenda.com/u/1050x0/main/{{image.filename}} 1050w,
+                https://img.openagenda.com/u/1275x0/main/{{image.filename}} 1275w,
+                https://img.openagenda.com/u/1635x0/main/{{image.filename}} 1635w"
               alt="{{event.description}}"
               height="auto"
             />
             {{else}}
             <img
-              src="https://cibul.s3.amazonaws.com/{{image.filename}}"
+              src="https://cdn.openagenda.com/main/{{image.filename}}"
               height="auto"
               alt="{{event.description}}"
             />
@@ -47,7 +47,7 @@
         {{else}}
           {{#if defaultImage}}
             <div class="text-center img-container">
-            <img 
+            <img
               class="img-fluid img-cover-event-col"
               src="../{{defaultImage}}"
               alt="{{event.description}}"
@@ -76,25 +76,25 @@
               {{#if age}}
                 {{#if @root.styles.list.displayAge}}
                   <div class="event-age">
-                    <p class="m-0">De {{age.min}} à {{age.max}} ans</p> 
+                    <p class="m-0">De {{age.min}} à {{age.max}} ans</p>
                   </div>
                 {{/if}}
               {{/if}}
               {{#if @root.styles.list.displayMore}}
                 <div class="event-more">
-                  <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p> 
+                  <p class="m-0">{{extractMoreLabel}} {{extractMore}}</p>
                 </div>
               {{/if}}
               <div class="event-location">
                 {{#if @root.styles.list.defineLocation}}
-                  <p class="m-0">{{extractLocationLabel}} {{extractLocation}}</p> 
+                  <p class="m-0">{{extractLocationLabel}} {{extractLocation}}</p>
                 {{else}}
-                <p class="m-0">{{location.name}}, {{location.city}}</p> 
+                <p class="m-0">{{location.name}}, {{location.city}}</p>
                 {{/if}}
               </div>
             </div>
           </div>
-        </a> 
+        </a>
       </div>
     </div>
     {{/each}}
