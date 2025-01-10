@@ -3,9 +3,9 @@
   {{#if formatAsLink}}
   <span><a href="{{value}}" target="_blank" rel="noreferrer">{{value}}</a></span>
   {{else if formatAsImage}}
-  <span><img src="https://cibul.s3.amazonaws.com/{{value.filename}}" /></span>
+  <span><img src="https://cdn.openagenda.com/main/{{value.filename}}" /></span>
   {{else if formatAsFile}}
-  <span><a href="https://cibul.s3.amazonaws.com/{{value.filename}}">{{value.originalName}}</a></span>
+  <span><a href="https://cdn.openagenda.com/main/{{value.filename}}">{{value.originalName}}</a></span>
   {{else if formatAsMarkdown}}
   <span>{{{mdToHtml formatted}}}</span>
   {{else}}
