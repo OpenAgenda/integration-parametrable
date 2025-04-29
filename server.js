@@ -152,18 +152,25 @@ function eventHook(inputEvent, { agenda, lang, styles }) {
     inputEvent.extractLocationLabel = inputEvent[keyLocationLabel] ? keyLocationLabel + ' : ' : 'Lieu :';
   } 
   
-  inputEvent.more = keyMoreLabel?.map((label, index,) => {
+  inputEvent.more = keyMoreLabel?.map((label, index) => {
     const slugData = inputEvent[keyMoreSlug[index]];
     if (Array.isArray(slugData)) {
-        return {
-            label,
-            slug: slugData.map(value => value.label[lang]),
-        };
+      const slugs = slugData.map(value => {
+        if (value?.label && typeof value.label === 'object' && value.label[lang]) {
+          return value.label[lang];
+        }
+        return value?.label || '';
+      });
+
+      return {
+        label,
+        slug: slugs,
+      };
     } else {
-        return {
-            label,
-            slug: slugData,
-        };
+      return {
+        label,
+        slug: slugData,
+      };
     }
   });
 
