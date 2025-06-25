@@ -352,7 +352,16 @@ Portal({
   // filters that applies even if other filter is specified, can be overloaded
   preFilter: {
     relative: process.env.PORTAL_PREFILTER?.split(','),
-  },
+    ...Object.fromEntries(
+      (process.env.PORTAL_ADDITIONAL_PREFILTERS || '')
+        .split(';')
+        .filter(Boolean)
+        .map(entry => {
+          const [key, values] = entry.split(':');
+          return [key, values.split(',')];
+        })
+      )
+    },
   // filter that applies when no other filter is specified
   defaultFilter: {
     ...(displayFeaturedSection ? { featured: 0 } : {}),
