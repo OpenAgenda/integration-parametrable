@@ -344,7 +344,7 @@ Portal({
   // assets folder
   assets: process.env.PORTAL_ASSETS_FOLDER,
   // multilingual labels folder
-  i18n: process.env.PORTAL_I18N_PATH,
+  i18n: (await import(process.env.PORTAL_I18N_PATH)).default,
   // number of events to be loaded in an event index page
   eventsPerPage: parseInt(process.env.PORTAL_EVENTS_PER_PAGE ?? '20', 10),
   // visibility of past events when relative or timings filter is specified
