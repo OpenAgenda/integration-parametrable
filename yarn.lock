@@ -2676,9 +2676,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openagenda/agenda-portal@npm:^6.13.3":
-  version: 6.13.3
-  resolution: "@openagenda/agenda-portal@npm:6.13.3"
+"@openagenda/agenda-portal@npm:^6.13.4":
+  version: 6.13.4
+  resolution: "@openagenda/agenda-portal@npm:6.13.4"
   dependencies:
     "@babel/core": "npm:^7.23.3"
     "@babel/runtime-corejs3": "npm:^7.23.2"
@@ -2710,7 +2710,6 @@ __metadata:
     debug: "npm:^4.1.1"
     dotenv: "npm:^16.4.5"
     express: "npm:^4.17.1"
-    file-loader: "npm:^6.2.0"
     hbs: "npm:^4.2.0"
     iframe-resizer: "npm:^4.2.10"
     immutability-helper: "npm:^3.0.0"
@@ -2745,7 +2744,7 @@ __metadata:
     bundle-server: bin/bundle-server.js
     deploy: bin/deploy/run.js
     start-portal: bin/start-portal.js
-  checksum: 10c0/486f5944429ed4bfa2bb8264cd044fed253cdd6b3c12c75bb44ad6fc7625b022b135b3722747abcfab34a5400af7cac2eb1a99918c09bd1df287c49e917f428c
+  checksum: 10c0/4be84802f0b15db39852c18f5a46c18732e7c2f06421cd84f8498ea99b96e35a2ac9906e4ad724d1d7f2efa900c73706573358b030904ba3cae931eceb3788bc
   languageName: node
   linkType: hard
 
@@ -8217,18 +8216,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-loader@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "file-loader@npm:6.2.0"
-  dependencies:
-    loader-utils: "npm:^2.0.0"
-    schema-utils: "npm:^3.0.0"
-  peerDependencies:
-    webpack: ^4.0.0 || ^5.0.0
-  checksum: 10c0/e176a57c2037ab0f78e5755dbf293a6b7f0f8392350a120bd03cc2ce2525bea017458ba28fea14ca535ff1848055e86d1a3a216bdb2561ef33395b27260a1dd3
-  languageName: node
-  linkType: hard
-
 "file-selector@npm:^2.1.0":
   version: 2.1.2
   resolution: "file-selector@npm:2.1.2"
@@ -9383,7 +9370,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "integration-parametrable@workspace:."
   dependencies:
-    "@openagenda/agenda-portal": "npm:^6.13.3"
+    "@openagenda/agenda-portal": "npm:^6.13.4"
     moment: "npm:^2.30.1"
     moment-timezone: "npm:^0.5.43"
   languageName: unknown
